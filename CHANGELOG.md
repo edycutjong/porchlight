@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/edycutjong/porchlight/compare/v1.3.0...v1.3.1) (2026-08-02)
+
+
+### Bug Fixes
+
+* **site:** hero demo CTA opens YouTube; self-sync version label; tidy comment ([40d2123](https://github.com/edycutjong/porchlight/commit/40d21233fd90135e2fda37b54ed948e6feb46735))
+
 # [1.3.0](https://github.com/edycutjong/porchlight/compare/v1.2.3...v1.3.0) (2026-08-02)
 
 
