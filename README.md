@@ -36,6 +36,8 @@
 
 ### 🤝 Sponsor
 
+<a href="https://hellominds.ai"><img src="docs/minds-logo.svg" alt="Minds by Animoca Brands" height="46"></a>
+
 Porchlight is built on **[Minds by Animoca Brands](https://hellominds.ai)** — the sponsor platform for the Creative Minds Jam. The Minds agent is the **engine**, not a wrapper: per-member long-term memory, semantic reasoning, and native-channel outreach all come from the Mind via [`@animocabrands/minds-client-lib`](https://build.hellominds.ai). Builder console: [build.hellominds.ai](https://build.hellominds.ai).
 
 Track: *Audience growth & community engagement*.
