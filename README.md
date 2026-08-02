@@ -52,6 +52,24 @@ For any membership creator, **churn is the direct revenue wound.** When a member
 2. **Churn board (continuity).** Every departure compounds into a live board: *"37% left over the pivot away from deep-dives."*
 3. **Conditional win-back (autonomous follow-up).** The creator announces what changed → the Mind **semantically matches** it against every stored reason and, unprompted, messages **only** the members whose reason is now resolved — **quoting their own words** from weeks ago. Do-not-contact is always honored. Recovered MRR is tracked.
 
+## 🎬 See it work
+
+**The money moment — the Mind wins a member back, unprompted, quoting their own words.** The creator posts "deep-dives are back"; the Mind semantically matches it to everyone who left over the pivot and reaches out to *only* them.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ada0e54d-459f-4f78-a433-d4ccdd5731d0" alt="The Mind autonomously wins members back, quoting each member's own words" width="100%">
+</div>
+
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/02-dashboard.png" alt="Porchlight churn dashboard" width="100%"><br/><sub><b>The dashboard</b> — every departure, remembered with its reason.</sub></td>
+<td width="50%"><img src="docs/screenshots/04-board.png" alt="Churn intelligence board" width="100%"><br/><sub><b>The churn board</b> — <em>"37% left over the pivot away from deep-dives."</em></sub></td>
+</tr>
+<tr>
+<td colspan="2"><img src="docs/screenshots/08-money.png" alt="Recovered MRR tracked automatically" width="100%"><br/><sub><b>Recovered MRR</b> — every conditional win-back, tracked to the dollar.</sub></td>
+</tr>
+</table>
+
 ## 🧠 Why the Mind is the product (not a wrapper)
 - The **exit interview** is an adaptive conversation, not a form.
 - **Condition matching** is *semantic judgement* — "the pivot to short clips" is resolved by "deep-dives are back" even with **zero shared keywords**. That is the Mind reasoning, not a filter.
