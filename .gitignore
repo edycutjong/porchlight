@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+.next/
+dist/
+coverage/
+.data/
+.DS_Store
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Lighthouse CI
+.lighthouseci/

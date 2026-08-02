@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Porchlight</title>
+<style>
+  /* Design language mirrors the landing page (site/index.html): warm serif
+     headings, mono amber kickers, glassy cards on deep navy, --ease motion.
+     --accent / --good / --ink are load-bearing (referenced by inline styles the
+     app's JS injects) — keep those names. */
+  :root{
+    --bg:#0f1220; --bg-deep:#0a0d18; --card:#171b2e; --bg-raise:#12162a; --bg-inset:#0c0f1c;
+    --line:#2a3050; --line-soft:rgba(233,236,255,.09);
+    --ink:#e9ecff; --dim:#a7b0d2; --whisper:#6b76a3;
+    --accent:#ffcf6b; --amber-deep:#e89f45; --amber-ink:#20160a;
+    --good:#69d38a; --green-ink:#0b1a10;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Charter,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --ease:cubic-bezier(.22,.8,.24,1);
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; min-height:100vh; font:15px/1.6 var(--sans); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; }
+  ::selection{ background:var(--accent); color:var(--amber-ink); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  /* atmosphere — warm porch glow up top, green whisper lower-right, blueprint grid, night vignette */
+  body::before{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(62% 44% at 50% -10%, rgba(255,207,107,.16), transparent 70%),
+      radial-gradient(48% 52% at 94% 112%, rgba(105,211,138,.11), transparent 70%),
+      repeating-linear-gradient(0deg, rgba(233,236,255,.028) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(90deg, rgba(233,236,255,.028) 0 1px, transparent 1px 48px); }
+  body::after{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:radial-gradient(120% 100% at 50% 38%, transparent 55%, rgba(5,6,14,.55)); }
+  header, main{ position:relative; z-index:1; }
+
+  header{ display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:20px clamp(18px,4vw,32px); border-bottom:1px solid var(--line-soft);
+    background:linear-gradient(180deg, rgba(15,18,32,.72), transparent); backdrop-filter:blur(8px); }
+  .brand{ display:flex; align-items:center; gap:9px; font-family:var(--serif); font-size:1.3rem; letter-spacing:.01em; color:var(--ink); }
+  .brand .lantern{ filter:drop-shadow(0 0 10px rgba(255,207,107,.55)); }
+  .tag{ margin-left:auto; color:var(--dim); font-size:.9rem; }
+  .badge{ font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase;
+    padding:4px 10px; border:1px solid var(--line); border-radius:99px; color:var(--dim); background:rgba(255,255,255,.02); }
+
+  main{ max-width:1040px; margin:0 auto; padding:clamp(20px,3vw,30px); display:grid; gap:18px; grid-template-columns:1fr 1fr; }
+  .card{ position:relative; background:linear-gradient(180deg, var(--card), var(--bg-raise));
+    border:1px solid var(--line-soft); border-radius:16px; padding:20px 22px;
+    box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 12px 34px rgba(0,0,0,.30);
+    transition:border-color .35s var(--ease), transform .35s var(--ease); }
+  .card:hover{ border-color:rgba(255,207,107,.22); transform:translateY(-2px); }
+  .card h2{ display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:.72rem; font-weight:600;
+    text-transform:uppercase; letter-spacing:.14em; color:var(--accent); margin:0 0 14px; }
+  .card h2::before{ content:""; width:22px; height:1px; background:linear-gradient(90deg,var(--accent),transparent); flex:none; }
+  .full{ grid-column:1/3; }
+
+  .mrr{ font-family:var(--serif); font-size:clamp(2.4rem,5vw,3.1rem); font-weight:600; line-height:1; letter-spacing:-.02em;
+    background:linear-gradient(100deg,#fff3d2,var(--accent) 42%,var(--good) 92%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 4px 22px rgba(255,207,107,.20)); }
+  .mrr small{ -webkit-text-fill-color:var(--dim); color:var(--dim); font-family:var(--mono); font-size:.82rem; font-weight:400; letter-spacing:0; }
+
+  .bar{ display:flex; align-items:center; gap:12px; margin:9px 0; }
+  .bar .lbl{ width:132px; color:var(--dim); font-size:.82rem; text-transform:capitalize; font-family:var(--mono); }
+  .bar .track{ flex:1; height:9px; background:var(--bg-inset); border:1px solid var(--line-soft); border-radius:99px; overflow:hidden; }
+  .bar .fill{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--amber-deep),var(--accent)); box-shadow:0 0 14px rgba(255,207,107,.40); transition:width .6s var(--ease); }
+  .bar .n{ width:30px; text-align:right; color:var(--dim); font-size:.82rem; font-variant-numeric:tabular-nums; }
+
+  .row{ display:flex; gap:10px; flex-wrap:wrap; }
+  select,input,button{ font:inherit; color:var(--ink); background:var(--bg-inset); border:1px solid var(--line); border-radius:11px; padding:11px 13px;
+    transition:border-color .2s var(--ease), box-shadow .2s var(--ease), transform .12s var(--ease); }
+  select:focus,input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(255,207,107,.16); }
+  input{ flex:1; min-width:200px; max-width:100%; }
+  input::placeholder{ color:var(--whisper); }
+  button{ background:linear-gradient(180deg,var(--accent),var(--amber-deep)); color:var(--amber-ink); border:none; font-weight:700; cursor:pointer; letter-spacing:.01em; }
+  button:hover{ transform:translateY(-1px); box-shadow:0 8px 22px rgba(255,207,107,.28); }
+  button:active{ transform:translateY(0); }
+  button.ghost{ background:var(--bg-inset); color:var(--ink); border:1px solid var(--line); font-weight:600; }
+  button.ghost:hover{ border-color:var(--dim); box-shadow:none; }
+
+  .feed{ display:flex; flex-direction:column; gap:12px; }
+  .wb{ border:1px solid var(--line-soft); border-left:3px solid var(--good); border-radius:12px; padding:13px 15px; background:var(--bg-raise);
+    transition:transform .3s var(--ease), border-color .3s var(--ease); }
+  .wb:hover{ transform:translateX(3px); border-left-color:#8fe3ab; }
+  .wb .who{ font-weight:650; font-size:.98rem; }
+  .wb .msg{ color:var(--dim); font-size:.92rem; margin-top:5px; font-family:var(--serif); font-style:italic; }
+  .skip{ color:var(--accent); font-size:.85rem; margin-top:10px; font-family:var(--mono); }
+  .muted{ color:var(--dim); font-size:.85rem; }
+  #edge b, #counts{ font-variant-numeric:tabular-nums; }
+
+  @media (max-width:640px){
+    main{ grid-template-columns:1fr; }
+    .full{ grid-column:auto; }
+    .tag{ margin-left:0; flex-basis:100%; }
+    input{ min-width:0; }
+    select{ max-width:100%; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand"><span class="lantern">🏮</span> Porchlight</span>
+  <span class="badge" id="mode">…</span>
+  <span class="tag">win members back when their reason is actually fixed</span>
+</header>
+<main>
+  <section class="card">
+    <h2>Recovered MRR</h2>
+    <div class="mrr"><span id="mrr">$0.00</span> <small>/mo · <span id="rejoined">0</span> rejoined</small></div>
+    <p class="muted" id="edge"></p>
+    <p class="muted" id="counts"></p>
+  </section>
+
+  <section class="card">
+    <h2>Why members leave (churn board)</h2>
+    <div id="reasons"></div>
+  </section>
+
+  <section class="card full">
+    <h2>Simulate</h2>
+    <div class="row" style="margin-bottom:10px">
+      <select id="member"></select>
+      <input id="cancelMsg" placeholder="parting message (why they're leaving)…"
+        value="the show pivoted away from the deep-dive interviews i loved — it is all short clips now" />
+      <button class="ghost" onclick="cancel()">Member cancels →</button>
+    </div>
+    <div class="row">
+      <input id="change" placeholder="announce what changed…" value="Big news — the deep-dive interviews are back, weekly." />
+      <button onclick="announce()">Announce change → Mind wins back</button>
+    </div>
+  </section>
+
+  <section class="card full">
+    <h2>Autonomous win-backs</h2>
+    <div class="feed" id="feed"><p class="muted">No win-backs yet. Announce a change the Mind can match.</p></div>
+    <div id="skip"></div>
+  </section>
+
+  <section class="card full">
+    <h2>Audit trail — every change the Mind acted on</h2>
+    <div id="audit"><p class="muted">No changes announced yet.</p></div>
+  </section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id)
+async function refresh() {
+  const s = await (await fetch('/api/state')).json()
+  $('mode').textContent = s.mode
+  $('mrr').textContent = '$' + (s.board.recoveredMrrCents/100).toFixed(2)
+  $('rejoined').textContent = s.board.members.rejoined
+  const edge = s.board.recoveredMrrCents - s.board.keywordRecoveredMrrCents
+  $('edge').innerHTML = s.board.recoveredMrrCents
+    ? `keyword matching would recover only <b>$${(s.board.keywordRecoveredMrrCents/100).toFixed(2)}</b> — the Mind's semantic match found <b style="color:var(--accent)">+$${(edge/100).toFixed(2)}</b> keywords miss`
+    : ''
+  $('counts').textContent = `${s.board.members.total} members · ${s.board.departures.total} departures · ${s.board.departures.open} open`
+  const max = Math.max(1, ...s.board.byReason.map(r=>r.count))
+  $('reasons').innerHTML = s.board.byReason.map(r =>
+    `<div class="bar"><span class="lbl">${r.reason.replace('_',' ')}</span>
+     <span class="track"><span class="fill" style="width:${(r.count/max*100)|0}%"></span></span>
+     <span class="n">${r.count}</span></div>`).join('')
+  const active = s.roster.filter(m=>m.status==='active')
+  $('member').innerHTML = active.map(m=>`<option value="${m.id}">${m.name} · ${m.tier} ($${(m.mrrCents/100)})</option>`).join('')
+  const wb = s.board.winbacks
+  $('feed').innerHTML = wb.length ? wb.map(w =>
+    `<div class="wb"><div class="who">${w.memberName} <span class="muted">· ${w.reason.replace('_',' ')} · +$${(w.recoveredMrrCents/100).toFixed(2)}/mo</span>
+       ${w.keywordWouldCatch ? '' : '<span class="badge" style="border-color:var(--accent);color:var(--accent)">semantic-only · keywords miss</span>'}</div>
+     <div class="msg">${w.message}</div></div>`).join('')
+    : '<p class="muted">No win-backs yet. Announce a change the Mind can match.</p>'
+  const audit = s.board.audit
+  $('audit').innerHTML = audit.length ? audit.map(a =>
+    `<div class="bar"><span class="lbl" style="width:auto;flex:1;text-transform:none;color:var(--ink)">${a.change}</span>
+     <span class="badge" style="border-color:var(--good);color:var(--good)">${a.resolved} won back</span>
+     <span class="muted" style="font-size:12px">${new Date(a.at).toLocaleString()}</span></div>`).join('')
+    : '<p class="muted">No changes announced yet.</p>'
+}
+async function cancel() {
+  const memberId = $('member').value, message = $('cancelMsg').value
+  if (!memberId) return
+  await fetch('/api/cancel', {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({memberId,message})})
+  refresh()
+}
+async function announce() {
+  const text = $('change').value
+  const r = await (await fetch('/api/change',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text})})).json()
+  $('skip').innerHTML = (r.skippedDoNotContact||[]).length
+    ? `<div class="skip">🔒 honored do-not-contact — skipped: ${r.skippedDoNotContact.map(s=>s.memberName).join(', ')}</div>` : ''
+  refresh()
+}
+refresh()
+</script>
+</body>
+</html>

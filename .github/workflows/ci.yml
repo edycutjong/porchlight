@@ -1,0 +1,159 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── STAGE 1: Code Quality (parallel with Stage 2) ─────────
+  quality:
+    name: "Stage 1 · Quality"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ${{ github.event_name == 'push' && fromJSON('[20, 22, 24]') || fromJSON('[22]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - name: Type check (strict)
+        run: npm run typecheck
+      - name: Unit tests with coverage
+        run: npm run test:coverage
+
+  # ── STAGE 2: Security Gate (parallel with Stage 1) ────────
+  secret-scan:
+    name: "Stage 2 · Secret Scanning"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: TruffleHog Secret Scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified
+
+  dependency-audit:
+    name: "Stage 2 · Dependency Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      - name: npm audit (high + critical)
+        run: npm audit --audit-level=high
+        continue-on-error: true
+      - name: License compliance check
+        run: npx license-checker --production --failOn "GPL-3.0;AGPL-3.0" --summary
+        continue-on-error: true
+
+  # ── STAGE 3: Build / Smoke Verification ───────────────────
+  build:
+    name: "Stage 3 · Build & Smoke"
+    needs: [quality]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      # No bundler step — tsx runs TypeScript directly. Smoke-verify the whole
+      # arc end-to-end (seed → exit interview → semantic match → win-back) in MOCK.
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Full-arc smoke (headless demo, MOCK mode)
+        run: npm run demo
+
+  # ── STAGE 4: E2E Tests (Playwright) ───────────────────────
+  e2e:
+    name: "Stage 4 · E2E Tests"
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run E2E tests
+        run: npm run e2e
+      - name: Upload E2E artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  # ── STAGE 5: Performance (advisory) ───────────────────────
+  performance:
+    name: "Stage 5 · Performance"
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      - name: Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun
+        continue-on-error: true
+
+  # ── STAGE 6: Deploy Gate (main only) ──────────────────────
+  deploy-gate:
+    name: "Stage 6 · Deploy Gate"
+    needs: [build, e2e, performance, secret-scan, dependency-audit]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: All gates passed
+        run: |
+          echo "🚀 All CI/CD gates passed!"
+          echo "  ✅ Stage 1 — Quality (strict typecheck, node:test + coverage)"
+          echo "  ✅ Stage 2 — Secret Scanning (TruffleHog) + Dependency Audit"
+          echo "  ✅ Stage 3 — Build & full-arc smoke (MOCK)"
+          echo "  ✅ Stage 4 — E2E (Playwright)"
+          echo "  ✅ Stage 5 — Performance (Lighthouse CI, advisory)"
+          echo "  ✅ Stage 6 — Deploy Gate"
+
+  # ── STAGE 7: Release (release-please, main only) ──────────
+  # Conventional Commits → SemVer, CHANGELOG, tag, and GitHub Release, driven by a
+  # pure GitHub Action (no npm dependencies — keeps `npm audit` clean).
+  release:
+    name: "Stage 7 · Release"
+    needs: [deploy-gate]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write      # create tags, commits, and GitHub Releases
+      pull-requests: write # open/maintain the release PR
+    steps:
+      - name: Release Please
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: node

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porchlight — the win-back Mind that remembers why they left</title>
+<meta name="description" content="An exit-interview Mind that remembers WHY each member left and autonomously wins them back the moment their stated reason is actually fixed — quoting their own words, honoring do-not-contact. Powered by Minds by Animoca Brands.">
+<meta property="og:title" content="Porchlight — leave the porch light on">
+<meta property="og:description" content="An exit-interview Mind that remembers why each member left — and wins them back the moment their reason is actually fixed. $105/mo recovered vs a $35/mo keyword baseline.">
+<meta name="theme-color" content="#0f1220">
+<!-- ▼ SOCIAL METADATA — before sharing, replace the base URL below (porchlight.edycu.dev)
+     with your deployed GitHub Pages base. OG/Twitter scrapers require ABSOLUTE image URLs. og.png ships beside this file. -->
+<link rel="canonical" href="https://porchlight.edycu.dev/">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Porchlight — Creative Minds Jam #1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porchlight">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://porchlight.edycu.dev/">
+<meta property="og:image" content="https://porchlight.edycu.dev/og-image.png">
+<meta property="og:image:secure_url" content="https://porchlight.edycu.dev/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porchlight — the win-back Mind. $105/mo recovered, +$70/mo the Mind alone finds, 0.93 live semantic match.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porchlight — leave the porch light on">
+<meta name="twitter:description" content="An exit-interview Mind that wins members back the moment their reason is actually fixed. $105/mo recovered; +$70/mo only the Mind finds.">
+<meta name="twitter:image" content="https://porchlight.edycu.dev/og-image.png">
+<meta name="twitter:image:alt" content="Porchlight — the win-back Mind, powered by Minds by Animoca Brands.">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%230f1220"/><circle cx="32" cy="30" r="22" fill="%23ffcf6b" opacity=".18"/><path d="M32 12c-4 1-9 7-10 11h20c-1-4-6-10-10-11z" fill="%232a3050"/><path d="M23 26h18l-2 18H25z" fill="%23ffcf6b"/><path d="M32 41c-4 0-5.5-4-4-8 1-2.6 2.8-3.6 3.3-6.4.2-1 1.2-1 1.4 0 .5 2.8 2.3 3.8 3.3 6.4 1.5 4 0 8-4 8z" fill="%23fff3d2"/><rect x="21" y="44" width="22" height="4" rx="2" fill="%232a3050"/><circle cx="44" cy="55" r="3.4" fill="%2369d38a"/></svg>'>
+<style>
+/* ============================================================
+   PORCHLIGHT · landing
+   Aesthetic: cinematic dusk minimalism — a warm porch light
+   against deep night. Editorial serif display, mono for proof.
+   Self-contained: no CDN, no webfonts, system stacks only.
+   ============================================================ */
+:root{
+  --bg:#0f1220;
+  --bg-deep:#0a0d18;
+  --bg-card:#171b2e;
+  --bg-raise:#12162a;
+  --bg-inset:#0c0f1c;
+  --line:#2a3050;
+  --line-soft:rgba(233,236,255,.09);
+  --ink:#e9ecff;
+  --dim:#a7b0d2;
+  --whisper:#6b76a3;
+  --amber:#ffcf6b;
+  --amber-deep:#e89f45;
+  --amber-ink:#20160a;
+  --green:#69d38a;
+  --green-ink:#0b1a10;
+  --coral:#ff8a7a;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Charter,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.22,.8,.24,1);
+  --maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:var(--amber);color:var(--amber-ink)}
+img,svg,video{max-width:100%;display:block}
+a{color:var(--amber);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+section{position:relative}
+
+/* ---------- kicker / eyebrow ---------- */
+.kicker{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--amber);
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--amber),transparent);flex:none}
+.section-title{font-size:clamp(1.85rem,4.2vw,3rem);margin-bottom:18px}
+.section-lede{color:var(--dim);max-width:46em;font-size:clamp(1rem,1.6vw,1.15rem)}
+
+/* ============ HEADER ============ */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  transition:background .35s var(--ease),border-color .35s var(--ease),backdrop-filter .35s var(--ease);
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(15,18,32,.82);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom-color:var(--line-soft);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--ink);font-family:var(--serif);font-size:1.28rem;letter-spacing:.01em}
+.brand:hover{text-decoration:none}
+.brand svg{width:30px;height:30px;flex:none}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:.9rem}
+.nav-links a{color:var(--dim);transition:color .2s}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{
+  color:var(--amber-ink)!important;background:var(--amber);
+  padding:8px 18px;border-radius:999px;font-weight:600;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+  box-shadow:0 0 0 0 rgba(255,207,107,0);
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px -6px rgba(255,207,107,.55);text-decoration:none}
+@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:120px 0 90px;
+  background:
+    radial-gradient(1100px 620px at 50% -8%, rgba(255,207,107,.13), transparent 62%),
+    radial-gradient(900px 700px at 82% 108%, rgba(105,211,138,.07), transparent 60%),
+    linear-gradient(180deg,#0a0d18 0%,#0f1220 46%,#131730 100%);
+  overflow:hidden;
+}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#e9ecff;opacity:.35;animation:twinkle 4.5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.5}}
+.firefly{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--amber);
+  box-shadow:0 0 10px 3px rgba(255,207,107,.5);opacity:0;pointer-events:none;
+  animation:drift 11s ease-in-out infinite}
+@keyframes drift{
+  0%{transform:translate(0,0);opacity:0}
+  12%{opacity:.85}
+  50%{transform:translate(46px,-64px);opacity:.35}
+  80%{opacity:.7}
+  100%{transform:translate(-24px,-130px);opacity:0}
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,72px);align-items:center;position:relative}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-lantern{display:none}}
+
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.badge{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+  padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+  color:var(--dim);background:rgba(23,27,46,.6);
+}
+.badge.glow{border-color:rgba(255,207,107,.4);color:var(--amber)}
+h1.hero-title{
+  font-size:clamp(2.4rem,5vw,4.35rem);
+  font-weight:600;line-height:1.06;letter-spacing:-.02em;
+  margin-bottom:26px;
+}
+.hero-title .lit{
+  color:var(--amber);font-style:italic;
+  text-shadow:0 0 44px rgba(255,207,107,.45),0 0 110px rgba(255,207,107,.22);
+  white-space:nowrap;
+}
+.hero-sub{
+  color:var(--dim);font-size:clamp(1.05rem,1.9vw,1.28rem);
+  max-width:36em;margin-bottom:40px;
+}
+.hero-sub strong{color:var(--ink);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:52px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:1.02rem;font-weight:600;font-family:var(--sans);
+  padding:15px 30px;border-radius:999px;cursor:pointer;
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s;
+  border:1px solid transparent;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{background:linear-gradient(180deg,#ffd985,var(--amber) 55%,#f4b94f);color:var(--amber-ink);box-shadow:0 4px 30px -4px rgba(255,207,107,.45)}
+.btn-primary:hover{box-shadow:0 10px 44px -6px rgba(255,207,107,.65)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--dim);background:rgba(233,236,255,.05)}
+.btn svg{width:17px;height:17px;flex:none}
+
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:0;
+  border-top:1px solid var(--line-soft);
+  max-width:620px;
+}
+.hstat{padding:20px 34px 0 0;margin-right:34px;border-right:1px solid var(--line-soft)}
+.hstat:last-child{border-right:none;margin-right:0;padding-right:0}
+.hstat b{display:block;font-family:var(--serif);font-size:clamp(1.55rem,2.6vw,2.05rem);color:var(--amber);font-weight:600;letter-spacing:-.01em}
+.hstat span{font-size:.78rem;color:var(--whisper);text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:560px){.hstat{border-right:none;margin-right:0;padding-right:0;width:100%}}
+
+/* the hanging lantern */
+.hero-lantern{position:relative;display:flex;justify-content:center}
+.hero-lantern svg{width:min(300px,100%);height:auto;overflow:visible}
+.lantern-halo{animation:breathe 5s ease-in-out infinite;transform-origin:256px 240px}
+@keyframes breathe{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.055)}}
+.lantern-flame{animation:flicker 3.2s ease-in-out infinite;transform-origin:256px 290px}
+@keyframes flicker{0%,100%{transform:scaleY(1)}25%{transform:scaleY(1.03) scaleX(.985)}55%{transform:scaleY(.975)}78%{transform:scaleY(1.02)}}
+.lantern-sway{animation:sway 7s ease-in-out infinite;transform-origin:256px 50px}
+@keyframes sway{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+
+.scroll-cue{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  color:var(--whisper);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(180deg,var(--whisper),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ============ REVEAL ON SCROLL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+
+/* ============ PROBLEM ============ */
+.problem{padding:clamp(90px,12vw,150px) 0;background:var(--bg)}
+.problem-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(34px,6vw,84px);align-items:start}
+@media(max-width:860px){.problem-grid{grid-template-columns:1fr}}
+.problem p{color:var(--dim);margin-bottom:18px}
+.problem p strong{color:var(--ink)}
+.tombstones{display:flex;flex-direction:column;gap:14px}
+.tomb{
+  background:var(--bg-raise);border:1px solid var(--line-soft);border-radius:14px;
+  padding:18px 22px;position:relative;
+}
+.tomb .who{font-size:.8rem;color:var(--whisper);font-family:var(--mono);letter-spacing:.05em;margin-bottom:5px;display:flex;justify-content:space-between;gap:10px}
+.tomb .said{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--dim)}
+.tomb.faded{opacity:.62}
+.tomb.faded2{opacity:.34}
+.tomb .gone{color:var(--coral);font-style:normal;font-family:var(--mono);font-size:.72rem;white-space:nowrap}
+.vanish-note{
+  margin-top:18px;font-family:var(--mono);font-size:.8rem;color:var(--whisper);
+  border-left:2px solid var(--coral);padding-left:14px;line-height:1.7;
+}
+
+/* ============ HOW IT WORKS ============ */
+.how{padding:clamp(90px,12vw,150px) 0;background:
+  radial-gradient(800px 420px at 12% 0%, rgba(255,207,107,.05), transparent 60%),
+  var(--bg-deep)}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:54px}
+@media(max-width:900px){.pillars{grid-template-columns:1fr;max-width:560px}}
+.pillar{
+  background:linear-gradient(180deg,var(--bg-card),var(--bg-raise));
+  border:1px solid var(--line-soft);border-radius:20px;
+  padding:34px 30px 30px;position:relative;overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.pillar:hover{transform:translateY(-5px);border-color:rgba(255,207,107,.32);box-shadow:0 22px 44px -22px rgba(0,0,0,.6),0 0 40px -18px rgba(255,207,107,.3)}
+.pillar .num{
+  position:absolute;top:14px;right:20px;
+  font-family:var(--serif);font-size:3.4rem;font-style:italic;color:rgba(255,207,107,.1);
+  line-height:1;user-select:none;
+}
+.pillar .picon{width:46px;height:46px;margin-bottom:20px}
+.pillar h3{font-size:1.32rem;margin-bottom:6px}
+.pillar .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:block}
+.pillar p{color:var(--dim);font-size:.95rem}
+.pillar p em{color:var(--ink);font-style:normal;font-weight:600}
+.arc-note{
+  margin-top:34px;text-align:center;color:var(--whisper);font-size:.9rem;font-family:var(--mono);
+}
+.arc-note b{color:var(--amber);font-weight:500}
+
+/* ============ PROOF (anti-clone) ============ */
+.proof{padding:clamp(90px,12vw,160px) 0;background:var(--bg);overflow:hidden}
+.proof-stage{
+  margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  gap:clamp(14px,3vw,30px);align-items:stretch;
+}
+@media(max-width:860px){.proof-stage{grid-template-columns:1fr}.beam{transform:rotate(90deg);margin:-6px auto;height:70px}}
+.qcard{
+  background:var(--bg-card);border:1px solid var(--line-soft);border-radius:20px;
+  padding:30px 30px 26px;display:flex;flex-direction:column;gap:16px;
+}
+.qcard .qlabel{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--whisper)}
+.qcard blockquote{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.9vw,1.42rem);
+  line-height:1.45;color:var(--ink);
+}
+.qcard blockquote .hl{border-bottom:2px solid rgba(255,207,107,.5)}
+.qcard .kwrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.kw{font-family:var(--mono);font-size:.7rem;padding:4px 11px;border-radius:999px;border:1px solid var(--line);color:var(--dim)}
+.beam{
+  align-self:center;display:flex;flex-direction:column;align-items:center;gap:10px;
+  min-width:120px;position:relative;
+}
+.beam .zero{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--coral);text-align:center;line-height:1.5;
+}
+.beam .link-line{
+  width:100%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--amber) 30%,var(--amber) 70%,transparent);
+  box-shadow:0 0 18px rgba(255,207,107,.55);
+  position:relative;overflow:visible;
+}
+.beam .link-line::after{
+  content:"";position:absolute;top:-3px;left:0;width:8px;height:8px;border-radius:50%;
+  background:#fff3d2;box-shadow:0 0 12px 4px rgba(255,207,107,.8);
+  animation:pulse-travel 2.6s var(--ease) infinite;
+}
+@keyframes pulse-travel{0%{left:-4%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
+.beam .meaning{font-family:var(--serif);font-style:italic;color:var(--amber);font-size:.95rem;text-align:center}
+
+.verdict{
+  margin:34px auto 0;max-width:760px;
+  background:var(--bg-inset);border:1px solid rgba(105,211,138,.28);border-radius:18px;
+  box-shadow:0 0 60px -22px rgba(105,211,138,.35),inset 0 1px 0 rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.verdict-bar{
+  display:flex;align-items:center;gap:8px;padding:12px 18px;
+  border-bottom:1px solid var(--line-soft);background:rgba(23,27,46,.55);
+}
+.verdict-bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.verdict-bar i:first-child{background:var(--coral)}
+.verdict-bar i:nth-child(2){background:var(--amber)}
+.verdict-bar i:nth-child(3){background:var(--green)}
+.verdict-bar span{margin-left:8px;font-family:var(--mono);font-size:.72rem;color:var(--whisper)}
+.verdict pre{
+  padding:24px 26px;font-family:var(--mono);font-size:clamp(.78rem,1.5vw,.92rem);
+  line-height:1.85;color:var(--dim);overflow-x:auto;
+}
+.verdict .k{color:var(--whisper)}
+.verdict .true{color:var(--green);font-weight:700}
+.verdict .conf{color:var(--green);font-weight:700;font-size:1.25em}
+.verdict .str{color:var(--amber)}
+.proof-footnote{
+  margin:22px auto 0;max-width:760px;text-align:center;
+  font-size:.86rem;color:var(--whisper);
+}
+.proof-footnote b{color:var(--green);font-weight:600}
+
+/* ============ EDGE ($105 vs $35) ============ */
+.edge{padding:clamp(90px,12vw,160px) 0;background:
+  radial-gradient(900px 480px at 88% 6%, rgba(255,207,107,.06), transparent 60%),
+  var(--bg-deep)}
+.edge-big{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:52px 0 46px;
+}
+@media(max-width:820px){.edge-big{grid-template-columns:1fr;max-width:480px}}
+.estat{
+  background:linear-gradient(180deg,var(--bg-card),var(--bg-raise));
+  border:1px solid var(--line-soft);border-radius:20px;padding:30px 28px 26px;
+  transition:transform .3s var(--ease),border-color .3s var(--ease);
+}
+.estat:hover{transform:translateY(-4px)}
+.estat.hero-stat{border-color:rgba(255,207,107,.4);box-shadow:0 0 46px -18px rgba(255,207,107,.35)}
+.estat.delta{border-color:rgba(105,211,138,.4);box-shadow:0 0 46px -18px rgba(105,211,138,.3)}
+.estat b{display:block;font-family:var(--serif);font-size:clamp(2.4rem,4.4vw,3.2rem);letter-spacing:-.02em;font-weight:600;line-height:1.05;color:var(--ink)}
+.estat.hero-stat b{color:var(--amber)}
+.estat.delta b{color:var(--green)}
+.estat small{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--whisper);margin:12px 0 8px}
+.estat p{font-size:.88rem;color:var(--dim)}
+
+.bars{max-width:760px;margin:0 auto 54px;display:flex;flex-direction:column;gap:22px}
+.bar-row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
+@media(max-width:560px){.bar-row{grid-template-columns:1fr}.bar-row .bar-label{margin-bottom:-10px}}
+.bar-label{font-family:var(--mono);font-size:.76rem;color:var(--dim);text-align:right;letter-spacing:.04em}
+@media(max-width:560px){.bar-label{text-align:left}}
+.bar-track{background:var(--bg-inset);border:1px solid var(--line-soft);border-radius:999px;height:40px;position:relative;overflow:hidden}
+.bar-fill{
+  height:100%;border-radius:999px;width:0;
+  display:flex;align-items:center;justify-content:flex-end;padding-right:14px;
+  font-family:var(--mono);font-weight:700;font-size:.85rem;
+  transition:width 1.4s var(--ease);
+  white-space:nowrap;
+}
+.bar-fill.mind{background:linear-gradient(90deg,#e89f45,var(--amber));color:var(--amber-ink);box-shadow:0 0 26px rgba(255,207,107,.4)}
+.bar-fill.kw{background:linear-gradient(90deg,#2a3050,#3d4570);color:var(--ink)}
+.bar-note{font-family:var(--mono);font-size:.72rem;color:var(--green);text-align:right;max-width:760px;margin:-8px auto 0;letter-spacing:.04em}
+
+.roster{max-width:860px;margin:0 auto}
+.roster h3{font-size:1.15rem;margin-bottom:20px;text-align:center;color:var(--dim);font-family:var(--sans);font-weight:500}
+.roster h3 em{color:var(--ink);font-family:var(--serif)}
+.members{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.member{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg-card);border:1px solid var(--line-soft);border-radius:999px;
+  padding:9px 18px 9px 10px;font-size:.9rem;
+  transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.member:hover{transform:translateY(-2px)}
+.member .avatar{
+  width:32px;height:32px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:.95rem;font-style:italic;
+}
+.member.semantic .avatar{background:rgba(255,207,107,.16);color:var(--amber);border:1px solid rgba(255,207,107,.4)}
+.member.keyword .avatar{background:rgba(105,211,138,.14);color:var(--green);border:1px solid rgba(105,211,138,.35)}
+.member .mtag{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.member.semantic .mtag{color:var(--amber);background:rgba(255,207,107,.1)}
+.member.semantic:hover{border-color:rgba(255,207,107,.45);box-shadow:0 0 24px -8px rgba(255,207,107,.4)}
+.member.keyword .mtag{color:var(--green);background:rgba(105,211,138,.1)}
+.member.keyword:hover{border-color:rgba(105,211,138,.4)}
+.roster-note{text-align:center;color:var(--whisper);font-size:.85rem;margin-top:22px}
+.roster-note b{color:var(--amber);font-weight:600}
+
+/* ============ WHY A MIND ============ */
+.whymind{padding:clamp(90px,12vw,150px) 0;background:var(--bg)}
+.why-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,80px);align-items:start}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+.req{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line-soft)}
+.req:last-of-type{border-bottom:none}
+.req .ricon{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(255,207,107,.09);border:1px solid rgba(255,207,107,.25);display:flex;align-items:center;justify-content:center}
+.req .ricon svg{width:20px;height:20px}
+.req h3{font-size:1.12rem;margin-bottom:4px}
+.req p{color:var(--dim);font-size:.93rem}
+.remove-mind{
+  margin-top:28px;padding:22px 26px;border-radius:16px;
+  background:rgba(255,138,122,.06);border:1px solid rgba(255,138,122,.22);
+  font-size:.95rem;color:var(--dim);
+}
+.remove-mind b{color:var(--coral);font-weight:600}
+.mind-card{
+  background:linear-gradient(160deg,var(--bg-card),var(--bg-inset));
+  border:1px solid rgba(255,207,107,.28);border-radius:22px;
+  padding:32px 30px;position:sticky;top:96px;
+  box-shadow:0 0 70px -30px rgba(255,207,107,.4);
+}
+.mind-card .mc-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.mind-card .mc-head svg{width:44px;height:44px;flex:none}
+.mind-card .mc-head b{font-family:var(--serif);font-size:1.35rem;font-weight:600;display:block;line-height:1.2}
+.mind-card .mc-head span{font-size:.78rem;color:var(--green);font-family:var(--mono)}
+.mind-card .mc-head span::before{content:"●";margin-right:6px;animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.mind-rows{display:flex;flex-direction:column;gap:0;font-size:.85rem}
+.mind-rows .mr{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line-soft)}
+.mind-rows .mr span{color:var(--whisper);flex:none}
+.mind-rows .mr code{font-family:var(--mono);font-size:.78rem;color:var(--dim);text-align:right;overflow-wrap:anywhere}
+.autonomy{
+  margin-top:20px;padding:16px 18px;border-radius:14px;
+  background:rgba(105,211,138,.07);border:1px solid rgba(105,211,138,.25);
+  font-size:.85rem;color:var(--dim);line-height:1.6;
+}
+.autonomy b{color:var(--green)}
+
+/* ============ DEMO ============ */
+.demo{padding:clamp(90px,12vw,150px) 0;background:
+  radial-gradient(1000px 500px at 50% 110%, rgba(255,207,107,.08), transparent 65%),
+  var(--bg-deep);text-align:center}
+.demo .section-lede{margin:0 auto 46px}
+.player{
+  max-width:880px;margin:0 auto;position:relative;border-radius:22px;
+  border:1px solid rgba(255,207,107,.3);
+  box-shadow:0 30px 90px -30px rgba(0,0,0,.8),0 0 90px -30px rgba(255,207,107,.4);
+  overflow:hidden;background:var(--bg-inset);
+}
+.player video{width:100%;height:auto;display:block}
+.demo-links{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.demo-note{margin-top:18px;font-family:var(--mono);font-size:.75rem;color:var(--whisper)}
+.demo-note code{color:var(--amber)}
+
+/* ============ VISION ============ */
+.vision{padding:clamp(90px,12vw,150px) 0;background:var(--bg)}
+.vision-inner{max-width:820px;margin:0 auto;text-align:center}
+.vision blockquote{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.4rem,3vw,2.05rem);line-height:1.4;color:var(--ink);
+  margin:36px auto;
+}
+.vision blockquote .lit{color:var(--amber)}
+.vision p{color:var(--dim);max-width:44em;margin:0 auto 16px}
+.honesty{
+  margin:54px auto 0;max-width:760px;text-align:left;
+  border:1px solid var(--line-soft);border-radius:18px;background:var(--bg-raise);
+  padding:28px 30px;
+}
+.honesty h3{font-size:1rem;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--whisper);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.honesty ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.9rem;color:var(--dim)}
+.honesty li{padding-left:22px;position:relative}
+.honesty li::before{content:"—";position:absolute;left:0;color:var(--whisper)}
+.honesty li b{color:var(--ink);font-weight:600}
+.honesty li.real b{color:var(--green)}
+
+/* ============ FINAL CTA ============ */
+.finale{
+  padding:clamp(110px,15vw,190px) 0 clamp(90px,12vw,150px);
+  background:
+    radial-gradient(720px 460px at 50% 32%, rgba(255,207,107,.17), transparent 62%),
+    linear-gradient(180deg,var(--bg) 0%,#0a0d18 100%);
+  text-align:center;position:relative;overflow:hidden;
+}
+.finale .mini-lantern{width:66px;margin:0 auto 34px;filter:drop-shadow(0 0 30px rgba(255,207,107,.55))}
+.finale h2{font-size:clamp(2.2rem,5.4vw,4rem);margin-bottom:20px}
+.finale h2 .lit{color:var(--amber);font-style:italic;text-shadow:0 0 40px rgba(255,207,107,.4)}
+.finale p{color:var(--dim);max-width:36em;margin:0 auto 44px;font-size:1.08rem}
+.finale .cta-row{justify-content:center;margin-bottom:0}
+
+/* ============ FOOTER ============ */
+footer{background:#0a0d18;border-top:1px solid var(--line-soft);padding:52px 0 40px}
+.foot{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+.foot .fbrand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
+.foot .fbrand svg{width:24px;height:24px}
+.foot-cols{display:flex;gap:clamp(28px,6vw,80px);flex-wrap:wrap}
+.foot-cols h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--whisper);margin-bottom:12px;font-weight:500}
+.foot-cols ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:.88rem}
+.foot-cols a{color:var(--dim)}
+.foot-cols a:hover{color:var(--amber)}
+.foot-bottom{
+  margin-top:44px;padding-top:22px;border-top:1px solid var(--line-soft);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-size:.78rem;color:var(--whisper);font-family:var(--mono);
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+  .bar-fill{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="top-header">
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Porchlight home">
+      <!-- lantern mark -->
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="30" r="24" fill="#ffcf6b" opacity=".14"/><path d="M32 10c-4.5 1.2-10 7.6-11 12h22c-1-4.4-6.5-10.8-11-12z" fill="#3d4570"/><path d="M22.5 25h19l-2.2 20h-14.6z" fill="#ffcf6b"/><path d="M32 42c-4.4 0-6-4.4-4.4-8.7 1.1-2.9 3-4 3.6-7 .2-1.2 1.4-1.2 1.6 0 .6 3 2.5 4.1 3.6 7 1.6 4.3 0 8.7-4.4 8.7z" fill="#fff3d2"/><rect x="20" y="45" width="24" height="4.5" rx="2.2" fill="#3d4570"/><circle cx="45" cy="56" r="3.6" fill="#69d38a"/></svg>
+      Porchlight
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#proof">The proof</a>
+      <a href="#edge">The edge</a>
+      <a href="#demo">Demo</a>
+      <a class="nav-cta" href="#" data-todo="repo-url" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" aria-label="Porchlight — introduction">
+  <div class="stars" aria-hidden="true">
+    <i style="top:12%;left:8%;animation-delay:0s"></i><i style="top:22%;left:28%;animation-delay:1.2s"></i>
+    <i style="top:9%;left:52%;animation-delay:2.1s"></i><i style="top:30%;left:70%;animation-delay:.6s"></i>
+    <i style="top:14%;left:88%;animation-delay:1.7s"></i><i style="top:44%;left:5%;animation-delay:2.6s"></i>
+    <i style="top:6%;left:37%;animation-delay:3.3s"></i><i style="top:38%;left:93%;animation-delay:.3s"></i>
+    <i style="top:52%;left:81%;animation-delay:2.9s"></i><i style="top:18%;left:64%;animation-delay:3.8s"></i>
+  </div>
+  <div class="firefly" style="top:64%;left:18%;animation-delay:0s" aria-hidden="true"></div>
+  <div class="firefly" style="top:48%;left:58%;animation-delay:3.5s" aria-hidden="true"></div>
+  <div class="firefly" style="top:74%;left:76%;animation-delay:7s" aria-hidden="true"></div>
+
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badges reveal in">
+        <span class="badge glow">◆ Powered by Minds by Animoca Brands</span>
+        <span class="badge">Creative Minds Jam #1 · Audience Growth &amp; Community Engagement</span>
+      </div>
+      <h1 class="hero-title reveal in d1">Every member who leaves<br>deserves a <span class="lit">porch light</span><br>left on.</h1>
+      <p class="hero-sub reveal in d2">Porchlight is an <strong>exit-interview Mind</strong> that remembers <strong>why</strong> each member left — and autonomously wins them back the moment their stated reason is <strong>actually fixed</strong>. Quoting their own words. Honoring do-not-contact.</p>
+      <div class="cta-row reveal in d3">
+        <a class="btn btn-primary" href="#demo">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="currentColor"/></svg>
+          Watch the 90-second demo
+        </a>
+        <a class="btn btn-ghost" href="#" data-todo="repo-url" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+          View the code
+        </a>
+      </div>
+      <div class="hero-stats reveal in d4" role="group" aria-label="Key results">
+        <div class="hstat"><b><span class="count" data-target="105" data-prefix="$" data-decimals="2">0.00</span></b><span>/mo recovered · 6 members</span></div>
+        <div class="hstat"><b>+<span class="count" data-target="70" data-prefix="$" data-decimals="2">0.00</span></b><span>/mo keywords miss</span></div>
+        <div class="hstat"><b><span class="count" data-target="0.93" data-decimals="2">0.00</span></b><span>confidence · zero keywords</span></div>
+      </div>
+    </div>
+
+    <div class="hero-lantern" aria-hidden="true">
+      <svg viewBox="60 20 392 440">
+        <defs>
+          <radialGradient id="hglow"><stop offset="0%" stop-color="#ffcf6b" stop-opacity=".5"/><stop offset="40%" stop-color="#ffcf6b" stop-opacity=".22"/><stop offset="100%" stop-color="#ffcf6b" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hglass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff3d2"/><stop offset="45%" stop-color="#ffcf6b"/><stop offset="100%" stop-color="#e89f45"/></linearGradient>
+          <radialGradient id="hcore"><stop offset="0%" stop-color="#fffdf4"/><stop offset="55%" stop-color="#fff3d2" stop-opacity=".9"/><stop offset="100%" stop-color="#fff3d2" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hflame" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe6a3"/><stop offset="45%" stop-color="#ffcf6b"/><stop offset="100%" stop-color="#f0992e"/></linearGradient>
+          <linearGradient id="hcone" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffcf6b" stop-opacity=".2"/><stop offset="100%" stop-color="#ffcf6b" stop-opacity="0"/></linearGradient>
+          <radialGradient id="hdot"><stop offset="0%" stop-color="#69d38a" stop-opacity=".45"/><stop offset="100%" stop-color="#69d38a" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle class="lantern-halo" cx="256" cy="240" r="188" fill="url(#hglow)"/>
+        <path d="M 210 332 L 142 424 Q 256 458 370 424 L 302 332 Z" fill="url(#hcone)"/>
+        <g class="lantern-sway">
+          <rect x="232" y="46" width="48" height="12" rx="6" fill="#2a3050"/>
+          <rect x="251" y="54" width="10" height="52" rx="5" fill="#2a3050"/>
+          <path d="M 256 96 C 234 102 196 136 189 160 L 323 160 C 316 136 278 102 256 96 Z" fill="#2a3050"/>
+          <rect x="178" y="156" width="156" height="17" rx="8.5" fill="#2a3050"/>
+          <path d="M 201 173 L 311 173 C 317.6 173 322.7 178.8 321.9 185.3 L 306.9 307.3 C 306.2 313.4 301.1 318 295 318 L 217 318 C 210.9 318 205.8 313.4 205.1 307.3 L 190.1 185.3 C 189.3 178.8 194.4 173 201 173 Z" fill="url(#hglass)"/>
+          <ellipse cx="256" cy="252" rx="34" ry="46" fill="url(#hcore)"/>
+          <g class="lantern-flame">
+            <path d="M 256 300 C 228 298 219 270 229 244 C 236 226 248 219 251 199 C 253 190 256 187 256 187 C 256 187 259 190 261 199 C 264 219 276 226 283 244 C 293 270 284 298 256 300 Z" fill="url(#hflame)"/>
+            <path d="M 256 286 C 244 285 240 269 246 253 C 250 241 255 236 256 222 C 257 236 261 241 266 253 C 272 269 268 285 256 286 Z" fill="#fff7df"/>
+          </g>
+          <g stroke="#2a3050" stroke-width="8" stroke-linecap="round" opacity=".85">
+            <line x1="238" y1="177" x2="243" y2="314"/><line x1="274" y1="177" x2="269" y2="314"/>
+          </g>
+          <rect x="194" y="318" width="124" height="23" rx="11.5" fill="#2a3050"/>
+          <circle cx="256" cy="352" r="9" fill="#2a3050"/>
+        </g>
+        <path d="M 92 424 Q 256 460 420 424" stroke="rgba(233,236,255,0.2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="344" cy="423" r="32" fill="url(#hdot)"/>
+        <circle cx="344" cy="425" r="13" fill="#69d38a"/>
+        <circle cx="381" cy="426" r="7" fill="#69d38a" opacity=".5"/>
+        <circle cx="408" cy="424" r="4.5" fill="#69d38a" opacity=".28"/>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">scroll</div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="problem" id="problem">
+  <div class="wrap problem-grid">
+    <div class="reveal">
+      <p class="kicker">The silent wound</p>
+      <h2 class="section-title">Churn drains MRR.<br>And the <em>reason</em> vanishes.</h2>
+      <p>For every membership creator — Patreon, YouTube memberships, Substack, Discord subs — cancellation is the direct revenue wound. And the loop around it is broken the same way everywhere: <strong>when a member cancels, nobody records why.</strong></p>
+      <p>Months later, the creator fixes the very thing that drove people away — brings back a series, drops the price, cleans up the community — and the members who left <strong>for exactly that reason</strong> are never told.</p>
+      <p>The entire win-back industry is a generic <em>"we miss you"</em> blast that ignores why each person actually left.</p>
+    </div>
+    <div class="tombstones reveal d2" aria-label="Cancellations whose reasons were lost">
+      <div class="tomb">
+        <div class="who"><span>maya · cancelled</span><span class="gone">reason: unrecorded</span></div>
+        <div class="said">"you pivoted to short clips — the long sit-down conversations i loved are gone"</div>
+      </div>
+      <div class="tomb faded">
+        <div class="who"><span>dre · cancelled</span><span class="gone">reason: unrecorded</span></div>
+        <div class="said">"not what i signed up for since the format changed"</div>
+      </div>
+      <div class="tomb faded2">
+        <div class="who"><span>cai · cancelled</span><span class="gone">reason: unrecorded</span></div>
+        <div class="said">"long chatty sit-downs with guests…"</div>
+      </div>
+      <p class="vanish-note">Six weeks later the creator brings the format back.<br>None of them will ever know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">How it works</p>
+      <h2 class="section-title">One flow, devastatingly deep:<br>cancellation → memory → resolution → return.</h2>
+      <p class="section-lede">Three load-bearing behaviors, all carried by a single persistent Mind — one conversation per member, kept alive across the weeks between goodbye and welcome home.</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar reveal d1">
+        <span class="num" aria-hidden="true">01</span>
+        <svg class="picon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="8" width="36" height="26" rx="6" stroke="#ffcf6b" stroke-width="2.4"/><path d="M15 34v6l8-6" stroke="#ffcf6b" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 17h20M14 24h13" stroke="#69d38a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>Exit interview</h3>
+        <span class="tag">memory</span>
+        <p>The moment a member cancels, the Mind runs a short, warm interview and files a structured <em>return-condition</em> — the reason, category, and the member's <em>verbatim quote</em> — into per-member long-term memory. One Mind conversation per member; the memory belongs to the agent, not just a database row.</p>
+      </article>
+      <article class="pillar reveal d2">
+        <span class="num" aria-hidden="true">02</span>
+        <svg class="picon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40V22M20 40V12M32 40V28M44 40H4" stroke="#ffcf6b" stroke-width="2.4" stroke-linecap="round"/><circle cx="32" cy="18" r="5" stroke="#69d38a" stroke-width="2.4"/><path d="M35.5 21.5 41 27" stroke="#69d38a" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>Churn intelligence</h3>
+        <span class="tag">continuity</span>
+        <p>Every departure compounds into a living board — <em>"37% of 19 departures left over the pivot away from deep-dives"</em> — with per-reason breakdowns, open vs. won-back status, and a full audit trail of every change the Mind acted on.</p>
+      </article>
+      <article class="pillar reveal d3">
+        <span class="num" aria-hidden="true">03</span>
+        <svg class="picon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 14l18 12L42 14" stroke="#ffcf6b" stroke-width="2.4" stroke-linejoin="round"/><rect x="6" y="10" width="36" height="28" rx="5" stroke="#ffcf6b" stroke-width="2.4"/><circle cx="38" cy="36" r="8" fill="#0f1220" stroke="#69d38a" stroke-width="2.4"/><path d="M34.5 36l2.4 2.4 4.6-4.8" stroke="#69d38a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Conditional win-back</h3>
+        <span class="tag">autonomous follow-up</span>
+        <p>The creator announces what changed. Unprompted, the Mind judges every open reason <em>by meaning, not keywords</em> — and messages only the members whose reason is now genuinely resolved, <em>quoting their own words</em> from weeks earlier. Do-not-contact is honored even when the reason is fixed.</p>
+      </article>
+    </div>
+    <p class="arc-note reveal">cancel → <b>remember why</b> → creator fixes it → <b>the right members come home</b></p>
+  </div>
+</section>
+
+<!-- ================= ANTI-CLONE PROOF ================= -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">The anti-clone proof · captured live</p>
+      <h2 class="section-title">Two sentences. Zero shared words.<br>The Mind joins them by <em>meaning</em>.</h2>
+      <p class="section-lede">This is what breaks the "churn survey + drip email" pattern-match. A keyword matcher scores this pair exactly 0. The live Porchlight Mind resolved it at 0.93.</p>
+    </div>
+
+    <div class="proof-stage">
+      <div class="qcard reveal d1">
+        <span class="qlabel">Why Maya left · filed 6 weeks ago</span>
+        <blockquote>"you pivoted to <span class="hl">short clips</span> — the <span class="hl">long sit-down conversations</span> i loved are gone"</blockquote>
+        <div class="kwrow" aria-label="Keywords in the cancellation reason">
+          <span class="kw">short clips</span><span class="kw">sit-down</span><span class="kw">conversations</span>
+        </div>
+      </div>
+      <div class="beam" aria-hidden="true">
+        <span class="zero">0 shared<br>keywords</span>
+        <div class="link-line"></div>
+        <span class="meaning">joined by meaning</span>
+      </div>
+      <div class="qcard reveal d2">
+        <span class="qlabel">What the creator announced · today</span>
+        <blockquote>"Big news — the <span class="hl">deep-dive interviews</span> are back, <span class="hl">weekly</span>."</blockquote>
+        <div class="kwrow" aria-label="Keywords in the announcement">
+          <span class="kw">deep-dive</span><span class="kw">interviews</span><span class="kw">weekly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict reveal d3">
+      <div class="verdict-bar" aria-hidden="true"><i></i><i></i><i></i><span>live Mind verdict — captured from the real Builder API</span></div>
+      <pre><code><span class="k">mind.doesChangeResolve(maya.returnCondition, announcement)</span>
+
+resolves    = <span class="true">true</span>
+confidence  = <span class="conf">0.93</span>
+rationale   = <span class="str">"The member left because long sit-down conversations were
+               replaced by short clips, and the announcement explicitly brings
+               back weekly long-form deep-dive interviews, which directly
+               restores the exact format they loved."</span></code></pre>
+    </div>
+    <p class="proof-footnote reveal d4">This is a <b>real, captured LIVE call</b> to the Porchlight Mind — not a mock, not a screenshot of a prompt. On zero shared keywords, the Mind returned <b>resolves=true at 0.93 confidence</b> and named the exact format restoration.</p>
+  </div>
+</section>
+
+<!-- ================= MEASURED EDGE ================= -->
+<section class="edge" id="edge">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">The measured edge</p>
+      <h2 class="section-title">We didn't claim the difference.<br>We shipped the baseline and <em>measured</em> it.</h2>
+      <p class="section-lede">A keyword matcher runs in-repo beside the Mind on every single win-back. Same seed, same announcement — the dashboard shows exactly which dollars only semantics can recover.</p>
+    </div>
+
+    <div class="edge-big">
+      <div class="estat hero-stat reveal d1">
+        <b><span class="count" data-target="105" data-prefix="$" data-decimals="2">0.00</span><small style="display:inline;font-size:.4em;color:var(--dim);text-transform:none;letter-spacing:0">/mo</small></b>
+        <small>The Mind recovers</small>
+        <p>6 members won back — every one because their <em>specific</em> reason was genuinely fixed.</p>
+      </div>
+      <div class="estat reveal d2">
+        <b><span class="count" data-target="35" data-prefix="$" data-decimals="2">0.00</span><small style="display:inline;font-size:.4em;color:var(--whisper);text-transform:none;letter-spacing:0">/mo</small></b>
+        <small>Keyword baseline recovers</small>
+        <p>The same announcement, matched on words alone, finds only the members who happened to use the creator's vocabulary.</p>
+      </div>
+      <div class="estat delta reveal d3">
+        <b>+<span class="count" data-target="70" data-prefix="$" data-decimals="2">0.00</span><small style="display:inline;font-size:.4em;color:var(--dim);text-transform:none;letter-spacing:0">/mo</small></b>
+        <small>Only the Mind finds</small>
+        <p>Same reason, different words. Two-thirds of the recovered revenue is invisible to keywords.</p>
+      </div>
+    </div>
+
+    <div class="bars reveal" role="img" aria-label="Bar chart: the Mind recovers 105 dollars per month; the keyword baseline recovers 35 dollars per month.">
+      <div class="bar-row">
+        <span class="bar-label">Porchlight Mind</span>
+        <div class="bar-track"><div class="bar-fill mind" data-width="100%">$105.00/mo</div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Keyword baseline</span>
+        <div class="bar-track"><div class="bar-fill kw" data-width="33.33%">$35.00/mo</div></div>
+      </div>
+    </div>
+    <p class="bar-note reveal">▲ the +$70.00/mo gap is the semantic edge — measured, on screen</p>
+
+    <div class="roster reveal" style="margin-top:56px">
+      <h3>Six members came home. <em>Four of them, keywords would never have found.</em></h3>
+      <div class="members">
+        <div class="member semantic"><span class="avatar" aria-hidden="true">B</span>Bea<span class="mtag">semantic-only · keywords miss</span></div>
+        <div class="member semantic"><span class="avatar" aria-hidden="true">C</span>Cai<span class="mtag">semantic-only · keywords miss</span></div>
+        <div class="member semantic"><span class="avatar" aria-hidden="true">D</span>Dre<span class="mtag">semantic-only · keywords miss</span></div>
+        <div class="member semantic"><span class="avatar" aria-hidden="true">M</span>Maya<span class="mtag">semantic-only · keywords miss</span></div>
+        <div class="member keyword"><span class="avatar" aria-hidden="true">A</span>Arjun<span class="mtag">keyword-caught</span></div>
+        <div class="member keyword"><span class="avatar" aria-hidden="true">F</span>Fen<span class="mtag">keyword-caught</span></div>
+      </div>
+      <p class="roster-note">Bea said <em>"long-form lore videos."</em> Cai said <em>"long chatty sit-downs with guests."</em> Dre said <em>"not what i signed up for since the format changed."</em> Same wound, different words — <b>only meaning connects them</b> to "the deep-dive interviews are back."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ONLY A MIND ================= -->
+<section class="whymind" id="why-mind">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker">Why only a Mind</p>
+      <h2 class="section-title">The Mind isn't a feature.<br>It's the engine.</h2>
+    </div>
+    <div class="why-grid" style="margin-top:44px">
+      <div>
+        <div class="req reveal d1">
+          <span class="ricon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#ffcf6b" stroke-width="1.8"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5" stroke="#ffcf6b" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div>
+            <h3>A persistent identity per member relationship</h3>
+            <p>One Mind conversation alias per member, surviving the weeks between the exit interview and the win-back. Not a session. A relationship.</p>
+          </div>
+        </div>
+        <div class="req reveal d2">
+          <span class="ricon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a7 7 0 0 1 7 7c0 2.5-1.2 4-2.5 5.5-.9 1-1.5 2-1.5 3.5h-6c0-1.5-.6-2.5-1.5-3.5C6.2 14 5 12.5 5 10a7 7 0 0 1 7-7z" stroke="#ffcf6b" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 22h5" stroke="#ffcf6b" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div>
+            <h3>Long-term memory the agent itself carries</h3>
+            <p>Return-conditions and verbatim quotes live in the Mind's own memory — semantic recall of <em>why</em>, in the member's exact words, weeks later.</p>
+          </div>
+        </div>
+        <div class="req reveal d3">
+          <span class="ricon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l17-7-4.5 16-5-6.5L3 11z" stroke="#ffcf6b" stroke-width="1.8" stroke-linejoin="round"/><path d="M10.5 13.5L20 4" stroke="#ffcf6b" stroke-width="1.8"/></svg></span>
+          <div>
+            <h3>A native outbound channel it uses on its own</h3>
+            <p>The Mind reaches out from its own address — it even emailed the builder <em>unprompted</em> on day one. No cron. No trigger from us.</p>
+          </div>
+        </div>
+        <p class="remove-mind reveal d4"><b>Remove the Mind</b> and what's left is the keyword baseline — which our own dashboard proves recovers <b>$70.00/mo less</b> on the same seed. A stateless LLM API gives none of this without rebuilding memory, identity, and channels from scratch.</p>
+      </div>
+
+      <aside class="mind-card reveal d2" aria-label="Live Mind identity">
+        <div class="mc-head">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="30" r="24" fill="#ffcf6b" opacity=".14"/><path d="M32 10c-4.5 1.2-10 7.6-11 12h22c-1-4.4-6.5-10.8-11-12z" fill="#3d4570"/><path d="M22.5 25h19l-2.2 20h-14.6z" fill="#ffcf6b"/><path d="M32 42c-4.4 0-6-4.4-4.4-8.7 1.1-2.9 3-4 3.6-7 .2-1.2 1.4-1.2 1.6 0 .6 3 2.5 4.1 3.6 7 1.6 4.3 0 8.7-4.4 8.7z" fill="#fff3d2"/><rect x="20" y="45" width="24" height="4.5" rx="2.2" fill="#3d4570"/><circle cx="45" cy="56" r="3.6" fill="#69d38a"/></svg>
+          <div><b>Porchlight</b><span>live Mind</span></div>
+        </div>
+        <div class="mind-rows">
+          <div class="mr"><span>Platform</span><code>Minds by Animoca Brands</code></div>
+          <div class="mr"><span>Email</span><code>porchlight@hellominds.ai</code></div>
+          <div class="mr"><span>Mind ID</span><code>3178453e-f36b-1410-8466-00039ce7df11</code></div>
+          <div class="mr"><span>Model</span><code>minimax/minimax-m3</code></div>
+          <div class="mr"><span>Product ops</span><code>interviewOnCancel · doesChangeResolve · draftWinback</code></div>
+        </div>
+        <p class="autonomy"><b>Autonomy, observed:</b> this Mind initiated contact over its native email channel entirely on its own — self-directed outreach from <code style="font-family:var(--mono);font-size:.92em">porchlight@hellominds.ai</code>, before we'd wired any trigger.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEMO ================= -->
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker" style="justify-content:center">See it happen</p>
+      <h2 class="section-title">Ninety seconds:<br>a cancellation becomes a homecoming.</h2>
+      <p class="section-lede">Maya cancels → the Mind remembers why → the creator brings the format back → the Mind quotes her own words back to her, and the recovered-MRR counter ticks to $105.00.</p>
+    </div>
+    <div class="player reveal d1">
+      <!-- Demo lives on YouTube — the mp4 is intentionally NOT shipped in this repo.
+           At submit, replace this placeholder link with the YouTube embed/URL. -->
+      <a href="#" data-todo="youtube-url" target="_blank" rel="noopener" aria-label="Watch the Porchlight demo on YouTube"
+         style="display:flex;align-items:center;justify-content:center;gap:14px;aspect-ratio:16/9;width:100%;border-radius:16px;background:linear-gradient(135deg,#1a1f38,#0f1220);border:1px solid rgba(255,207,107,.28);color:#ffcf6b;text-decoration:none;font-weight:600;font-size:18px">
+        <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#ffcf6b;color:#0f1220;font-size:22px">&#9654;</span>
+        Watch the 90-second demo on YouTube
+      </a>
+    </div>
+    <div class="demo-links reveal d2">
+      <a class="btn btn-primary" href="#" data-todo="youtube-url" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="currentColor"/></svg>
+        Watch on YouTube
+      </a>
+      <a class="btn btn-ghost" href="#" data-todo="repo-url" target="_blank" rel="noopener">Explore the repo</a>
+    </div>
+    <p class="demo-note reveal d3">Reproduce the full arc yourself in 60 seconds: <code>npm install &amp;&amp; npm run demo</code> — headless, offline, deterministic. LIVE mode is one env var away.</p>
+  </div>
+</section>
+
+<!-- ================= VISION ================= -->
+<section class="vision" id="vision">
+  <div class="wrap vision-inner">
+    <div class="reveal">
+      <p class="kicker" style="justify-content:center">The vision</p>
+      <h2 class="section-title">Churn becomes a pipeline.</h2>
+      <blockquote>A stateless tool can say <em>"we miss you."</em><br>Only a Mind knows <span class="lit">this person</span> left for <span class="lit">that reason</span> — and that today, it stopped being true.</blockquote>
+      <p>Every win-back Porchlight sends carries a directly monetizable metric: <strong style="color:var(--ink)">recovered MRR per creator</strong>. That's the traction story for the <strong style="color:var(--ink)">Minds Investment Programme</strong> — instrument recovered revenue across pilot creators, take the loop from modeled rejoins to real re-subscribe webhooks, and make every membership cancellation recoverable.</p>
+    </div>
+    <div class="honesty reveal d2">
+      <h3>What's real · what's modeled — honestly</h3>
+      <ul>
+        <li class="real"><b>Real:</b> the live Mind, its memory, and the semantic edge — including the captured <b style="color:var(--green)">resolves=true, confidence=0.93</b> verdict on zero shared keywords, straight from the Builder API.</li>
+        <li class="real"><b>Real:</b> the in-repo keyword baseline that runs beside the Mind on every win-back and measures the $70.00/mo it misses.</li>
+        <li><b>Modeled:</b> the membership storefront is our own mock (Patreon's API is restricted) — cancellations enter through it, and the Mind-side flow is real end-to-end.</li>
+        <li><b>Modeled:</b> "rejoins" are a demo model; production would await a real re-subscribe webhook before counting recovered MRR.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="finale">
+  <div class="wrap">
+    <svg class="mini-lantern reveal" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="30" r="26" fill="#ffcf6b" opacity=".16"/><path d="M32 8c-5 1.4-11 8.4-12 13h24c-1-4.6-7-11.6-12-13z" fill="#3d4570"/><path d="M21.5 24h21l-2.4 22h-16.2z" fill="#ffcf6b"/><path d="M32 43c-4.8 0-6.6-4.9-4.8-9.6 1.2-3.2 3.3-4.4 4-7.7.2-1.3 1.4-1.3 1.6 0 .7 3.3 2.8 4.5 4 7.7 1.8 4.7 0 9.6-4.8 9.6z" fill="#fff3d2"/><rect x="19" y="46" width="26" height="5" rx="2.5" fill="#3d4570"/><circle cx="46" cy="58" r="4" fill="#69d38a"/></svg>
+    <h2 class="reveal d1">The porch light<br>is <span class="lit">already on</span>.</h2>
+    <p class="reveal d2">One deep flow, a live Mind with real memory, a measured $70.00/mo semantic edge, and a 0.93-confidence verdict no keyword tool could ever return. Built for Creative Minds Jam #1.</p>
+    <div class="cta-row reveal d3">
+      <a class="btn btn-primary" href="#" data-todo="repo-url" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.58.67.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+        View on GitHub
+      </a>
+      <a class="btn btn-ghost" href="#" data-todo="youtube-url" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="currentColor"/></svg>
+        Watch the demo
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="fbrand">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 10c-4.5 1.2-10 7.6-11 12h22c-1-4.4-6.5-10.8-11-12z" fill="#3d4570"/><path d="M22.5 25h19l-2.2 20h-14.6z" fill="#ffcf6b"/><path d="M32 42c-4.4 0-6-4.4-4.4-8.7 1.1-2.9 3-4 3.6-7 .2-1.2 1.4-1.2 1.6 0 .6 3 2.5 4.1 3.6 7 1.6 4.3 0 8.7-4.4 8.7z" fill="#fff3d2"/><rect x="20" y="45" width="24" height="4.5" rx="2.2" fill="#3d4570"/></svg>
+          Porchlight
+        </div>
+        <p style="color:var(--whisper);font-size:.85rem;max-width:30em;margin-top:12px">An exit-interview Mind that remembers why each member left — and wins them back the moment their reason is actually fixed.</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="#" data-todo="repo-url" target="_blank" rel="noopener">GitHub repository</a></li>
+            <li><a href="#" data-todo="youtube-url" target="_blank" rel="noopener">Demo video</a></li>
+            <li><a href="#proof">The live proof</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Built on</h4>
+          <ul>
+            <li><a href="https://www.hellominds.ai" target="_blank" rel="noopener">Minds by Animoca Brands</a></li>
+            <li><a href="https://dorahacks.io/hackathon/creativeminds" target="_blank" rel="noopener">Creative Minds Jam #1</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>The Mind</h4>
+          <ul>
+            <li><a href="mailto:porchlight@hellominds.ai">porchlight@hellominds.ai</a></li>
+            <li><span style="color:var(--whisper)">model: minimax/minimax-m3</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Porchlight · Powered by <a href="https://www.hellominds.ai" target="_blank" rel="noopener" style="color:var(--primary,#ffcf6b)">Minds by Animoca Brands</a> · Creative Minds Jam #1 · Audience Growth &amp; Community Engagement</span>
+      <span>the porch light stays on 🏮</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* sticky header state */
+  var header = document.getElementById("top-header");
+  function onScroll(){ header.classList.toggle("scrolled", window.scrollY > 24); }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  /* count-up */
+  function countUp(el){
+    var target = parseFloat(el.dataset.target);
+    var decimals = parseInt(el.dataset.decimals || "0", 10);
+    var prefix = el.dataset.prefix || "";
+    if(reduce){ el.textContent = prefix + target.toFixed(decimals); return; }
+    var dur = 1500, t0 = null;
+    function frame(t){
+      if(t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + (target * eased).toFixed(decimals);
+      if(p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* reveal-on-scroll + triggers */
+  var seenCounts = new WeakSet();
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add("in");
+      e.target.querySelectorAll(".count").forEach(function(c){
+        if(seenCounts.has(c)) return; seenCounts.add(c); countUp(c);
+      });
+      e.target.querySelectorAll(".bar-fill").forEach(function(b){
+        b.style.width = b.dataset.width;
+      });
+      io.unobserve(e.target);
+    });
+  }, {threshold:.18, rootMargin:"0px 0px -40px 0px"});
+
+  document.querySelectorAll(".reveal, .bars").forEach(function(el){ io.observe(el); });
+
+  /* hero counts fire on load (hero .reveal elements are pre-marked "in") */
+  document.querySelectorAll(".hero .count").forEach(function(c){
+    if(seenCounts.has(c)) return; seenCounts.add(c);
+    setTimeout(function(){ countUp(c); }, reduce ? 0 : 700);
+  });
+
+  /* placeholder links: gentle notice until URLs are filled */
+  document.querySelectorAll("[data-todo]").forEach(function(a){
+    a.addEventListener("click", function(ev){
+      if(a.getAttribute("href") === "#"){ ev.preventDefault(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

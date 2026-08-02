@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!-- ═══════════════════════════════════════════════════════════════════════════
+  🏮 PORCHLIGHT — pitch deck · Creative Minds Jam #1 (DoraHacks)
+  Track: Audience growth & community engagement · Powered by Minds by Animoca Brands
+
+  SELF-CONTAINED: no CDN, no external fonts, no network requests.
+  Deployable as-is on GitHub Pages.
+
+  CONTROLS
+    → / ↓ / Space / PgDn   next slide          ← / ↑ / PgUp   previous
+    Home / End             first / last        1–9            jump to slide
+    ESC                    overview grid       P              presenter mode (speaker notes)
+    C                      contrast debug (thin borders on text — projector check)
+
+  PRINT TO PDF: Chrome → Cmd/Ctrl+P → Save as PDF → Landscape → margins none.
+  One slide per 16in × 9in page.
+
+  HUMAN-FILL PLACEHOLDERS (search for "TBD"):
+    · YouTube demo URL  (slide 7 + slide 11)
+    · Public repo URL   (slide 11)
+    · BUIDL-page QR     (slide 11)
+
+  Every number is locked to captured evidence:
+  $105.00/mo (Mind, 6 members) · $35.00/mo (keyword baseline) · +$70.00/mo semantic-only
+  · resolves=true, confidence=0.93 (live) · semantic-only: Bea, Cai, Dre, Maya
+  · keyword-caught: Arjun, Fen · do-not-contact: Efi skipped.
+═══════════════════════════════════════════════════════════════════════════ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porchlight — the exit-interview Mind · Creative Minds Jam #1</title>
+<meta name="description" content="Pitch deck for Porchlight: an exit-interview Mind that remembers why each member left and autonomously wins them back the moment their reason is actually fixed. $105/mo recovered vs a $35/mo keyword baseline; +$70/mo only the Mind finds; 0.93 live semantic match. Powered by Minds by Animoca Brands.">
+<meta name="author" content="Porchlight — Creative Minds Jam #1">
+<meta name="theme-color" content="#0b0e1a">
+<meta name="robots" content="index,follow">
+<!-- ▼ SOCIAL METADATA — before sharing, replace the base URL below (porchlight.edycu.dev)
+     with your deployed GitHub Pages base. OG/Twitter scrapers require ABSOLUTE image URLs. og.png ships beside this file. -->
+<link rel="canonical" href="https://porchlight.edycu.dev/pitch-deck/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Porchlight">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Porchlight — the exit-interview Mind (pitch deck)">
+<meta property="og:description" content="Remembers why each member left; wins them back the moment their reason is actually fixed. $105/mo recovered; +$70/mo only the Mind finds; 0.93 live match. Powered by Minds by Animoca Brands.">
+<meta property="og:url" content="https://porchlight.edycu.dev/pitch-deck/">
+<meta property="og:image" content="https://porchlight.edycu.dev/og-image.png">
+<meta property="og:image:secure_url" content="https://porchlight.edycu.dev/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Porchlight — the win-back Mind. $105/mo recovered, +$70/mo the Mind alone finds, 0.93 live semantic match.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Porchlight — the exit-interview Mind (pitch deck)">
+<meta name="twitter:description" content="Wins members back the moment their reason is actually fixed. $105/mo recovered; +$70/mo only the Mind finds; 0.93 live match.">
+<meta name="twitter:image" content="https://porchlight.edycu.dev/og-image.png">
+<meta name="twitter:image:alt" content="Porchlight — the win-back Mind, powered by Minds by Animoca Brands.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%230b0e1a"/><circle cx="32" cy="30" r="22" fill="%23ffcf6b" opacity=".18"/><path d="M32 12c-4 1-9 7-10 11h20c-1-4-6-10-10-11z" fill="%232a3050"/><path d="M23 26h18l-2 18H25z" fill="%23ffcf6b"/><path d="M32 41c-4 0-5.5-4-4-8 1-2.6 2.8-3.6 3.3-6.4.2-1 1.2-1 1.4 0 .5 2.8 2.3 3.8 3.3 6.4 1.5 4 0 8-4 8z" fill="%23fff3d2"/><rect x="21" y="44" width="22" height="4" rx="2" fill="%232a3050"/><circle cx="44" cy="55" r="3.4" fill="%2369d38a"/></svg>'>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+/* ═══════════ TOKENS — rebrand in 30s ═══════════ */
+:root{
+  --color-bg:        #0f1220;   /* deep dusk navy — never pure black */
+  --color-bg-deep:   #090b16;
+  --color-card:      #191d31;
+  --color-raise:     #12162a;
+  --color-inset:     #0c0f1c;
+  --color-line:      #2a3050;
+  --color-ink:       #e9ecff;   /* warm off-white */
+  --color-dim:       #9aa3c7;
+  --color-whisper:   #5c6690;
+  --color-primary:   #ffcf6b;   /* porch-light amber */
+  --color-ember:     #f5a03c;
+  --color-accent:    #69d38a;   /* homecoming green — ≤5%, judge-memorable only */
+  --color-miss:      #ff8a8a;
+  --font-display:'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,'Times New Roman',serif;
+  --font-ui:-apple-system,BlinkMacSystemFont,'Segoe UI Variable','Segoe UI',system-ui,Roboto,'Helvetica Neue',sans-serif;
+  --font-mono:ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace;
+  --glow:0 0 60px rgba(255,207,107,.22),0 0 140px rgba(255,207,107,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--color-bg-deep);overflow:hidden;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:var(--font-ui);color:var(--color-ink);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+/* ═══════════ STAGE — fixed 1920×1080, browser letterboxes ═══════════ */
+#viewport{position:fixed;inset:0;display:block}
+#stage{position:absolute;top:50%;left:50%;width:1920px;height:1080px;
+  transform:translate(-50%,-50%) scale(1);transform-origin:center center;
+  background:
+    radial-gradient(38% 34% at 24% 20%, rgba(255,207,107,.13) 0%, transparent 100%),
+    radial-gradient(90% 75% at 30% 10%, rgba(255,207,107,.06) 0%, transparent 70%),
+    radial-gradient(70% 60% at 86% 86%, rgba(105,211,138,.07) 0%, transparent 72%),
+    radial-gradient(120% 90% at 82% -10%, rgba(3,4,10,.6) 0%, transparent 60%),
+    var(--color-bg);
+  box-shadow:0 0 120px rgba(0,0,0,.8)}
+/* faint blueprint grid over the whole stage */
+#stage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:
+   repeating-linear-gradient(0deg,rgba(233,236,255,.028) 0,rgba(233,236,255,.028) 1px,transparent 1px,transparent 64px),
+   repeating-linear-gradient(90deg,rgba(233,236,255,.028) 0,rgba(233,236,255,.028) 1px,transparent 1px,transparent 64px)}
+
+/* ═══════════ SLIDES ═══════════ */
+.slide{position:absolute;inset:0;padding:96px 110px 120px;opacity:0;visibility:hidden;
+  transform:translateY(14px);transition:opacity .55s ease,transform .55s ease,visibility 0s .55s;
+  display:flex;flex-direction:column}
+.slide.active{opacity:1;visibility:visible;transform:none;transition:opacity .55s ease,transform .55s ease}
+/* staggered child reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.7,.3,1),transform .7s cubic-bezier(.22,.7,.3,1);transition-delay:var(--d,0s)}
+.slide.active .rv{opacity:1;transform:none}
+
+/* ═══════════ TYPE ═══════════ */
+.eyebrow{font-family:var(--font-mono);font-size:19px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--color-primary);margin-bottom:34px}
+.eyebrow .tick{color:var(--color-whisper)}
+h1{font-family:var(--font-display);font-weight:600;letter-spacing:-.015em;line-height:1.04}
+.h-mega{font-size:104px}
+.h-big{font-size:84px}
+.h-mid{font-size:68px}
+.lede{font-size:27px;line-height:1.55;color:var(--color-dim);max-width:1080px}
+.lede strong{color:var(--color-ink);font-weight:600}
+.amber{color:var(--color-primary)}
+.green{color:var(--color-accent)}
+em{font-style:italic}
+.mono{font-family:var(--font-mono)}
+
+/* ═══════════ SHARED COMPONENTS ═══════════ */
+.badge{display:inline-flex;align-items:center;gap:10px;padding:10px 20px;
+  border:1px solid var(--color-line);border-radius:999px;background:rgba(12,15,28,.7);
+  font-family:var(--font-mono);font-size:17px;color:var(--color-dim);white-space:nowrap}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--color-accent);
+  box-shadow:0 0 12px var(--color-accent);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.card{background:var(--color-card);border:1px solid var(--color-line);border-radius:18px}
+.kw-chip{display:inline-block;font-family:var(--font-mono);font-size:15px;padding:5px 12px;
+  border-radius:999px;border:1px solid var(--color-line);color:var(--color-whisper)}
+.kw-chip.hot{color:#20160a;background:var(--color-primary);border-color:var(--color-primary);font-weight:700}
+.footer-tag{position:absolute;left:110px;bottom:52px;font-family:var(--font-mono);
+  font-size:15px;letter-spacing:.14em;color:var(--color-whisper);text-transform:uppercase}
+.footer-tag b{color:var(--color-ember);font-weight:600}
+
+/* terminal frame */
+.terminal{background:var(--color-inset);border:1px solid var(--color-line);border-radius:14px;
+  overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.terminal .bar{display:flex;align-items:center;gap:8px;padding:14px 18px;
+  background:#151a2e;border-bottom:1px solid var(--color-line)}
+.terminal .bar i{width:13px;height:13px;border-radius:50%;display:block}
+.terminal .bar i:nth-child(1){background:#ff5f57}.terminal .bar i:nth-child(2){background:#febc2e}
+.terminal .bar i:nth-child(3){background:#28c840}
+.terminal .bar span{margin-left:12px;font-family:var(--font-mono);font-size:15px;color:var(--color-whisper)}
+.terminal pre{padding:28px 32px;font-family:var(--font-mono);font-size:21px;line-height:1.75;
+  color:var(--color-dim);white-space:pre-wrap}
+.terminal .p{color:var(--color-whisper)}
+.terminal .k{color:var(--color-ink)}
+
+/* browser frame */
+.browser{background:var(--color-raise);border:1px solid var(--color-line);border-radius:16px;
+  overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.browser .bar{display:flex;align-items:center;gap:8px;padding:13px 16px;
+  background:#151a2e;border-bottom:1px solid var(--color-line)}
+.browser .bar i{width:12px;height:12px;border-radius:50%;display:block}
+.browser .bar i:nth-child(1){background:#ff5f57}.browser .bar i:nth-child(2){background:#febc2e}
+.browser .bar i:nth-child(3){background:#28c840}
+.browser .url{flex:1;margin-left:14px;background:var(--color-inset);border:1px solid var(--color-line);
+  border-radius:8px;padding:7px 14px;font-family:var(--font-mono);font-size:14px;color:var(--color-whisper)}
+
+/* numbered callouts */
+.co{display:flex;gap:18px;align-items:flex-start}
+.co .n{flex:none;width:42px;height:42px;border-radius:50%;background:var(--color-primary);
+  color:#20160a;font-family:var(--font-mono);font-weight:700;font-size:20px;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(255,207,107,.35)}
+.co h3{font-size:23px;font-weight:650;margin-bottom:6px}
+.co p{font-size:19px;line-height:1.5;color:var(--color-dim)}
+
+/* quote cards */
+.quote{background:var(--color-card);border:1px solid var(--color-line);border-left:4px solid var(--color-whisper);
+  border-radius:14px;padding:30px 34px}
+.quote.hotL{border-left-color:var(--color-primary)}
+.quote.hotG{border-left-color:var(--color-accent)}
+.quote .who{font-family:var(--font-mono);font-size:15px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--color-whisper);margin-bottom:14px}
+.quote .q{font-family:var(--font-display);font-size:29px;line-height:1.4;font-style:italic;color:var(--color-ink)}
+
+/* Press C to toggle contrast debug mode */
+body.debug-contrast .slide :is(h1,h2,h3,p,span,div.lede,td,th,pre,li){outline:1px solid rgba(255,0,128,.55)}
+
+/* ═══════════ COVER EXTRAS ═══════════ */
+#lantern-glow{position:absolute;top:-160px;right:180px;width:760px;height:760px;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(255,207,107,.28) 0%,rgba(255,207,107,.10) 46%,transparent 100%);
+  animation:breathe 4.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+.firefly{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--color-primary);
+  box-shadow:0 0 14px 3px rgba(255,207,107,.55);opacity:.7;animation:drift 9s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.25}
+  30%{transform:translate(-34px,-46px);opacity:.85}
+  60%{transform:translate(22px,-84px);opacity:.4}
+  80%{transform:translate(-12px,-30px);opacity:.7}}
+
+/* ═══════════ CHROME (nav UI) ═══════════ */
+#counter{position:fixed;right:34px;bottom:26px;font-family:var(--font-mono);font-size:15px;
+  letter-spacing:.2em;color:var(--color-whisper);z-index:60}
+#counter b{color:var(--color-primary);font-weight:600}
+#progress{position:fixed;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--color-ember),var(--color-primary));
+  width:0;transition:width .45s ease;z-index:60;box-shadow:0 0 12px rgba(255,207,107,.6)}
+#hint{position:fixed;left:34px;bottom:26px;font-family:var(--font-mono);font-size:13px;
+  letter-spacing:.12em;color:var(--color-whisper);opacity:.75;z-index:60}
+body.presenter :is(#hint){opacity:0}
+
+/* overview grid (ESC) */
+#overview{position:fixed;inset:0;background:rgba(5,6,14,.92);backdrop-filter:blur(8px);
+  z-index:120;display:none;padding:6vh 6vw;overflow:auto}
+body.overview #overview{display:block}
+#overview .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1500px;margin:0 auto}
+#overview .cell{cursor:pointer;background:var(--color-card);border:1px solid var(--color-line);
+  border-radius:14px;padding:22px 24px;transition:border-color .2s,transform .2s}
+#overview .cell:hover{border-color:var(--color-primary);transform:translateY(-3px)}
+#overview .cell.cur{border-color:var(--color-primary);box-shadow:0 0 30px rgba(255,207,107,.15)}
+#overview .cell .num{font-family:var(--font-mono);font-size:14px;color:var(--color-primary);letter-spacing:.2em}
+#overview .cell h4{font-family:var(--font-display);font-size:23px;margin:10px 0 6px;font-weight:600}
+#overview .cell p{font-size:14.5px;color:var(--color-dim);line-height:1.45}
+#overview .esc{max-width:1500px;margin:0 auto 22px;font-family:var(--font-mono);font-size:14px;
+  letter-spacing:.18em;color:var(--color-whisper);text-transform:uppercase}
+
+/* presenter mode (P) */
+.speaker-notes{display:none}
+#notesPanel{position:fixed;left:0;right:0;bottom:0;height:20vh;min-height:150px;z-index:110;
+  background:rgba(9,11,22,.96);border-top:2px solid var(--color-ember);padding:22px 44px;
+  display:none;overflow:auto}
+body.presenter #notesPanel{display:block}
+#notesPanel .lbl{font-family:var(--font-mono);font-size:13px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--color-ember);margin-bottom:10px}
+#notesPanel .txt{font-size:21px;line-height:1.55;color:var(--color-ink);max-width:1400px}
+body.presenter #counter{bottom:calc(20vh + 14px)}
+body.presenter.hide-cursor{cursor:none}
+body.presenter.hide-cursor *{cursor:none}
+
+/* ═══════════ PRINT — one slide per 16in×9in page ═══════════ */
+@page{size:16in 9in landscape;margin:0}
+@media print{
+  html,body{overflow:visible;height:auto;background:var(--color-bg)}
+  #viewport{position:static}
+  #stage{position:static;transform:none!important;width:auto;height:auto;box-shadow:none;background:none}
+  #stage::before{display:none}
+  .slide{position:relative;inset:auto;width:1920px;height:1080px;zoom:.8;
+    opacity:1!important;visibility:visible!important;transform:none!important;
+    page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid;
+    background:
+      radial-gradient(38% 34% at 24% 20%, rgba(255,207,107,.13) 0%, transparent 100%),
+      radial-gradient(70% 60% at 86% 86%, rgba(105,211,138,.07) 0%, transparent 72%),
+      var(--color-bg)}
+  .rv{opacity:1!important;transform:none!important}
+  #counter,#progress,#hint,#overview,#notesPanel{display:none!important}
+  #lantern-glow,.firefly{animation:none}
+  .speaker-notes{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- ════════ SLIDE 1 · COVER ════════ -->
+<section class="slide" data-title="Porchlight" data-desc="Cover — the porch light left on">
+  <div id="lantern-glow"></div>
+  <!-- hanging porch lamp, pure SVG -->
+  <svg class="rv" style="--d:.15s;position:absolute;top:0;right:436px;width:250px;height:420px" viewBox="0 0 250 420" fill="none" aria-hidden="true">
+    <line x1="125" y1="0" x2="125" y2="118" stroke="#2a3050" stroke-width="5"/>
+    <line x1="125" y1="0" x2="125" y2="118" stroke="#9aa3c7" stroke-width="1.6"/>
+    <path d="M78 130 L172 130 L188 176 L62 176 Z" stroke="#9aa3c7" stroke-width="3" fill="#151a2e"/>
+    <circle cx="125" cy="122" r="8" fill="#151a2e" stroke="#9aa3c7" stroke-width="3"/>
+    <path d="M70 176 L180 176 L166 288 L84 288 Z" stroke="#9aa3c7" stroke-width="3" fill="rgba(255,207,107,.13)"/>
+    <ellipse cx="125" cy="232" rx="27" ry="35" fill="#ffcf6b" opacity=".92">
+      <animate attributeName="opacity" values=".92;.65;.92" dur="4.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="125" cy="232" rx="46" ry="56" fill="#ffcf6b" opacity=".18">
+      <animate attributeName="opacity" values=".18;.32;.18" dur="4.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <path d="M84 288 L166 288 L152 312 L98 312 Z" stroke="#9aa3c7" stroke-width="3" fill="#151a2e"/>
+    <line x1="112" y1="176" x2="103" y2="288" stroke="#9aa3c7" stroke-width="1.4" opacity=".5"/>
+    <line x1="138" y1="176" x2="147" y2="288" stroke="#9aa3c7" stroke-width="1.4" opacity=".5"/>
+  </svg>
+  <span class="firefly" style="top:290px;right:330px"></span>
+  <span class="firefly" style="top:430px;right:560px;animation-delay:-3s"></span>
+  <span class="firefly" style="top:200px;right:720px;animation-delay:-6s;width:4px;height:4px"></span>
+
+  <div style="margin-top:auto;max-width:1240px">
+    <div class="eyebrow rv">Creative Minds Jam #1 · Hong Kong <span class="tick">//</span> Audience Growth &amp; Community Engagement</div>
+    <h1 class="rv" style="--d:.1s;font-size:168px;line-height:1;letter-spacing:-.02em">
+      Porch<span class="amber" style="text-shadow:var(--glow)">light</span></h1>
+    <p class="lede rv" style="--d:.25s;margin-top:38px;font-size:30px;max-width:1150px">
+      The exit-interview Mind that remembers <strong>why</strong> every member left —
+      and wins them back the moment their reason is <strong>actually fixed</strong>.</p>
+    <div class="rv" style="--d:.4s;display:flex;gap:16px;margin-top:52px;flex-wrap:wrap">
+      <span class="badge"><span class="dot"></span>LIVE Mind · porchlight@hellominds.ai</span>
+      <span class="badge">Powered by Minds by Animoca Brands</span>
+      <span class="badge">minimax/minimax-m3 · Base-wallet Soul</span>
+    </div>
+  </div>
+  <aside class="speaker-notes">Open on the metaphor: when someone you care about leaves, you leave the porch light on. Every membership creator bleeds members every month — Porchlight is a live, persistent Mind that treats each cancellation as the start of a relationship, not the end. The Mind on this slide is real and running right now.</aside>
+</section>
+
+<!-- ════════ SLIDE 2 · HOOK ════════ -->
+<section class="slide" data-title="The wound" data-desc="The reason walks out the door">
+  <div class="eyebrow rv">The churn wound</div>
+  <h1 class="h-mega rv" style="--d:.1s;max-width:1500px">When a member cancels,<br>
+    the <em class="amber">reason</em> walks out the door with them.</h1>
+  <p class="lede rv" style="--d:.25s;margin-top:44px">
+    Patreon, YouTube Memberships, Substack, Discord — churn is the direct revenue wound, and nobody writes down why.
+    Months later the creator fixes the very thing that drove people away… <strong>and the people who left for exactly that reason are never told.</strong></p>
+  <!-- the artifact: today's state of the art -->
+  <div class="rv" style="--d:.4s;margin-top:auto;display:flex;align-items:center;gap:28px">
+    <div class="card" style="padding:26px 34px;max-width:640px;opacity:.85">
+      <div class="mono" style="font-size:14px;letter-spacing:.18em;color:var(--color-whisper);text-transform:uppercase;margin-bottom:12px">Today's entire win-back industry</div>
+      <div style="font-size:24px;color:var(--color-dim)">“Hey… we miss you 💔 Here's 20% off.”</div>
+      <div class="mono" style="font-size:15px;color:var(--color-whisper);margin-top:12px">to: everyone · when: whenever · why they left: unknown</div>
+    </div>
+    <div class="mono" style="font-size:19px;color:var(--color-miss);letter-spacing:.06em">✗ ignores why each person actually left</div>
+  </div>
+  <aside class="speaker-notes">Make the pain specific: the reason is spoken once — in a cancel box or a Discord grumble — and then it evaporates. So the only tool anyone has is the generic guilt-blast. It goes to everyone, at a random time, and it converts terribly because it has no idea why any individual person left.</aside>
+</section>
+
+<!-- ════════ SLIDE 3 · THE INSIGHT ════════ -->
+<section class="slide" data-title="The insight" data-desc="Timing, not discounts">
+  <div class="eyebrow rv">The insight</div>
+  <h1 class="h-big rv" style="--d:.1s;max-width:1560px">Message the <em class="amber">right people</em> the moment
+    their specific reason <em class="amber">stops being true</em>.</h1>
+  <p class="lede rv" style="--d:.22s;margin-top:38px">Win-back is a timing-and-memory problem, not a discount problem.
+    That takes an agent that <strong>remembers the reason</strong> and can <strong>judge the fix</strong>.</p>
+  <!-- timeline hero -->
+  <div class="rv" style="--d:.38s;margin-top:auto;margin-bottom:30px">
+    <svg viewBox="0 0 1700 250" width="1700" height="250" fill="none" aria-label="cancellation-to-comeback timeline">
+      <line x1="40" y1="92" x2="560" y2="92" stroke="#2a3050" stroke-width="3"/>
+      <line x1="560" y1="92" x2="1030" y2="92" stroke="#2a3050" stroke-width="3" stroke-dasharray="4 12"/>
+      <line x1="1030" y1="92" x2="1660" y2="92" stroke="#ffcf6b" stroke-width="3"/>
+      <circle cx="60" cy="92" r="13" fill="#0f1220" stroke="#9aa3c7" stroke-width="3"/>
+      <circle cx="560" cy="92" r="13" fill="#0f1220" stroke="#9aa3c7" stroke-width="3"/>
+      <circle cx="1030" cy="92" r="15" fill="#151a2e" stroke="#ffcf6b" stroke-width="3.5"/>
+      <circle cx="1330" cy="92" r="26" fill="rgba(255,207,107,.14)"/>
+      <circle cx="1330" cy="92" r="15" fill="#ffcf6b"/>
+      <circle cx="1640" cy="92" r="15" fill="#69d38a"/>
+      <text x="60" y="145" fill="#e9ecff" font-size="22" font-weight="600" font-family="system-ui">Member cancels</text>
+      <text x="60" y="175" fill="#9aa3c7" font-size="18" font-family="system-ui">warm exit interview</text>
+      <text x="480" y="145" fill="#e9ecff" font-size="22" font-weight="600" font-family="system-ui">Reason remembered</text>
+      <text x="480" y="175" fill="#9aa3c7" font-size="18" font-family="system-ui">in the member's own words</text>
+      <text x="770" y="60" fill="#5c6690" font-size="18" font-style="italic" font-family="Georgia,serif">weeks pass…</text>
+      <text x="950" y="145" fill="#e9ecff" font-size="22" font-weight="600" font-family="system-ui">Creator fixes it</text>
+      <text x="950" y="175" fill="#9aa3c7" font-size="18" font-family="system-ui">announces the change</text>
+      <text x="1255" y="145" fill="#ffcf6b" font-size="22" font-weight="700" font-family="system-ui">Semantic match</text>
+      <text x="1255" y="175" fill="#9aa3c7" font-size="18" font-family="system-ui">by meaning, not keywords</text>
+      <text x="1690" y="145" text-anchor="end" fill="#69d38a" font-size="22" font-weight="700" font-family="system-ui">“Come home”</text>
+      <text x="1690" y="175" text-anchor="end" fill="#9aa3c7" font-size="18" font-family="system-ui">quoting their own words</text>
+    </svg>
+  </div>
+  <aside class="speaker-notes">The unlock is precision in both dimensions: WHO (only the members whose stated reason is now resolved) and WHEN (the exact moment it's resolved). No stateless tool can do this — it requires memory of the reason and semantic judgement about the fix. That's the whole product on one line.</aside>
+</section>
+
+<!-- ════════ SLIDE 4 · THREE PILLARS ════════ -->
+<section class="slide" data-title="What it does" data-desc="Memory · Meaning · Autonomy">
+  <div class="eyebrow rv">What Porchlight does <span class="tick">//</span> one flow, done deep</div>
+  <h1 class="h-big rv" style="--d:.08s">Memory. Meaning. <span class="amber">Autonomy.</span></h1>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-top:64px;align-items:start">
+    <div class="card rv" style="--d:.2s;padding:38px 36px;min-height:420px">
+      <div class="mono amber" style="font-size:17px;letter-spacing:.2em">01 · MEMORY</div>
+      <h3 style="font-family:var(--font-display);font-size:36px;margin:18px 0 16px;font-weight:600">Exit interview on cancel</h3>
+      <p style="font-size:20px;line-height:1.55;color:var(--color-dim)">The Mind runs a short, warm interview and files a structured
+        <span class="mono" style="font-size:17px;color:var(--color-ink)">return-condition</span> — reason, <strong style="color:var(--color-ink)">verbatim quote</strong>, do-not-contact — into per-member long-term memory. One Mind conversation per member: the memory is the Mind's, not a database row.</p>
+    </div>
+    <div class="card rv" style="--d:.32s;padding:38px 36px;min-height:420px;margin-top:34px;border-color:rgba(255,207,107,.45);box-shadow:0 0 50px rgba(255,207,107,.08)">
+      <div class="mono amber" style="font-size:17px;letter-spacing:.2em">02 · SEMANTIC MATCH</div>
+      <h3 style="font-family:var(--font-display);font-size:36px;margin:18px 0 16px;font-weight:600">Judged by meaning</h3>
+      <p style="font-size:20px;line-height:1.55;color:var(--color-dim)">When the creator announces a change, the Mind asks of <em>every</em> open reason:
+        <em style="color:var(--color-ink)">“Does this genuinely resolve THIS member's reason? Judge by meaning, not keywords.”</em>
+        Only the resolved get contacted.</p>
+    </div>
+    <div class="card rv" style="--d:.44s;padding:38px 36px;min-height:420px;margin-top:68px">
+      <div class="mono amber" style="font-size:17px;letter-spacing:.2em">03 · AUTONOMOUS WIN-BACK</div>
+      <h3 style="font-family:var(--font-display);font-size:36px;margin:18px 0 16px;font-weight:600">Unprompted, in their words</h3>
+      <p style="font-size:20px;line-height:1.55;color:var(--color-dim)">The Mind drafts and sends personal win-backs <strong style="color:var(--color-ink)">quoting each member's own words</strong> from weeks earlier — and <strong style="color:var(--color-ink)">honors do-not-contact even when the reason is fixed</strong>. Restraint is shown on the dashboard, not buried.</p>
+    </div>
+  </div>
+  <div class="footer-tag rv" style="--d:.55s">Every departure compounds into a churn board — <b>37% of 19 seeded departures</b> left over the pivot away from deep-dives</div>
+  <aside class="speaker-notes">Three load-bearing behaviors, mapped 1:1 to the Jam's persistence requirement: memory, continuity, autonomous follow-up. Emphasize pillar three's restraint — Efi's reason gets resolved too, and the Mind still skips her because she said don't contact me. Safety is part of the demo.</aside>
+</section>
+
+<!-- ════════ SLIDE 5 · THE LIVE 0.93 PROOF ════════ -->
+<section class="slide" data-title="Live proof: 0.93" data-desc="Zero shared keywords, live Mind verdict">
+  <div class="eyebrow rv">Live · captured 2026-08-01 <span class="tick">//</span> not a mock</div>
+  <h1 class="h-big rv" style="--d:.08s">Zero shared keywords.<br><span class="amber" style="text-shadow:var(--glow)">0.93 confidence.</span></h1>
+  <div style="display:grid;grid-template-columns:760px 1fr;gap:56px;margin-top:52px;align-items:start">
+    <div>
+      <div class="quote hotL rv" style="--d:.2s">
+        <div class="who">Why Maya left · weeks ago</div>
+        <div class="q">“you pivoted to short clips — the long sit-down conversations i loved are gone”</div>
+      </div>
+      <div class="rv" style="--d:.3s;display:flex;align-items:center;gap:16px;margin:22px 0 22px 34px">
+        <div style="width:2px;height:40px;background:var(--color-line)"></div>
+        <span class="kw-chip" style="border-color:var(--color-miss);color:var(--color-miss)">shared content keywords: 0</span>
+      </div>
+      <div class="quote hotG rv" style="--d:.38s">
+        <div class="who">What the creator announced · today</div>
+        <div class="q">“Big news — the deep-dive interviews are back, weekly.”</div>
+      </div>
+    </div>
+    <div class="rv" style="--d:.5s">
+      <div class="terminal">
+        <div class="bar"><i></i><i></i><i></i><span>live Mind call · porchlight@hellominds.ai</span></div>
+        <pre><span class="p">judge: does this change resolve Maya's reason?</span>
+
+<span class="k">resolves</span>    = <span class="green" style="font-weight:700">true</span>
+<span class="k">confidence</span>  = <span class="amber" style="font-size:30px;font-weight:700">0.93</span>
+<span class="k">rationale</span>   = "…the announcement explicitly brings
+               back weekly long-form deep-dive
+               interviews, which directly restores
+               the exact format they loved."</pre>
+      </div>
+      <p class="rv" style="--d:.62s;margin-top:26px;font-size:22px;line-height:1.5;color:var(--color-dim)">
+        A keyword matcher scores this exact case <span class="mono" style="color:var(--color-miss)">0</span>.
+        <strong style="color:var(--color-ink)">This is the anti-clone proof — the whole product in one number.</strong></p>
+    </div>
+  </div>
+  <aside class="speaker-notes">This is the slide that defeats the "churn survey plus drip email" pattern-match. Her complaint and the fix share zero content keywords — clips versus interviews. The real, live Mind resolved it at 0.93 confidence and its rationale names the exact format restoration. Captured output, reproducible.</aside>
+</section>
+
+<!-- ════════ SLIDE 6 · THE MEASURED EDGE ════════ -->
+<section class="slide" data-title="The $70 edge" data-desc="$105 vs $35 — measured in-repo">
+  <div class="eyebrow rv">Measured, not claimed <span class="tick">//</span> a keyword baseline ships in-repo &amp; runs on every win-back</div>
+  <div style="display:flex;gap:70px;align-items:baseline;margin-top:56px">
+    <div class="rv" style="--d:.1s">
+      <div class="mono" style="font-size:17px;letter-spacing:.2em;color:var(--color-dim);text-transform:uppercase">The Mind · 6 members</div>
+      <div class="amber mono" style="font-size:120px;font-weight:700;letter-spacing:-.03em;text-shadow:var(--glow)">$<span data-count="105.00">105.00</span></div>
+      <div class="mono" style="font-size:19px;color:var(--color-dim)">/mo recovered</div>
+    </div>
+    <div class="rv" style="--d:.22s">
+      <div class="mono" style="font-size:17px;letter-spacing:.2em;color:var(--color-whisper);text-transform:uppercase">Keyword baseline · same seed</div>
+      <div class="mono" style="font-size:76px;font-weight:600;color:var(--color-whisper)">$<span data-count="35.00">35.00</span></div>
+      <div class="mono" style="font-size:19px;color:var(--color-whisper)">/mo recovered</div>
+    </div>
+    <div class="rv" style="--d:.34s">
+      <div class="mono" style="font-size:17px;letter-spacing:.2em;color:var(--color-accent);text-transform:uppercase">Found only by meaning</div>
+      <div class="green mono" style="font-size:96px;font-weight:700">+$<span data-count="70.00">70.00</span></div>
+      <div class="mono" style="font-size:19px;color:var(--color-dim)">/mo keywords miss</div>
+    </div>
+  </div>
+  <!-- bars -->
+  <div class="rv" style="--d:.46s;margin-top:96px;max-width:1560px">
+    <div style="height:60px;border-radius:10px;background:var(--color-inset);border:1px solid var(--color-line);overflow:hidden;display:flex">
+      <div style="width:33.3%;background:#3a415f"></div>
+      <div style="width:66.7%;background:linear-gradient(90deg,var(--color-ember),var(--color-primary));box-shadow:0 0 40px rgba(255,207,107,.35)"></div>
+    </div>
+    <div style="display:flex;font-family:var(--font-mono);font-size:16px;margin-top:12px">
+      <div style="width:33.3%;color:var(--color-whisper)">$35.00 — what keywords catch</div>
+      <div style="width:66.7%;color:var(--color-primary)">+$70.00 — what only the Mind finds</div>
+    </div>
+  </div>
+  <!-- member chips -->
+  <div class="rv" style="--d:.58s;margin-top:104px">
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+      <span class="mono" style="font-size:16px;color:var(--color-whisper);letter-spacing:.14em;text-transform:uppercase">keyword-caught:</span>
+      <span class="kw-chip">Arjun</span><span class="kw-chip">Fen</span>
+      <span style="width:26px"></span>
+      <span class="mono" style="font-size:16px;color:var(--color-primary);letter-spacing:.14em;text-transform:uppercase">semantic-only — keywords miss:</span>
+      <span class="kw-chip hot">Bea</span><span class="kw-chip hot">Cai</span><span class="kw-chip hot">Dre</span><span class="kw-chip hot">Maya</span>
+    </div>
+    <p style="margin-top:26px;font-size:22px;line-height:1.6;color:var(--color-dim);max-width:1560px">
+      Four people, one reason, four different wordings — <em>“long-form lore videos”, “long chatty sit-downs with guests”, “not what i signed up for since the format changed”</em> — zero keyword overlap with <em>“the deep-dive interviews are back.”</em> The Mind resolved every one.</p>
+  </div>
+  <aside class="speaker-notes">We didn't claim the semantic edge — we instrumented it. The keyword baseline is shipped in the repo and tags every single win-back with whether keywords would have caught it. On the 19-departure seed: Mind $105 a month across six members, keywords $35. The $70 gap IS the product's value, on screen.</aside>
+</section>
+
+<!-- ════════ SLIDE 7 · DEMO ════════ -->
+<section class="slide" data-title="See it run" data-desc="Dashboard + 2-min demo + 60s reproduce">
+  <div class="eyebrow rv">See it run</div>
+  <h1 class="h-mid rv" style="--d:.08s">Cancellation to comeback in one arc.</h1>
+  <div style="display:grid;grid-template-columns:1040px 1fr;gap:60px;margin-top:44px;align-items:start">
+    <!-- CSS-drawn recreation of the real dashboard (real strings from the live app) -->
+    <div class="browser rv" style="--d:.2s">
+      <div class="bar"><i></i><i></i><i></i><div class="url">localhost:5173 — Porchlight · churn board</div></div>
+      <div style="padding:26px 30px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="mono" style="font-size:16px;color:var(--color-dim)">19 departures · 6 won back · 1 protected</div>
+          <div style="position:relative">
+            <span style="position:absolute;top:-14px;right:0" class="co"><span class="n" style="width:32px;height:32px;font-size:16px">1</span></span>
+            <div class="mono" style="font-size:15px;color:var(--color-whisper);text-align:right">RECOVERED MRR</div>
+            <div class="mono green" style="font-size:34px;font-weight:700">$105.00<span style="font-size:17px">/mo</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="mono" style="font-size:15px;color:var(--color-dim);margin-bottom:8px">content pivot — 37% of departures</div>
+          <div style="height:14px;border-radius:7px;background:var(--color-inset);overflow:hidden"><div style="width:37%;height:100%;background:var(--color-primary)"></div></div>
+        </div>
+        <div class="card" style="position:relative;background:var(--color-raise);padding:20px 24px;border-left:4px solid var(--color-primary)">
+          <span style="position:absolute;top:-14px;right:-14px" class="co"><span class="n" style="width:32px;height:32px;font-size:16px">2</span></span>
+          <div class="mono" style="font-size:14px;color:var(--color-whisper);margin-bottom:8px">WIN-BACK → MAYA · <span class="amber">semantic-only — keywords miss</span></div>
+          <div style="font-size:18.5px;line-height:1.5;color:var(--color-ink);font-style:italic">“You said the long sit-down conversations you loved were gone after we pivoted to short clips… The deep-dive interviews are back, weekly — the format you came for. The door's open.”</div>
+        </div>
+        <div class="card" style="position:relative;background:var(--color-raise);padding:16px 24px;display:flex;justify-content:space-between;align-items:center">
+          <span style="position:absolute;top:-14px;right:-14px" class="co"><span class="n" style="width:32px;height:32px;font-size:16px">3</span></span>
+          <div class="mono" style="font-size:16px;color:var(--color-dim)">EFI — reason resolved, <b style="color:var(--color-ink)">skipped</b></div>
+          <div class="mono" style="font-size:15px;color:var(--color-accent)">✓ do-not-contact honored</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div class="co rv" style="--d:.34s"><span class="n">1</span><div><h3>The board remembers</h3><p>Every reason compounds into churn intelligence; recovered MRR is the ROI meter.</p></div></div>
+      <div class="co rv" style="--d:.42s"><span class="n">2</span><div><h3>Their words, not a template</h3><p>Each win-back quotes the member's own parting words from weeks earlier.</p></div></div>
+      <div class="co rv" style="--d:.5s"><span class="n">3</span><div><h3>Restraint on screen</h3><p>Skipped members are shown, not hidden — autonomy with boundaries.</p></div></div>
+      <!-- TBD: replace href + label with the real YouTube URL at submit time -->
+      <a class="card rv" href="#" style="--d:.6s;display:block;padding:22px 26px;text-decoration:none;border-color:rgba(255,207,107,.4)">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--color-primary);display:flex;align-items:center;justify-content:center;color:#20160a;font-size:22px">▶</div>
+          <div>
+            <div style="font-size:21px;font-weight:650;color:var(--color-ink)">2-minute demo — real Mind replies on screen</div>
+            <div class="mono" style="font-size:15px;color:var(--color-whisper);margin-top:4px">[ TBD-YOUTUBE-URL — add at submit ]</div>
+          </div>
+        </div>
+      </a>
+      <div class="terminal rv" style="--d:.68s"><div class="bar"><i></i><i></i><i></i><span>reproduce in 60s — offline</span></div>
+        <pre style="font-size:19px;padding:20px 26px"><span class="p">$</span> <span class="k">npm install &amp;&amp; npm run demo</span>
+<span class="p"># the full arc, headless · LIVE mode = 1 env var</span></pre></div>
+    </div>
+  </div>
+  <aside class="speaker-notes">Walk the arc left to right: Maya cancels, the interview files her reason, the board shows 37% share it, the creator announces the fix, and the Mind messages only the six resolved members — Efi visibly skipped. Then the kicker for judges: the entire arc reproduces offline in sixty seconds with npm run demo.</aside>
+</section>
+
+<!-- ════════ SLIDE 8 · WHY ONLY A MIND ════════ -->
+<section class="slide" data-title="Why only a Mind" data-desc="Remove the Mind, lose $70/mo">
+  <div class="eyebrow rv">The moat <span class="tick">//</span> why Minds is the engine, not decoration</div>
+  <h1 class="h-big rv" style="--d:.08s">Remove the Mind,<br>lose <span class="amber">$70.00/mo</span>.</h1>
+  <div style="display:grid;grid-template-columns:1fr 620px;gap:70px;margin-top:52px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:30px">
+      <div class="co rv" style="--d:.2s"><span class="n">a</span><div><h3>Persistent per-member identity</h3><p>One Mind conversation alias per member survives the weeks between the exit interview and the win-back.</p></div></div>
+      <div class="co rv" style="--d:.3s"><span class="n">b</span><div><h3>Memory the agent itself carries</h3><p>The return-condition lives in the Mind's long-term memory — not just a row we look up for it.</p></div></div>
+      <div class="co rv" style="--d:.4s"><span class="n">c</span><div><h3>A native channel it uses on its own</h3><p>The Mind emailed the builder <strong style="color:var(--color-ink)">unprompted</strong> from porchlight@hellominds.ai on day one — no cron, no trigger from us.</p></div></div>
+      <p class="rv" style="--d:.52s;font-size:22px;line-height:1.55;color:var(--color-dim);border-top:1px solid var(--color-line);padding-top:26px">
+        A stateless LLM API gives none of these without rebuilding memory, identity and channels ourselves.
+        Strip the Mind out and what's left is the keyword baseline — <strong style="color:var(--color-ink)">which our own dashboard measures at $70.00/mo less.</strong></p>
+    </div>
+    <div class="card rv" style="--d:.45s;padding:36px 38px;border-color:rgba(255,207,107,.35);box-shadow:0 0 60px rgba(255,207,107,.07)">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+        <div style="width:14px;height:14px;border-radius:50%;background:var(--color-accent);box-shadow:0 0 14px var(--color-accent)"></div>
+        <div class="mono" style="font-size:16px;letter-spacing:.22em;color:var(--color-dim)">LIVE MIND IDENTITY</div>
+      </div>
+      <div style="font-family:var(--font-display);font-size:44px;font-weight:600;margin-bottom:22px">“Porchlight”</div>
+      <table class="mono" style="font-size:16.5px;line-height:2.15;color:var(--color-dim);border-collapse:collapse">
+        <tr><td style="color:var(--color-whisper);padding-right:22px">email</td><td style="color:var(--color-ink)">porchlight@hellominds.ai</td></tr>
+        <tr><td style="color:var(--color-whisper)">mind id</td><td>3178453e-f36b-1410-8466-…</td></tr>
+        <tr><td style="color:var(--color-whisper)">model</td><td>minimax/minimax-m3</td></tr>
+        <tr><td style="color:var(--color-whisper)">soul</td><td>Base wallet · platform-native</td></tr>
+        <tr><td style="color:var(--color-whisper);vertical-align:top;padding-right:22px">client-lib</td><td style="line-height:1.7;padding-top:8px">6 methods spike-verified:<br>listMinds · getMind · ensureConversation ·<br>sendMessage · waitForReply · getHistory</td></tr>
+      </table>
+    </div>
+  </div>
+  <aside class="speaker-notes">Answer "why not just GPT plus a cron job" head-on. Porchlight needs identity that survives weeks, memory the agent carries, and a channel it can use on its own initiative — the Mind's Soul provides all three natively, and it proved the third by emailing me unprompted on day one. The counterfactual isn't hypothetical: it's the $35 baseline.</aside>
+</section>
+
+<!-- ════════ SLIDE 9 · HONEST + SHIPPED ════════ -->
+<section class="slide" data-title="Real vs modeled" data-desc="Honesty ledger + engineering floor">
+  <div class="eyebrow rv">The honesty ledger <span class="tick">//</span> labeled on screen, not in a footnote</div>
+  <h1 class="h-mid rv" style="--d:.08s">We only claim what we captured.</h1>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:52px">
+    <div class="card rv" style="--d:.2s;padding:36px 40px;border-color:rgba(255,207,107,.4)">
+      <div class="mono amber" style="font-size:17px;letter-spacing:.22em;margin-bottom:26px">REAL · LIVE · CAPTURED</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:20px;font-size:21px;line-height:1.5;color:var(--color-ink)">
+        <li><span class="amber">✦</span>&nbsp; The <b>0.93</b> verdict on a zero-keyword case — real live Mind call</li>
+        <li><span class="amber">✦</span>&nbsp; The <b>$105.00 / $35.00 / +$70.00</b> edge — measured by an in-repo baseline on every win-back</li>
+        <li><span class="amber">✦</span>&nbsp; Unprompted native-channel email from the Mind, day one</li>
+        <li><span class="amber">✦</span>&nbsp; Per-member Mind memory &amp; own-words recall, HTML-clean</li>
+      </ul>
+    </div>
+    <div class="card rv" style="--d:.32s;padding:36px 40px">
+      <div class="mono" style="font-size:17px;letter-spacing:.22em;margin-bottom:26px;color:var(--color-whisper)">MODELED · AND SAID SO</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:20px;font-size:21px;line-height:1.5;color:var(--color-dim)">
+        <li><span style="color:var(--color-whisper)">◦</span>&nbsp; The membership storefront is our own mock — Patreon's API is restricted; the Mind-side flow is real end-to-end</li>
+        <li><span style="color:var(--color-whisper)">◦</span>&nbsp; A reason-resolved win-back counts as a rejoin in the demo; production waits for the real re-subscribe webhook</li>
+        <li><span style="color:var(--color-whisper)">◦</span>&nbsp; Hero-cluster live mode conserves the Jam cognition budget — identical on-screen numbers</li>
+      </ul>
+    </div>
+  </div>
+  <div class="rv" style="--d:.46s;margin-top:auto;margin-bottom:22px;display:flex;gap:12px;flex-wrap:wrap">
+    <span class="badge">TypeScript strict</span><span class="badge">5 unit tests</span>
+    <span class="badge">Playwright · 3 specs × 2 browsers</span><span class="badge">7-stage CI</span>
+    <span class="badge">CodeQL</span><span class="badge">TruffleHog</span><span class="badge">MIT</span>
+  </div>
+  <aside class="speaker-notes">Judges reward calibrated claims. Left column is captured evidence; right column is what's modeled for the demo, and the dashboard itself labels it. Under it all, a real engineering floor: strict TypeScript, unit and E2E tests, and a seven-stage CI pipeline with security scanning.</aside>
+</section>
+
+<!-- ════════ SLIDE 10 · VISION / PROGRAMME ════════ -->
+<section class="slide" data-title="Churn → pipeline" data-desc="Roadmap + Minds Investment Programme">
+  <div class="eyebrow rv">Where this goes</div>
+  <h1 class="h-big rv" style="--d:.08s">Churn stops being an ending.<br>It becomes a <span class="amber">pipeline</span>.</h1>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-top:60px">
+    <div class="rv" style="--d:.2s;border-top:3px solid var(--color-primary);padding-top:24px">
+      <div class="mono" style="font-size:16px;letter-spacing:.2em;color:var(--color-primary)">NOW · THE JAM</div>
+      <p style="margin-top:14px;font-size:20.5px;line-height:1.55;color:var(--color-dim)">One flow, devastatingly deep: interview → memory → semantic match → autonomous win-back. Reproducible offline; live with one env var.</p>
+    </div>
+    <div class="rv" style="--d:.32s;border-top:3px solid var(--color-line);padding-top:24px">
+      <div class="mono" style="font-size:16px;letter-spacing:.2em;color:var(--color-dim)">NEXT · REAL CHANNELS</div>
+      <p style="margin-top:14px;font-size:20.5px;line-height:1.55;color:var(--color-dim)">Patreon / YouTube / Discord cancellation webhooks in; re-subscribe webhooks close the recovered-MRR loop for real. Compound reasons, partial resolutions.</p>
+    </div>
+    <div class="rv" style="--d:.44s;border-top:3px solid var(--color-line);padding-top:24px">
+      <div class="mono" style="font-size:16px;letter-spacing:.2em;color:var(--color-dim)">THEN · CHURN INTELLIGENCE</div>
+      <p style="margin-top:14px;font-size:20.5px;line-height:1.55;color:var(--color-dim)">Reason-trend alerts <em>before</em> churn spikes; pilot creators instrumented; every win-back audited against the baseline.</p>
+    </div>
+  </div>
+  <div class="card rv" style="--d:.56s;margin-top:auto;margin-bottom:26px;padding:32px 40px;display:flex;align-items:center;gap:36px;border-color:rgba(105,211,138,.35)">
+    <div class="mono green" style="font-size:17px;letter-spacing:.2em;white-space:nowrap">THE BUSINESS</div>
+    <p style="font-size:22px;line-height:1.55;color:var(--color-ink)">Recovered MRR per creator is <strong>directly monetizable</strong> — Porchlight earns a % of revenue it verifiably brings home. That instrumented, per-win number is our case for the <strong class="amber">Minds Investment Programme ($250k)</strong>.</p>
+  </div>
+  <aside class="speaker-notes">The metric we already put on screen — recovered MRR — is also the business model: take a percentage of revenue Porchlight verifiably recovers. Nothing to invent for the Investment Programme pitch; just instrument the same number across pilot creators.</aside>
+</section>
+
+<!-- ════════ SLIDE 11 · CLOSE / THE ASK ════════ -->
+<section class="slide" data-title="Leave the light on" data-desc="The ask + live Mind CTA">
+  <div id="lantern-glow" style="right:auto;left:50%;top:-220px;transform:translateX(-50%)"></div>
+  <div style="margin:auto;text-align:center;max-width:1360px;width:100%">
+    <h1 class="rv" style="font-size:118px;line-height:1.06">Leave the<br><span class="amber" style="text-shadow:var(--glow)">porch light</span> on.</h1>
+    <p class="lede rv" style="--d:.15s;margin:38px auto 0;font-size:28px;max-width:1150px">
+      <strong>$105.00/mo</strong> recovered across 6 members — <strong class="amber">$70.00/mo of it only a Mind could find.</strong></p>
+    <div class="rv" style="--d:.3s;margin-top:56px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap">
+      <span class="badge" style="font-size:19px;padding:14px 26px;border-color:rgba(255,207,107,.5);color:var(--color-ink)">
+        <span class="dot"></span>The ask: email the live Mind — <b class="amber" style="margin-left:6px">porchlight@hellominds.ai</b></span>
+    </div>
+    <div class="rv" style="--d:.42s;margin-top:22px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+      <!-- TBD: swap in real URLs at submit -->
+      <span class="badge">repo: [ TBD — public at submit ]</span>
+      <span class="badge">video: [ TBD-YOUTUBE-URL ]</span>
+      <span class="badge">Edy · solo build · edy.cu@live.com</span>
+    </div>
+    <div class="rv" style="--d:.54s;margin:44px auto 0;width:150px;height:150px;border:2px dashed var(--color-line);border-radius:14px;display:flex;align-items:center;justify-content:center">
+      <span class="mono" style="font-size:13px;color:var(--color-whisper);line-height:1.5">QR →<br>BUIDL page<br>(add at submit)</span>
+    </div>
+  </div>
+  <div class="footer-tag" style="left:50%;transform:translateX(-50%);text-align:center">Porchlight · Creative Minds Jam #1 · powered by Minds by Animoca Brands</div>
+  <aside class="speaker-notes">Close warm and concrete. The ask is one action: email the Mind — it's live, it remembers, it will answer. Restate the two numbers that matter: 0.93 on a zero-keyword match, and $70 a month of recovered revenue that only a Mind could find. Porchlight: churn becomes a pipeline.</aside>
+</section>
+
+</div></div>
+
+<!-- chrome -->
+<div id="progress"></div>
+<div id="counter"><b>01</b> / 11</div>
+<div id="hint">←→ slides · ESC grid · P notes · C contrast</div>
+<div id="overview"><div class="esc">Overview — click a slide · ESC to close</div><div class="grid"></div></div>
+<div id="notesPanel"><div class="lbl">Speaker notes</div><div class="txt"></div></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),
+      slides=[].slice.call(document.querySelectorAll('.slide')),
+      counter=document.getElementById('counter'),
+      progress=document.getElementById('progress'),
+      notesTxt=document.querySelector('#notesPanel .txt'),
+      ovGrid=document.querySelector('#overview .grid'),
+      cur=0, N=slides.length;
+
+  /* ── scale 1920×1080 stage to viewport (letterbox browser, never slide) ── */
+  function fit(){
+    var s=Math.min(window.innerWidth/1920, window.innerHeight/1080);
+    if(document.body.classList.contains('presenter'))
+      s=Math.min(window.innerWidth/1920, (window.innerHeight*0.8)/1080);
+    stage.style.transform='translate(-50%,-50%) scale('+s+')';
+    if(document.body.classList.contains('presenter'))
+      stage.style.top=(window.innerHeight*0.4)+'px';
+    else stage.style.top='50%';
+  }
+  window.addEventListener('resize',fit);
+
+  /* ── number count-ups (run once per element) ── */
+  function countUp(scope){
+    [].forEach.call(scope.querySelectorAll('[data-count]'),function(el){
+      if(el.dataset.done)return; el.dataset.done='1';
+      var target=parseFloat(el.dataset.count),
+          dec=(el.dataset.count.split('.')[1]||'').length,
+          t0=null, D=1300;
+      function step(t){
+        if(!t0)t0=t;
+        var p=Math.min((t-t0)/D,1), e=1-Math.pow(1-p,3);
+        el.textContent=(target*e).toFixed(dec);
+        if(p<1)requestAnimationFrame(step); else el.textContent=target.toFixed(dec);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* ── navigation ── */
+  function pad(n){return (n<10?'0':'')+n}
+  function go(i){
+    cur=Math.max(0,Math.min(N-1,i));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===cur)});
+    counter.innerHTML='<b>'+pad(cur+1)+'</b> / '+pad(N);
+    progress.style.width=((cur+1)/N*100)+'%';
+    var note=slides[cur].querySelector('.speaker-notes');
+    notesTxt.textContent=note?note.textContent:'';
+    [].forEach.call(ovGrid.children,function(c,k){c.classList.toggle('cur',k===cur)});
+    if(history.replaceState)history.replaceState(null,'','#'+(cur+1));
+    setTimeout(function(){countUp(slides[cur])},450);
+  }
+  function next(){go(cur+1)} function prev(){go(cur-1)}
+
+  /* ── overview grid ── */
+  slides.forEach(function(s,i){
+    var c=document.createElement('div'); c.className='cell';
+    c.innerHTML='<div class="num">'+pad(i+1)+'</div><h4>'+s.dataset.title+'</h4><p>'+s.dataset.desc+'</p>';
+    c.addEventListener('click',function(){document.body.classList.remove('overview');go(i)});
+    ovGrid.appendChild(c);
+  });
+
+  /* ── keys ── */
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    switch(e.key){
+      case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown': e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'Home': go(0); break;
+      case 'End': go(N-1); break;
+      case 'Escape': document.body.classList.toggle('overview'); break;
+      case 'p': case 'P': document.body.classList.toggle('presenter'); fit(); break;
+      case 'c': case 'C': document.body.classList.toggle('debug-contrast'); break;
+      default:
+        if(/^[1-9]$/.test(e.key)) go(parseInt(e.key,10)-1);
+    }
+  });
+  /* click / tap right two-thirds = next, left third = prev (touch friendly) */
+  stage.addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    (e.clientX < window.innerWidth/3) ? prev() : next();
+  });
+  var tx=null;
+  document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(tx===null)return;
+    var dx=e.changedTouches[0].clientX-tx; tx=null;
+    if(Math.abs(dx)>60) dx<0?next():prev();
+  },{passive:true});
+
+  /* ── presenter cursor hide after 2s idle ── */
+  var cursorTimer;
+  document.addEventListener('mousemove',function(){
+    document.body.classList.remove('hide-cursor');
+    clearTimeout(cursorTimer);
+    if(document.body.classList.contains('presenter'))
+      cursorTimer=setTimeout(function(){document.body.classList.add('hide-cursor')},2000);
+  });
+
+  /* ── init (support #n deep links) ── */
+  var h=parseInt((location.hash||'').slice(1),10);
+  fit(); go(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1280 640" width="1280" height="640" role="img"
+     aria-label="Porchlight — a lit porch lantern over the PORCHLIGHT wordmark. A departed member's exit-interview quote is matched by meaning to the creator's fix, a glowing thread links them through the lantern, the member returns, and recovered MRR ticks $95 to $105 per month.">
+<!-- ╔══════════════════════════════════════════════════════════════════════════╗
+     ║ 🏮 PORCHLIGHT — README hero · ANIMATED · 1280×640 · one 6.0s seamless loop ║
+     ╚══════════════════════════════════════════════════════════════════════════╝
+     The SVG twin of readme-hero-animated.gif — same layout, same tokens, same
+     poster frame, ~40× smaller and crisp at any scale. Motion is SMIL only, so it
+     plays inside GitHub <img> embeds (scripts stay inert there; the seek hook at
+     the bottom is only for the deterministic frame-exporter).
+
+     The win-back arc, dramatized (identical beats to the source render(t)):
+       0.15–1.35s  PORCHLIGHT draws on as outline, then the warm fill sweeps across
+       1.75–2.15s  the one-liner rises
+       2.10–3.10s  a departed member's exit quote (Bea) and the creator's fix appear
+       3.05–3.80s  a glowing thread links them THROUGH the lantern · "0 shared keywords"
+       3.85–4.50s  Bea's dot travels the thread home into the light
+       4.45–5.05s  $95 → $105/mo ticks up · won-back 5 → 6 · the stat band completes
+       5.30–5.80s  CLEAN POSTER HOLD (== readme-hero.png)
+       5.80–6.00s  story text dips out, the lantern stays lit, the loop begins again
+
+     Colors use CSS var() with a #hex fallback: rasterized standalone they take the hex; embedded
+     in a page that loads _tokens.css the brand retunes live. Web fonts can't be
+     fetched from inside an <img>-embedded SVG, so type falls back to system-ui when
+     GitHub renders it (the wordmark keeps its shape via letter-spacing + weight).
+     ── Fixed-viewport asset: literal px only. ────────────────────────────────── -->
+<defs>
+  <!-- ── atmosphere ──────────────────────────────────────────────────────── -->
+  <radialGradient id="crownGlow">
+    <stop offset="0%"  stop-color="var(--primary,#ffcf6b)" stop-opacity="0.42"/>
+    <stop offset="45%" stop-color="var(--primary,#ffcf6b)" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="var(--primary,#ffcf6b)" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="centerBloom">
+    <stop offset="0%"  stop-color="var(--primary,#ffcf6b)" stop-opacity="0.16"/>
+    <stop offset="100%" stop-color="var(--primary,#ffcf6b)" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="greenWhisper">
+    <stop offset="0%"  stop-color="var(--accent,#69d38a)" stop-opacity="0.16"/>
+    <stop offset="100%" stop-color="var(--accent,#69d38a)" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="nightVignette" cx="82%" cy="-10%" r="90%">
+    <stop offset="0%"  stop-color="#05060e" stop-opacity="0.55"/>
+    <stop offset="60%" stop-color="#05060e" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M48 0H0V48" fill="none" stroke="#e9ecff" stroke-opacity="0.035" stroke-width="1"/>
+  </pattern>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.04 0"/></filter>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+
+  <!-- ── the returning-member thread (semantic match through the lantern) ──── -->
+  <linearGradient id="threadGrad" gradientUnits="userSpaceOnUse" x1="338" y1="0" x2="942" y2="0">
+    <stop offset="0%"  stop-color="var(--primary,#ffcf6b)" stop-opacity="0.9"/>
+    <stop offset="45%" stop-color="#ffe3a2" stop-opacity="0.95"/>
+    <stop offset="100%" stop-color="var(--accent,#69d38a)" stop-opacity="0.9"/>
+  </linearGradient>
+  <radialGradient id="dotHalo">
+    <stop offset="0%" stop-color="var(--accent,#69d38a)" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="var(--accent,#69d38a)" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<!-- ══ 1 · ATMOSPHERE — persistent; periods divide 6s so the seam stays continuous ══ -->
+<rect width="1280" height="640" fill="var(--bg-base,#0f1220)"/>
+<rect width="1280" height="640" fill="url(#grid)"/>
+<ellipse cx="640" cy="150" rx="360" ry="300" fill="url(#centerBloom)">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="spline"
+    keyTimes="0;0.5;0.758;1" values="0.7;0.85;1;0.7"
+    keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1"/>
+</ellipse>
+<ellipse cx="1120" cy="560" rx="420" ry="360" fill="url(#greenWhisper)">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="spline"
+    keyTimes="0;0.62;0.78;1" values="0.55;0.7;1;0.55"
+    keySplines=".42 0 .58 1;.2 0 .3 1;.42 0 .58 1"/>
+</ellipse>
+<rect width="1280" height="640" fill="url(#nightVignette)"/>
+<!-- the porch-light halo behind the lantern — one slow breath per loop, cresting at the welcome-home flare -->
+<ellipse cx="640" cy="100" rx="310" ry="310" fill="url(#crownGlow)">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="spline"
+    keyTimes="0;0.25;0.758;0.86;1" values="0.78;0.86;1;0.9;0.78"
+    keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1"/>
+</ellipse>
+<!-- drifting ember motes (deterministic sin/cos loops) -->
+<g fill="#ffe3a2">
+  <circle cx="472" cy="96"  r="1.5"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0.10;0.24;0.10" keyTimes="0;0.5;1"/><animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;10 -8;0 0" keyTimes="0;0.5;1" additive="sum"/></circle>
+  <circle cx="806" cy="70"  r="1"  ><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0.12;0.22;0.12" keyTimes="0;0.4;1"/><animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;-9 7;0 0" keyTimes="0;0.5;1" additive="sum"/></circle>
+  <circle cx="565" cy="212" r="2"  ><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0.08;0.20;0.08" keyTimes="0;0.6;1"/><animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;12 6;0 0" keyTimes="0;0.5;1" additive="sum"/></circle>
+  <circle cx="712" cy="170" r="1"  ><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0.10;0.20;0.10" keyTimes="0;0.45;1"/><animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;-8 -6;0 0" keyTimes="0;0.5;1" additive="sum"/></circle>
+  <circle cx="1120" cy="520" r="1.5" fill="#9fe0b5"><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0.10;0.22;0.10" keyTimes="0;0.55;1"/><animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;9 -7;0 0" keyTimes="0;0.5;1" additive="sum"/></circle>
+</g>
+
+<!-- ══ 2 · STORY LAYER — exit quote → semantic thread → win-back (exits before the poster hold) ══ -->
+<!-- the thread + travelling particles + Bea's homecoming dot -->
+<g fill="none">
+  <path id="threadPath" d="M 338 110 C 450 84, 548 90, 640 116 C 726 140, 856 132, 942 102"
+        stroke="url(#threadGrad)" stroke-width="1.8" stroke-linecap="round"
+        stroke-dasharray="720 720" filter="url(#soft)" opacity="0">
+    <animate attributeName="stroke-dashoffset" dur="6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.508;0.633;1" values="720;720;0;0" keySplines=".42 0 .58 1;.25 .1 .25 1;0 0 1 1"/>
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite"
+      keyTimes="0;0.508;0.52;0.742;0.817;1" values="0;0;0.9;0.9;0;0"/>
+  </path>
+  <!-- meaning-particles: amber before the lantern, green after (the match) -->
+  <circle r="3" fill="var(--primary,#ffcf6b)" opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.55;0.6;0.74;0.79;1" values="0;0;0.85;0.85;0;0"/>
+    <animateMotion dur="2s" repeatCount="indefinite" keyPoints="0.04;0.96" keyTimes="0;1" calcMode="linear"><mpath xlink:href="#threadPath"/></animateMotion>
+  </circle>
+  <circle r="2.4" fill="var(--accent,#69d38a)" opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.58;0.63;0.74;0.79;1" values="0;0;0.8;0.8;0;0"/>
+    <animateMotion dur="2s" begin="-0.7s" repeatCount="indefinite" keyPoints="0.04;0.96" keyTimes="0;1" calcMode="linear"><mpath xlink:href="#threadPath"/></animateMotion>
+  </circle>
+  <circle r="2.8" fill="var(--primary,#ffcf6b)" opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.6;0.65;0.74;0.79;1" values="0;0;0.8;0.8;0;0"/>
+    <animateMotion dur="2s" begin="-1.3s" repeatCount="indefinite" keyPoints="0.04;0.96" keyTimes="0;1" calcMode="linear"><mpath xlink:href="#threadPath"/></animateMotion>
+  </circle>
+  <!-- Bea comes home along the thread, settling into the lantern's light -->
+  <g opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.642;0.665;0.73;0.75;1" values="0;0;0.95;0.95;0;0"/>
+    <animateMotion dur="6s" repeatCount="indefinite" calcMode="spline"
+      keyPoints="0;0;0.5;0.5" keyTimes="0;0.642;0.75;1" keySplines=".42 0 .58 1;.16 0 .24 1;0 0 1 1">
+      <mpath xlink:href="#threadPath"/></animateMotion>
+    <circle r="13" fill="url(#dotHalo)"/>
+    <circle r="5.5" fill="var(--accent,#69d38a)"/>
+  </g>
+  <!-- the porch light welcomes her -->
+  <circle cx="640" cy="117" r="16" stroke="var(--accent,#69d38a)" stroke-width="2" opacity="0">
+    <animate attributeName="r" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.747;0.813;1" values="16;16;50;50" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.747;0.78;0.813;1" values="0;0;0.5;0;0"/>
+  </circle>
+</g>
+
+<!-- exit-interview card (left) — border shifts amber→green as her reason is resolved -->
+<g transform="translate(0 16)" opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.35;0.425;0.742;0.817;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" type="translate" additive="sum" dur="6s" repeatCount="indefinite" keyTimes="0;0.35;0.425;1" values="0 16;0 16;0 0;0 0"/>
+  <rect x="48" y="56" width="288" height="94" rx="12" fill="#191d31" fill-opacity="0.9" stroke="var(--border-line,#2a3050)" stroke-width="1"/>
+  <rect x="48" y="56" width="3" height="94" rx="1.5" fill="var(--primary,#ffcf6b)">
+    <animate attributeName="fill" dur="6s" repeatCount="indefinite" keyTimes="0;0.633;0.692;1" values="#ffcf6b;#ffcf6b;#69d38a;#69d38a"/>
+  </rect>
+  <text class="m" x="64" y="80" fill="var(--primary,#ffcf6b)" font-size="10" letter-spacing="1.5">EXIT INTERVIEW · SAVED VERBATIM</text>
+  <text class="u" x="64" y="101" font-size="13.5"><tspan fill="var(--text-hi,#e9ecff)" font-weight="650">Bea</tspan><tspan fill="var(--text-mid,#9aa3c7)" font-weight="400" font-size="12"> · Member · $10/mo · left wk 3</tspan></text>
+  <text class="m" x="64" y="121" fill="var(--text-mid,#9aa3c7)" font-size="12">&#8220;you stopped doing the <tspan fill="var(--primary,#ffcf6b)">long-form</tspan></text>
+  <text class="m" x="64" y="138" fill="var(--text-mid,#9aa3c7)" font-size="12"><tspan fill="var(--primary,#ffcf6b)">lore videos</tspan> i subscribed for&#8221;</text>
+</g>
+
+<!-- creator's fix card (right) -->
+<g transform="translate(0 16)" opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.442;0.517;0.742;0.817;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" type="translate" additive="sum" dur="6s" repeatCount="indefinite" keyTimes="0;0.442;0.517;1" values="0 16;0 16;0 0;0 0"/>
+  <rect x="944" y="56" width="288" height="76" rx="12" fill="#191d31" fill-opacity="0.9" stroke="var(--border-line,#2a3050)" stroke-width="1"/>
+  <rect x="944" y="56" width="3" height="76" rx="1.5" fill="var(--primary,#ffcf6b)">
+    <animate attributeName="fill" dur="6s" repeatCount="indefinite" keyTimes="0;0.633;0.692;1" values="#ffcf6b;#ffcf6b;#69d38a;#69d38a"/>
+  </rect>
+  <text class="m" x="960" y="80" fill="var(--primary,#ffcf6b)" font-size="10" letter-spacing="1.5">CREATOR ANNOUNCES A FIX</text>
+  <text class="u" x="960" y="102" fill="var(--text-hi,#e9ecff)" font-size="14" font-weight="550">&#8220;Deep-dive interviews are back &#8212;</text>
+  <text class="u" x="960" y="120" fill="var(--text-hi,#e9ecff)" font-size="14" font-weight="550">weekly.&#8221;</text>
+</g>
+
+<!-- proof chip -->
+<g opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.608;0.658;0.742;0.817;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" additive="sum" calcMode="spline" keyTimes="0;0.608;0.658;1" values="0 6;0 6;0 0;0 0" keySplines="0 0 1 1;.34 1.56 .64 1;0 0 1 1"/>
+  <rect x="672" y="122" width="244" height="24" rx="12" fill="var(--primary,#ffcf6b)" fill-opacity="0.08" stroke="var(--primary,#ffcf6b)" stroke-opacity="0.5" stroke-width="1"/>
+  <text class="m" x="794" y="138" text-anchor="middle" font-size="10.5" fill="var(--primary,#ffcf6b)" letter-spacing="0.5"><tspan font-weight="700">matched by meaning</tspan> · 0 shared keywords</text>
+</g>
+
+<!-- ══ 3 · POSTER STACK (== readme-hero.png) ══ -->
+<!-- the lantern, lit — never turns off, even across the loop seam -->
+<svg x="603" y="44" width="74" height="115" viewBox="150 34 212 330" overflow="visible">
+  <defs>
+    <radialGradient id="rhGlow"><stop offset="0%" stop-color="var(--primary,#ffcf6b)" stop-opacity="0.55"/><stop offset="100%" stop-color="var(--primary,#ffcf6b)" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rhGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff3d2"/><stop offset="45%" stop-color="var(--primary,#ffcf6b)"/><stop offset="100%" stop-color="#e89f45"/></linearGradient>
+    <radialGradient id="rhCore"><stop offset="0%" stop-color="#fffdf4"/><stop offset="55%" stop-color="#fff3d2" stop-opacity="0.9"/><stop offset="100%" stop-color="#fff3d2" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="256" cy="240" r="104" fill="url(#rhGlow)">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="spline"
+      keyTimes="0;0.25;0.758;0.86;1" values="0.82;0.9;1;0.94;0.82" keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1"/>
+  </circle>
+  <rect x="232" y="46" width="48" height="12" rx="6" fill="#3a4166"/>
+  <rect x="251" y="54" width="10" height="52" rx="5" fill="#3a4166"/>
+  <path d="M 256 96 C 234 102 196 136 189 160 L 323 160 C 316 136 278 102 256 96 Z" fill="#3a4166"/>
+  <rect x="178" y="156" width="156" height="17" rx="8.5" fill="#3a4166"/>
+  <path d="M 201 173 L 311 173 C 317.6 173 322.7 178.8 321.9 185.3 L 306.9 307.3 C 306.2 313.4 301.1 318 295 318 L 217 318 C 210.9 318 205.8 313.4 205.1 307.3 L 190.1 185.3 C 189.3 178.8 194.4 173 201 173 Z" fill="url(#rhGlass)"/>
+  <ellipse cx="256" cy="243" rx="46" ry="56" fill="url(#rhCore)"/>
+  <g stroke="#3a4166" stroke-width="8" stroke-linecap="round" opacity="0.85">
+    <line x1="238" y1="177" x2="243" y2="314"/><line x1="274" y1="177" x2="269" y2="314"/>
+  </g>
+  <rect x="194" y="318" width="124" height="23" rx="11.5" fill="#3a4166"/>
+  <circle cx="256" cy="352" r="9" fill="#3a4166"/>
+</svg>
+
+<!-- PORCHLIGHT — outline draws on, then the warm fill sweeps left→right -->
+<svg x="260" y="163" width="760" height="92" viewBox="0 0 760 92" overflow="visible">
+  <defs>
+    <linearGradient id="litGrad" gradientUnits="userSpaceOnUse" x1="403" y1="0" x2="785" y2="34">
+      <stop offset="0%" stop-color="#fff3d2"/><stop offset="41%" stop-color="var(--primary,#ffcf6b)"/><stop offset="100%" stop-color="var(--accent,#69d38a)"/>
+    </linearGradient>
+    <linearGradient id="strokeGrad" gradientUnits="userSpaceOnUse" x1="74" y1="0" x2="692" y2="0">
+      <stop offset="0%" stop-color="#fff3d2"/><stop offset="55%" stop-color="var(--primary,#ffcf6b)"/><stop offset="100%" stop-color="#8fd9a5"/>
+    </linearGradient>
+    <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff3d2" stop-opacity="0"/><stop offset="50%" stop-color="#fff3d2" stop-opacity="0.9"/><stop offset="100%" stop-color="#fff3d2" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="wmClip"><rect x="-20" y="-30" width="0" height="152">
+      <animate attributeName="width" dur="6s" repeatCount="indefinite" calcMode="spline"
+        keyTimes="0;0.208;0.342;1" values="0;0;830;830" keySplines="0 0 1 1;.42 0 .58 1;0 0 1 1"/>
+    </rect></clipPath>
+    <filter id="sweepBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <g opacity="1">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.967;1" values="1;1;0"/>
+    <!-- 1 · outline -->
+    <text x="380" y="83" text-anchor="middle" class="d" font-size="92" font-weight="700" letter-spacing="4.6"
+          fill="none" stroke="url(#strokeGrad)" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="900 900">
+      <animate attributeName="stroke-dashoffset" dur="6s" repeatCount="indefinite" calcMode="spline"
+        keyTimes="0;0.025;0.225;1" values="900;900;0;0" keySplines="0 0 1 1;.33 0 .1 1;0 0 1 1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.025;0.117;0.325;0.392;1" values="0;0;0.92;0.92;0;0"/>PORCHLIGHT</text>
+    <!-- 2 · warm fill, revealed under the sweeping clip -->
+    <g clip-path="url(#wmClip)">
+      <text x="380" y="83" text-anchor="middle" class="d" font-size="92" font-weight="700" letter-spacing="4.6"><tspan fill="var(--text-hi,#e9ecff)">PORCH</tspan><tspan fill="url(#litGrad)">LIGHT</tspan></text>
+    </g>
+    <!-- 3 · the light sweeping across the letters -->
+    <rect x="-120" y="-24" width="84" height="140" fill="url(#sweepGrad)" filter="url(#sweepBlur)" transform="skewX(-14)" opacity="0">
+      <animate attributeName="x" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.208;0.342;1" values="-120;-120;780;780" keySplines="0 0 1 1;.42 0 .58 1;0 0 1 1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.208;0.275;0.342;1" values="0;0;0.85;0;0"/>
+    </rect>
+  </g>
+</svg>
+
+<!-- one-liner -->
+<g opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.292;0.358;0.967;1" values="0;0;1;1;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.292;0.358;1" values="0 14;0 14;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+  <text x="640" y="300" text-anchor="middle" class="u" font-size="26" font-weight="500" fill="var(--text-mid,#9aa3c7)">Remembers <tspan fill="var(--primary,#ffcf6b)" font-weight="600">why</tspan> members leave &#8212; <tspan fill="var(--accent,#69d38a)" font-weight="600">wins them back</tspan> when it&#8217;s fixed.</text>
+</g>
+
+<!-- stat band -->
+<g opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.6;0.663;0.967;1" values="0;0;1;1;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.6;0.663;1" values="0 14;0 14;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+  <rect x="172" y="344" width="936" height="114" rx="20" fill="#191d31" fill-opacity="0.55" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08" stroke-width="1"/>
+  <!-- recovered MRR — ticks $95 → $105 -->
+  <g>
+    <text x="218" y="414" class="d" font-size="58" font-weight="700" fill="var(--accent,#69d38a)"><tspan>$95</tspan><tspan class="d" font-size="27" fill="var(--text-mid,#9aa3c7)">/mo</tspan>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.758;0.792;1" values="1;1;0;0"/></text>
+    <text x="218" y="414" class="d" font-size="58" font-weight="700" fill="var(--accent,#69d38a)" opacity="0"><tspan>$105</tspan><tspan class="d" font-size="27" fill="var(--text-mid,#9aa3c7)">/mo</tspan>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.758;0.792;1" values="0;0;1;1"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.77;0.8;0.83;1" values="1;1;1.06;1;1" keySplines="0 0 1 1;.34 1.56 .64 1;.42 0 .58 1;0 0 1 1"/></text>
+  </g>
+  <text x="218" y="436" class="m" font-size="10.5" letter-spacing="0.6" fill="var(--text-mid,#9aa3c7)">RECOVERED MRR</text>
+
+  <line x1="468" y1="378" x2="468" y2="430" stroke="var(--border-default,#ffffff)" stroke-opacity="0.15"/>
+  <text x="510" y="404" class="d" font-size="30" font-weight="700" fill="var(--accent,#69d38a)">+75%</text>
+  <text x="510" y="424" class="m" font-size="10.5" letter-spacing="0.6" fill="var(--text-mid,#9aa3c7)">VS KEYWORD BASELINE</text>
+
+  <line x1="688" y1="378" x2="688" y2="430" stroke="var(--border-default,#ffffff)" stroke-opacity="0.15"/>
+  <!-- won back — ticks 5 → 6 -->
+  <text x="728" y="404" class="d" font-size="30" font-weight="700" fill="var(--text-hi,#e9ecff)">5<animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.796;0.802;1" values="1;1;0;0"/></text>
+  <text x="728" y="404" class="d" font-size="30" font-weight="700" fill="var(--text-hi,#e9ecff)" opacity="0">6<animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.796;0.802;1" values="0;0;1;1"/></text>
+  <text x="728" y="424" class="m" font-size="10.5" letter-spacing="0.6" fill="var(--text-mid,#9aa3c7)">WON BACK, BY NAME</text>
+
+  <line x1="908" y1="378" x2="908" y2="430" stroke="var(--border-default,#ffffff)" stroke-opacity="0.15"/>
+  <text x="930" y="404" class="d" font-size="30" font-weight="700" fill="var(--primary,#ffcf6b)">+$45/mo</text>
+  <text x="930" y="424" class="m" font-size="10.5" letter-spacing="0.6" fill="var(--text-mid,#9aa3c7)">KEYWORDS MISS</text>
+</g>
+
+<!-- feature pills (staggered) -->
+<g class="m" font-size="13.5" fill="var(--text-hi,#e9ecff)">
+  <g opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.783;0.843;0.967;1" values="0;0;1;1;0"/>
+    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.783;0.843;1" values="0 12;0 12;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+    <rect x="108" y="490" width="320" height="43" rx="21.5" fill="#ffffff" fill-opacity="0.035" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/>
+    <circle cx="130" cy="511.5" r="4" fill="var(--primary,#ffcf6b)"/>
+    <text x="146" y="516">exit-interview memory <tspan fill="var(--text-mid,#9aa3c7)">· verbatim</tspan></text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.803;0.863;0.967;1" values="0;0;1;1;0"/>
+    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.803;0.863;1" values="0 12;0 12;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+    <rect x="438" y="490" width="386" height="43" rx="21.5" fill="#ffffff" fill-opacity="0.035" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/>
+    <circle cx="460" cy="511.5" r="4" fill="var(--accent,#69d38a)"/>
+    <text x="476" y="516">semantic win-back <tspan fill="var(--text-mid,#9aa3c7)">· zero shared keywords</tspan></text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.823;0.883;0.967;1" values="0;0;1;1;0"/>
+    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.823;0.883;1" values="0 12;0 12;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+    <rect x="836" y="490" width="336" height="43" rx="21.5" fill="#ffffff" fill-opacity="0.035" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/>
+    <circle cx="858" cy="511.5" r="4" fill="var(--color-info,#84a9ff)"/>
+    <text x="874" y="516">autonomous <tspan fill="var(--text-mid,#9aa3c7)">· honors do-not-contact</tspan></text>
+  </g>
+</g>
+
+<!-- footer -->
+<g opacity="0">
+  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" keyTimes="0;0.825;0.883;0.967;1" values="0;0;1;1;0"/>
+  <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.825;0.883;1" values="0 10;0 10;0 0;0 0" keySplines="0 0 1 1;.16 0 .3 1;0 0 1 1"/>
+  <g class="m" font-size="12" fill="var(--text-mid,#9aa3c7)">
+    <rect x="255" y="591" width="90"  height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/><text x="300" y="606" text-anchor="middle">Minds SDK</text>
+    <rect x="353" y="591" width="98"  height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/><text x="402" y="606" text-anchor="middle">TypeScript</text>
+    <rect x="459" y="591" width="74"  height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/><text x="496" y="606" text-anchor="middle">Express</text>
+    <rect x="541" y="591" width="50"  height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/><text x="566" y="606" text-anchor="middle">zod</text>
+    <rect x="599" y="591" width="92"  height="22" rx="11" fill="#ffffff" fill-opacity="0.04" stroke="var(--border-subtle,#ffffff)" stroke-opacity="0.08"/><text x="645" y="606" text-anchor="middle">Playwright</text>
+  </g>
+  <text x="712" y="606" class="m" font-size="12" fill="var(--text-low,#5c6690)">·</text>
+  <text x="732" y="606" class="m" font-size="12" letter-spacing="1" fill="var(--text-low,#5c6690)">MIT · BUILT FOR CREATIVE MINDS JAM</text>
+</g>
+
+<rect width="1280" height="640" filter="url(#grain)" opacity="0.5" pointer-events="none"/>
+
+<style>
+  .d { font-family: 'Space Grotesk','Inter',system-ui,sans-serif; }
+  .u { font-family: 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; }
+  .m { font-family: 'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace; }
+  @media (prefers-reduced-motion: reduce) { animate, animateTransform, animateMotion { display: none; } }
+</style>
+
+<!-- Deterministic seek hook for the frame exporter (inert inside <img>; SMIL plays on its own).
+     __DUR_MS = 6000 · __POSTER_MS = 5500 · suggested capture: 150 frames @ 25 fps. -->
+<script><![CDATA[
+  (function () {
+    try {
+      if (typeof window === "undefined" || typeof document === "undefined") return;
+      var svg = document.querySelector("svg") || document.documentElement;
+      if (!svg || typeof svg.setCurrentTime !== "function") return;
+      var DUR = 6000;
+      window.__DUR_MS = DUR;
+      window.__POSTER_MS = 5500;
+      window.__ready = (document.fonts && document.fonts.ready) || Promise.resolve(true);
+      window.__seek = function (ms) { var t = ((ms % DUR) + DUR) % DUR; svg.pauseAnimations(); svg.setCurrentTime(t / 1000); return t; };
+      window.__play = function () { svg.unpauseAnimations(); };
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) window.__seek(window.__POSTER_MS);
+    } catch (e) {}
+  })();
+]]></script>
+</svg>
