@@ -75,10 +75,46 @@ With no API key, Porchlight runs in **MOCK mode** so the whole flow is demoable 
 4. `export MINDS_BUILDER_API_KEY=…` (optionally `MIND_ID=…`), then `npm run spike`.
 
 ## 🏗️ Architecture
-```
-mock storefront ── cancel ──▶ exitInterview ──▶ Mind: interview → return-condition ──▶ board (memory)
-creator: "what changed" ──▶ triggerEngine ──▶ Mind: does this resolve reason? (semantic)
-                                          └─▶ Mind: draft win-back quoting their words ──▶ recovered MRR
+```mermaid
+flowchart TD
+    subgraph client["🖥️ Browser — our own UI"]
+        SF["Mock membership storefront<br/>(cancel / rejoin)"]
+        DASH["Dashboard<br/>churn board · recovered-MRR · audit trail"]
+    end
+
+    subgraph backend["⚙️ Porchlight backend — Node/TS · Express"]
+        SRV["server.ts<br/>REST + SSE · serves /public"]
+        subgraph engine["engine/"]
+            EI["exitInterview.ts<br/>drives Mind chat, parses condition"]
+            CM["conditionMatcher.ts<br/>semantic: does change resolve reason?"]
+            TE["triggerEngine.ts<br/>match open conditions → win back resolved"]
+        end
+        MW["minds.ts<br/>client-lib wrapper (+ MOCK mode)"]
+        DB[("db.ts — SQLite<br/>members · departures{condition, quote, do_not_contact}<br/>events · winbacks")]
+    end
+
+    subgraph minds["🧠 Minds platform · @animocabrands/minds-client-lib"]
+        MIND["Pre-configured Mind<br/>long-term memory · semantic reasoning · Skill"]
+        CH["Native channel<br/>Telegram / email"]
+    end
+
+    SF -- "cancel event" --> SRV
+    SRV --> EI
+    EI -- "ensureConversation · sendMessage · waitForReply" --> MW
+    MW <--> MIND
+    MIND <--> CH
+    EI -- "structured return-condition + verbatim quote" --> DB
+
+    SRV -- "creator posts 'what changed'" --> TE
+    TE --> CM
+    CM -- "semantic judgment" --> MW
+    TE -- "resolved & not do-not-contact" --> MW
+    MW -- "win-back quoting member's own words" --> MIND
+    TE -- "recovered MRR" --> DB
+
+    DB --> SRV
+    MW -- "getHistory audit · subscribeEvents SSE" --> SRV
+    SRV --> DASH
 ```
 - `src/minds.ts` — the Minds integration (LIVE client-lib + MOCK brain).
 - `src/engine/` — exit interview, condition matcher, trigger engine.
