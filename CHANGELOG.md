@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/edycutjong/porchlight/compare/v1.4.2...v1.5.0) (2026-08-02)
+
+
+### Features
+
+* **pitch-deck:** make both slide-11 emails mailto: links ([5da0370](https://github.com/edycutjong/porchlight/commit/5da0370cba8cd534ac29faf1bfa29a84239288de))
+
 ## [1.4.2](https://github.com/edycutjong/porchlight/compare/v1.4.1...v1.4.2) (2026-08-02)
 
 
