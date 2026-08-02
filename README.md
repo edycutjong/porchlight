@@ -9,6 +9,7 @@
   <br/>
 
   [![Live site](https://img.shields.io/badge/Live_site-porchlight.edycu.dev-69D38A?style=for-the-badge&labelColor=0F1220&logo=github&logoColor=white)](https://porchlight.edycu.dev)
+  [![Demo video](https://img.shields.io/badge/▶_Demo-Watch_2_min-FF0000?style=for-the-badge&labelColor=0F1220&logo=youtube&logoColor=white)](https://youtu.be/1J-86tHxsYM)
   [![Pitch Deck](https://img.shields.io/badge/Pitch_Deck-View-ffcf6b?style=for-the-badge&labelColor=0F1220)](https://porchlight.edycu.dev/pitch-deck/)
   [![Powered by Minds by Animoca Brands](https://img.shields.io/badge/Powered_by-Minds_by_Animoca_Brands-ff9f1c?style=for-the-badge&labelColor=0F1220)](https://hellominds.ai)
   [![Creative Minds Jam](https://img.shields.io/badge/Creative_Minds_Jam-%231-6C5CE7?style=for-the-badge&labelColor=0F1220)](https://dorahacks.io/hackathon/creativeminds)
