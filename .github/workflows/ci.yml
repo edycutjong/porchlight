@@ -141,19 +141,5 @@ jobs:
           echo "  ✅ Stage 5 — Performance (Lighthouse CI, advisory)"
           echo "  ✅ Stage 6 — Deploy Gate"
 
-  # ── STAGE 7: Release (release-please, main only) ──────────
-  # Conventional Commits → SemVer, CHANGELOG, tag, and GitHub Release, driven by a
-  # pure GitHub Action (no npm dependencies — keeps `npm audit` clean).
-  release:
-    name: "Stage 7 · Release"
-    needs: [deploy-gate]
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: write      # create tags, commits, and GitHub Releases
-      pull-requests: write # open/maintain the release PR
-    steps:
-      - name: Release Please
-        uses: googleapis/release-please-action@v5
-        with:
-          release-type: node
+  # Releases are handled by the dedicated semantic-release workflow (release.yml),
+  # which owns SemVer, CHANGELOG, tags, and GitHub Releases on push to main.
