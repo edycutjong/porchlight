@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/edycutjong/porchlight/compare/v1.3.1...v1.4.0) (2026-08-02)
+
+
+### Features
+
+* **site:** real demo thumbnail with play overlay in the #demo player (was empty) ([be16cb8](https://github.com/edycutjong/porchlight/commit/be16cb81b8019f3aa5d774215fecf62183faff60)), closes [#demo](https://github.com/edycutjong/porchlight/issues/demo)
+
 ## [1.3.1](https://github.com/edycutjong/porchlight/compare/v1.3.0...v1.3.1) (2026-08-02)
 
 
