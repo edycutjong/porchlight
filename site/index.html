@@ -566,7 +566,7 @@ footer{background:#0a0d18;border-top:1px solid var(--line-soft);padding:52px 0 4
       <h1 class="hero-title reveal in d1">Every member who leaves<br>deserves a <span class="lit">porch light</span><br>left on.</h1>
       <p class="hero-sub reveal in d2">Porchlight is an <strong>exit-interview Mind</strong> that remembers <strong>why</strong> each member left — and autonomously wins them back the moment their stated reason is <strong>actually fixed</strong>. Quoting their own words. Honoring do-not-contact.</p>
       <div class="cta-row reveal in d3">
-        <a class="btn btn-primary" href="#demo">
+        <a class="btn btn-primary" href="https://youtu.be/1J-86tHxsYM" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="currentColor"/></svg>
           Watch the 90-second demo
         </a>
@@ -845,8 +845,7 @@ rationale   = <span class="str">"The member left because long sit-down conversat
       <p class="section-lede">Maya cancels → the Mind remembers why → the creator brings the format back → the Mind quotes her own words back to her, and the recovered-MRR counter ticks to $105.00.</p>
     </div>
     <div class="player reveal d1">
-      <!-- Demo lives on YouTube — the mp4 is intentionally NOT shipped in this repo.
-           At submit, replace this placeholder link with the YouTube embed/URL. -->
+      <!-- Demo on YouTube — the mp4 is intentionally NOT shipped in this repo. -->
       <a href="https://youtu.be/1J-86tHxsYM" target="_blank" rel="noopener" aria-label="Watch the Porchlight demo on YouTube"
          style="display:flex;align-items:center;justify-content:center;gap:14px;aspect-ratio:16/9;width:100%;border-radius:16px;background:linear-gradient(135deg,#1a1f38,#0f1220);border:1px solid rgba(255,207,107,.28);color:#ffcf6b;text-decoration:none;font-weight:600;font-size:18px">
         <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:#ffcf6b;color:#0f1220;font-size:22px">&#9654;</span>
@@ -943,7 +942,9 @@ rationale   = <span class="str">"The member left because long sit-down conversat
     </div>
     <div class="foot-bottom">
       <span>© 2026 Porchlight · Powered by <a href="https://www.hellominds.ai" target="_blank" rel="noopener" style="color:var(--primary,#ffcf6b)">Minds by Animoca Brands</a> · Creative Minds Jam #1 · Audience Growth &amp; Community Engagement</span>
-      <span>the porch light stays on 🏮 · <a href="https://github.com/edycutjong/porchlight/releases" target="_blank" rel="noopener" style="color:var(--whisper);font-variant-numeric:tabular-nums">v1.1.0</a></span>
+      <span>the porch light stays on 🏮 · <a id="lp-ver" href="https://github.com/edycutjong/porchlight/releases" target="_blank" rel="noopener" style="color:var(--whisper);font-variant-numeric:tabular-nums">v1.2.3</a></span>
+      <script>/* keep the version label synced with the latest GitHub release (best-effort, offline-safe) */
+      fetch('https://api.github.com/repos/edycutjong/porchlight/releases/latest').then(function(r){return r.ok?r.json():null}).then(function(d){if(d&&d.tag_name){var e=document.getElementById('lp-ver');if(e)e.textContent=d.tag_name;}}).catch(function(){});</script>
     </div>
   </div>
 </footer>
