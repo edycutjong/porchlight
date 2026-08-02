@@ -165,4 +165,4 @@ Commit conventionally and the version takes care of itself.
 [MIT](LICENSE) © 2026 Edy Cu
 
 ## 🙏 Acknowledgments
-Built for the **Creative Minds Jam** (Minds by Animoca Brands). Thank you to the Minds team for the `@animocabrands/minds-client-lib` builder surface.
+Built for the **Creative Minds Jam** ([Minds by Animoca Brands](https://hellominds.ai)). Thank you to the Minds team for the `@animocabrands/minds-client-lib` builder surface.
