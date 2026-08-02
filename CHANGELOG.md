@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/edycutjong/porchlight/compare/v1.7.0...v1.7.1) (2026-08-02)
+
+
+### Bug Fixes
+
+* **pitch-deck:** use relative path + local copy for Minds logo so it renders everywhere ([84057aa](https://github.com/edycutjong/porchlight/commit/84057aa61ae39d56c0d507ac37a8929cb489dc20))
+
 # [1.7.0](https://github.com/edycutjong/porchlight/compare/v1.6.0...v1.7.0) (2026-08-02)
 
 
