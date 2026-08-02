@@ -17,7 +17,7 @@
     "test": "tsx --test src/*.test.ts",
     "test:coverage": "tsx --test --experimental-test-coverage src/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "audit": "npm audit --audit-level=high",
+    "audit": "npm audit --audit-level=high --omit=dev",
     "ci": "npm run audit && npm run typecheck && npm run test",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
@@ -31,8 +31,11 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.2",
+    "semantic-release": "^25.0.8",
     "tsx": "^4.19.0",
     "typescript": "^7.0.2"
   }

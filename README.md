@@ -28,6 +28,7 @@
   ![License](https://img.shields.io/badge/license-MIT-2ea44f?style=flat)
   [![CI/CD Pipeline](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml)
   [![CodeQL](https://github.com/edycutjong/porchlight/actions/workflows/codeql.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/codeql.yml)
+  [![Release](https://img.shields.io/github/v/release/edycutjong/porchlight?sort=semver)](https://github.com/edycutjong/porchlight/releases)
 
 </div>
 
