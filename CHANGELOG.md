@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/edycutjong/porchlight/compare/v1.2.0...v1.2.1) (2026-08-02)
+
+
+### Performance Improvements
+
+* **site:** fix a11y contrast + heading order, trim meta, shrink og-image ([7ca7b9d](https://github.com/edycutjong/porchlight/commit/7ca7b9d2807f8a6ed654627c6bd27b151a298042))
+
 # [1.2.0](https://github.com/edycutjong/porchlight/compare/v1.1.2...v1.2.0) (2026-08-02)
 
 
