@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Porchlight — the win-back Mind that remembers why they left</title>
-<meta name="description" content="An exit-interview Mind that remembers WHY each member left and autonomously wins them back the moment their stated reason is actually fixed — quoting their own words, honoring do-not-contact. Powered by Minds by Animoca Brands.">
+<meta name="description" content="Porchlight is an exit-interview Mind that remembers why each member left — and autonomously wins them back the moment their reason is actually fixed.">
 <meta property="og:title" content="Porchlight — leave the porch light on">
-<meta property="og:description" content="An exit-interview Mind that remembers why each member left — and wins them back the moment their reason is actually fixed. $105/mo recovered vs a $35/mo keyword baseline.">
+<meta property="og:description" content="An exit-interview Mind that remembers why each member left — and wins them back the moment their reason is fixed.">
 <meta name="theme-color" content="#0f1220">
 <!-- ▼ SOCIAL METADATA — before sharing, replace the base URL below (porchlight.edycu.dev)
      with your deployed GitHub Pages base. OG/Twitter scrapers require ABSOLUTE image URLs. og.png ships beside this file. -->
@@ -47,7 +47,7 @@
   --line-soft:rgba(233,236,255,.09);
   --ink:#e9ecff;
   --dim:#a7b0d2;
-  --whisper:#6b76a3;
+  --whisper:#7d87b5;
   --amber:#ffcf6b;
   --amber-deep:#e89f45;
   --amber-ink:#20160a;
@@ -503,7 +503,7 @@ footer{background:#0a0d18;border-top:1px solid var(--line-soft);padding:52px 0 4
 .foot .fbrand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
 .foot .fbrand svg{width:24px;height:24px}
 .foot-cols{display:flex;gap:clamp(28px,6vw,80px);flex-wrap:wrap}
-.foot-cols h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--whisper);margin-bottom:12px;font-weight:500}
+.foot-cols .foot-h{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--whisper);margin-bottom:12px;font-weight:500}
 .foot-cols ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:.88rem}
 .foot-cols a{color:var(--dim)}
 .foot-cols a:hover{color:var(--amber)}
@@ -917,7 +917,7 @@ rationale   = <span class="str">"The member left because long sit-down conversat
       </div>
       <div class="foot-cols">
         <div>
-          <h4>Project</h4>
+          <p class="foot-h">Project</p>
           <ul>
             <li><a href="https://github.com/edycutjong/porchlight" target="_blank" rel="noopener">GitHub repository</a></li>
             <li><a href="https://youtu.be/1J-86tHxsYM" target="_blank" rel="noopener">Demo video</a></li>
@@ -925,14 +925,14 @@ rationale   = <span class="str">"The member left because long sit-down conversat
           </ul>
         </div>
         <div>
-          <h4>Built on</h4>
+          <p class="foot-h">Built on</p>
           <ul>
             <li><a href="https://www.hellominds.ai" target="_blank" rel="noopener">Minds by Animoca Brands</a></li>
             <li><a href="https://dorahacks.io/hackathon/creativeminds" target="_blank" rel="noopener">Creative Minds Jam #1</a></li>
           </ul>
         </div>
         <div>
-          <h4>The Mind</h4>
+          <p class="foot-h">The Mind</p>
           <ul>
             <li><a href="mailto:porchlight@hellominds.ai">porchlight@hellominds.ai</a></li>
             <li><span style="color:var(--whisper)">model: minimax/minimax-m3</span></li>
