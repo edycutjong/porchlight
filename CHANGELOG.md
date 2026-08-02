@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/edycutjong/porchlight/compare/v1.2.2...v1.2.3) (2026-08-02)
+
+
+### Bug Fixes
+
+* **pitch-deck:** drop opacity on keyboard hint to clear WCAG AA contrast ([a47e606](https://github.com/edycutjong/porchlight/commit/a47e60661b481fa7e1e0fb99291cece7558cfccc))
+
 ## [1.2.2](https://github.com/edycutjong/porchlight/compare/v1.2.1...v1.2.2) (2026-08-02)
 
 
