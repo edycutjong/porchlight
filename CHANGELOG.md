@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/edycutjong/porchlight/compare/v1.4.1...v1.4.2) (2026-08-02)
+
+
+### Bug Fixes
+
+* **pitch-deck:** stop slide-3 timeline line overshooting the 'Come home' dot ([a0091f0](https://github.com/edycutjong/porchlight/commit/a0091f0417eab571853b72152ae8ab7901e5b106))
+
 ## [1.4.1](https://github.com/edycutjong/porchlight/compare/v1.4.0...v1.4.1) (2026-08-02)
 
 
