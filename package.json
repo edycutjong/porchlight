@@ -1,6 +1,6 @@
 {
   "name": "porchlight",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "An exit-interview Mind that remembers why each member left and autonomously wins them back when their reason is actually fixed.",

@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/edycutjong/porchlight/compare/v1.1.2...v1.2.0) (2026-08-02)
+
+
+### Features
+
+* **site:** wire in the YouTube demo link across site, pitch deck, and README ([309739d](https://github.com/edycutjong/porchlight/commit/309739de6adda52c2e262faeaf9ced541360ee2b))
+
 ## [1.1.2](https://github.com/edycutjong/porchlight/compare/v1.1.1...v1.1.2) (2026-08-02)
 
 
