@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/edycutjong/porchlight/compare/v1.2.3...v1.3.0) (2026-08-02)
+
+
+### Features
+
+* **site:** add DoraHacks BUIDL badge + real BUIDL QR, repo link, and live-synced version on the pitch deck ([0a14fb8](https://github.com/edycutjong/porchlight/commit/0a14fb864d3893f58a7abaee2882b4a98ea1f68f))
+
 ## [1.2.3](https://github.com/edycutjong/porchlight/compare/v1.2.2...v1.2.3) (2026-08-02)
 
 
