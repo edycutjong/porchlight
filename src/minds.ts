@@ -66,12 +66,25 @@ function extractJson(text: string): unknown {
 
 /** Minds wrap replies in HTML (e.g. `<p>ok</p>`). Strip tags + decode entities for plain-text display. */
 function stripHtml(text: string): string {
-  return text
+  // Decode entities FIRST (with &amp; decoded LAST so we never double-unescape,
+  // e.g. "&amp;lt;" -> "&lt;" not "<"), then strip tags. Because decoding can
+  // reveal markup (e.g. "&lt;script&gt;" -> "<script>"), the tag-strip runs in a
+  // loop until stable so no injected markup can survive in the plain-text output.
+  let out = text
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<\/p>\s*<p>/gi, '\n\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"')
-    .trim()
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+  let previous: string
+  do {
+    previous = out
+    out = out.replace(/<[^>]*>/g, '')
+  } while (out !== previous)
+  return out.trim()
 }
 
 const alias = (memberId: string) => `member:${memberId}`

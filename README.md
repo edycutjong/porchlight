@@ -3,6 +3,9 @@
 
   <h1>Porchlight 🏮</h1>
   <p><em>An exit-interview Mind that remembers <b>why</b> each member left — and autonomously wins them back the moment their reason is actually fixed</em></p>
+
+  [![CI/CD Pipeline](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml)
+  [![CodeQL](https://github.com/edycutjong/porchlight/actions/workflows/codeql.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/codeql.yml)
   <a href="https://dorahacks.io/hackathon/creativeminds"><img src="docs/readme-hero-animated.svg" alt="Porchlight — remembers why members leave, wins them back when it's fixed" width="100%"></a>
 
   <br/>

@@ -135,7 +135,12 @@ test('draftWinback (LIVE) strips HTML tags and decodes entities', async () => {
   assert.match(msg, /welcome back/) // &nbsp; -> space
   assert.match(msg, /back & 'yes'/) // &amp; -> & , &#39; -> '
   assert.match(msg, /"q"/) // &quot; -> "
-  assert.match(msg, /<3 heart>/) // &lt; / &gt; decoded
+  // Entity-decoded angle-bracket markup (&lt;3 heart&gt; -> <3 heart>) must NOT
+  // survive: decoding happens before a loop-until-stable tag strip, so any markup
+  // revealed by decoding (e.g. a smuggled &lt;script&gt;) is removed. Guards
+  // against js/double-escaping + js/incomplete-multi-character-sanitization.
+  assert.ok(!/<[^>]*>/.test(msg), 'decoded markup is fully stripped')
+  assert.ok(!msg.includes('<3 heart>'), 'decoded angle-bracket sequence removed')
   assert.match(msg, /\ndone/) // <br/> -> newline
 })
 
