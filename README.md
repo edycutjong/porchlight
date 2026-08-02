@@ -46,7 +46,7 @@ For any membership creator, **churn is the direct revenue wound.** When a member
 
 ## 🏮 What Porchlight does
 1. **Exit interview (memory).** A member cancels → the Mind runs a short, warm interview and files a structured **return-condition** per member — the reason, in *their own words*.
-2. **Churn board (continuity).** Every departure compounds into a live board: *"33% left over the pivot away from deep-dives."*
+2. **Churn board (continuity).** Every departure compounds into a live board: *"37% left over the pivot away from deep-dives."*
 3. **Conditional win-back (autonomous follow-up).** The creator announces what changed → the Mind **semantically matches** it against every stored reason and, unprompted, messages **only** the members whose reason is now resolved — **quoting their own words** from weeks ago. Do-not-contact is always honored. Recovered MRR is tracked.
 
 ## 🧠 Why the Mind is the product (not a wrapper)
