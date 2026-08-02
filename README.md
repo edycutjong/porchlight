@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://porchlight.edycu.dev"><img src="docs/icon-animated.svg" alt="Porchlight logo — a porch lantern left on" width="120"></a>
+  <a href="https://porchlight.edycu.dev"><img src="docs/icon-animated.svg" alt="Porchlight logo — a porch lantern left on" width="144"></a>
 
   <h1>Porchlight 🏮</h1>
   <p><em>An exit-interview Mind that remembers <b>why</b> each member left — and autonomously wins them back the moment their reason is actually fixed</em></p>
@@ -45,7 +45,7 @@ For any membership creator, **churn is the direct revenue wound.** When a member
 
 ## 🏮 What Porchlight does
 1. **Exit interview (memory).** A member cancels → the Mind runs a short, warm interview and files a structured **return-condition** per member — the reason, in *their own words*.
-2. **Churn board (continuity).** Every departure compounds into a live board: *"37% left over the pivot away from deep-dives."*
+2. **Churn board (continuity).** Every departure compounds into a live board: *"33% left over the pivot away from deep-dives."*
 3. **Conditional win-back (autonomous follow-up).** The creator announces what changed → the Mind **semantically matches** it against every stored reason and, unprompted, messages **only** the members whose reason is now resolved — **quoting their own words** from weeks ago. Do-not-contact is always honored. Recovered MRR is tracked.
 
 ## 🧠 Why the Mind is the product (not a wrapper)
@@ -83,7 +83,7 @@ flowchart TD
     end
 
     subgraph backend["⚙️ Porchlight backend — Node/TS · Express"]
-        SRV["server.ts<br/>REST + SSE · serves /public"]
+        SRV["server.ts<br/>REST API · serves /public"]
         subgraph engine["engine/"]
             EI["exitInterview.ts<br/>drives Mind chat, parses condition"]
             CM["conditionMatcher.ts<br/>semantic: does change resolve reason?"]
@@ -113,7 +113,7 @@ flowchart TD
     TE -- "recovered MRR" --> DB
 
     DB --> SRV
-    MW -- "getHistory audit · subscribeEvents SSE" --> SRV
+    MW -- "getHistory audit · getLatestHistoryFingerprint" --> SRV
     SRV --> DASH
 ```
 - `src/minds.ts` — the Minds integration (LIVE client-lib + MOCK brain).
@@ -124,7 +124,7 @@ Node 22+ · TypeScript · Express · zod. A JSON store mirrors the Mind's memory
 
 ## 🧪 Testing & CI
 
-A production-grade harness runs on every push and PR — a **7-stage GitHub Actions pipeline**: Quality → Security → Build & Smoke → E2E → Performance → Deploy Gate → Release.
+A production-grade harness runs on every push and PR — a **6-stage GitHub Actions pipeline** (`ci.yml`): Quality → Security → Build & Smoke → E2E → Performance → Deploy Gate. Releases run in a dedicated `release.yml` workflow (see below).
 
 ```bash
 npm run ci          # audit + strict typecheck + unit tests
@@ -137,7 +137,7 @@ make security-scan  # npm audit + license check
 
 ### Automatic semantic versioning
 
-Version numbers are never bumped by hand. On every push to `main`, once all gates pass, **[release-please](https://github.com/googleapis/release-please)** (a pure GitHub Action — no npm dependencies, so `npm audit` stays clean) reads the [Conventional Commits](https://www.conventionalcommits.org/) since the last tag, computes the next [SemVer](https://semver.org/), and maintains a release PR that — when merged — writes `CHANGELOG.md`, bumps `package.json`, tags the commit, and publishes a GitHub Release.
+Version numbers are never bumped by hand. On every push to `main`, the `release.yml` workflow runs **[semantic-release](https://github.com/semantic-release/semantic-release)**: it reads the [Conventional Commits](https://www.conventionalcommits.org/) since the last tag, computes the next [SemVer](https://semver.org/), then — with no manual release PR — writes `CHANGELOG.md`, bumps `package.json`, tags the commit, and publishes a GitHub Release automatically.
 
 | Commit prefix | Release |
 |---|---|
@@ -157,7 +157,7 @@ Commit conventionally and the version takes care of itself.
 | Security (SCA) | Dependabot + `npm audit` | ✅ |
 | Secret Scanning | TruffleHog (CI) | ✅ |
 | Performance | Lighthouse CI | ✅ (advisory) |
-| Versioning | release-please (Conventional Commits → SemVer) | ✅ |
+| Versioning | semantic-release (Conventional Commits → SemVer) | ✅ |
 
 ## 📄 License
 [MIT](LICENSE) © 2026 Edy Cu
