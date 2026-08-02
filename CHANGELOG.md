@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/edycutjong/porchlight/compare/v1.4.0...v1.4.1) (2026-08-02)
+
+
+### Bug Fixes
+
+* **pitch-deck:** show full Mind ID (slide 8) and name 'Edy Cu' (slide 11) ([1c12e60](https://github.com/edycutjong/porchlight/commit/1c12e6072e752d9c1de81691d3dc75965228483e))
+
 # [1.4.0](https://github.com/edycutjong/porchlight/compare/v1.3.1...v1.4.0) (2026-08-02)
 
 
