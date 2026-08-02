@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/edycutjong/porchlight/compare/v1.6.0...v1.7.0) (2026-08-02)
+
+
+### Features
+
+* **sponsor:** add official Minds by Animoca Brands logo (README, landing footer, pitch slide 1) ([3828b8e](https://github.com/edycutjong/porchlight/commit/3828b8e63bb9c1a257dbbf56b92ec82e746ad50c))
+
 # [1.6.0](https://github.com/edycutjong/porchlight/compare/v1.5.0...v1.6.0) (2026-08-02)
 
 
