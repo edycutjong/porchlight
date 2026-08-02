@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/edycutjong/porchlight/compare/v1.5.0...v1.6.0) (2026-08-02)
+
+
+### Features
+
+* **sponsor:** make Minds by Animoca Brands credits clickable across README, landing, and pitch deck ([a5343da](https://github.com/edycutjong/porchlight/commit/a5343da66bf51755121b48e2522e974b040a4457))
+
 # [1.5.0](https://github.com/edycutjong/porchlight/compare/v1.4.2...v1.5.0) (2026-08-02)
 
 
