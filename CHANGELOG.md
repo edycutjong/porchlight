@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/edycutjong/porchlight/compare/v1.2.1...v1.2.2) (2026-08-02)
+
+
+### Bug Fixes
+
+* **site:** underline footer prose links so they are distinguishable without color ([2cf7dcf](https://github.com/edycutjong/porchlight/commit/2cf7dcf7155a72e5be0e94d0a8287acd2c258eba))
+
 ## [1.2.1](https://github.com/edycutjong/porchlight/compare/v1.2.0...v1.2.1) (2026-08-02)
 
 
