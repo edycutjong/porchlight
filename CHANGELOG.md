@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/edycutjong/porchlight/compare/v1.1.0...v1.1.1) (2026-08-02)
+
+
+### Bug Fixes
+
+* **ui:** make dashboard brand a real h1 so the header has a heading ([011be5c](https://github.com/edycutjong/porchlight/commit/011be5c748c86a74b128478cb0842be87afeed47))
+
 # [1.1.0](https://github.com/edycutjong/porchlight/compare/v1.0.0...v1.1.0) (2026-08-02)
 
 
