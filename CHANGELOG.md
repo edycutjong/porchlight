@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/edycutjong/porchlight/compare/v1.7.2...v1.8.0) (2026-08-13)
+
+
+### Features
+
+* **og:** add a call-to-action to the share preview ([f8d5988](https://github.com/edycutjong/porchlight/commit/f8d59884da856c1e3cf9ab0d0abd34d346750513))
+
 ## [1.7.2](https://github.com/edycutjong/porchlight/compare/v1.7.1...v1.7.2) (2026-08-13)
 
 
