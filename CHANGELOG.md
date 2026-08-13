@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/edycutjong/porchlight/compare/v1.7.1...v1.7.2) (2026-08-13)
+
+
+### Bug Fixes
+
+* **a11y:** match footer sponsor link's accessible name to its visible text ([767f5ca](https://github.com/edycutjong/porchlight/commit/767f5ca0a9d8ec4d8219acb5153b2e40f005d50a))
+
 ## [1.7.1](https://github.com/edycutjong/porchlight/compare/v1.7.0...v1.7.1) (2026-08-02)
 
 
