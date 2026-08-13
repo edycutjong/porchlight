@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/edycutjong/porchlight/compare/v1.10.0...v1.10.1) (2026-08-13)
+
+
+### Bug Fixes
+
+* **seo:** fit the social descriptions under the truncation point ([b87300e](https://github.com/edycutjong/porchlight/commit/b87300eb16d31842d224b75d042a7098b3de399b))
+
 # [1.10.0](https://github.com/edycutjong/porchlight/compare/v1.9.0...v1.10.0) (2026-08-13)
 
 
