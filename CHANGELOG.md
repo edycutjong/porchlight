@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/edycutjong/porchlight/compare/v1.9.0...v1.10.0) (2026-08-13)
+
+
+### Features
+
+* **seo:** add a call-to-action to the social descriptions ([765defa](https://github.com/edycutjong/porchlight/commit/765defaf6511778e96018b216639ebb114d79a44))
+
 # [1.9.0](https://github.com/edycutjong/porchlight/compare/v1.8.0...v1.9.0) (2026-08-13)
 
 
