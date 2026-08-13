@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/edycutjong/porchlight/compare/v1.8.0...v1.9.0) (2026-08-13)
+
+
+### Features
+
+* **og:** size the share-preview CTA for the card, not the canvas ([7b88ed3](https://github.com/edycutjong/porchlight/commit/7b88ed3b9bb9e52e07cc6435852f9e1748027961))
+
 # [1.8.0](https://github.com/edycutjong/porchlight/compare/v1.7.2...v1.8.0) (2026-08-13)
 
 
