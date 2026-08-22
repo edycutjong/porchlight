@@ -1,0 +1,678 @@
+{
+  "mindId": "3178453e-f36b-1410-8466-00039ce7df11",
+  "changes": {
+    "deepdive": {
+      "text": "Big news — the deep-dive interviews are back, weekly.",
+      "verdicts": [
+        {
+          "departureId": "13820f87-f19d-4a7e-ad80-bb1b64253a59",
+          "resolves": true,
+          "confidence": 0.88,
+          "rationale": "The member's core complaint was the loss of deep-dive interviews; reintroducing them weekly directly reverses the pivot they objected to, even though the announcement does not explicitly reduce the short-form content they disliked.",
+          "keywordWouldCatch": true,
+          "latencyMs": 16703,
+          "capturedAt": "2026-08-22T09:32:05.652Z"
+        },
+        {
+          "departureId": "6fd830e8-85c8-495a-8868-1f06d8879864",
+          "resolves": false,
+          "confidence": 0.6,
+          "rationale": "The announcement restores long-form content but specifically as deep-dive interviews, not the lore videos the member subscribed for; the subject-matter mismatch means the member's core interest in lore is likely still unsatisfied even though length and cadence are back.",
+          "keywordWouldCatch": false,
+          "latencyMs": 37037,
+          "capturedAt": "2026-08-22T09:32:42.690Z"
+        },
+        {
+          "departureId": "d497945a-4ff3-4fc2-9e24-f3cd052ebacc",
+          "resolves": true,
+          "confidence": 0.85,
+          "rationale": "The member's specific complaint was the loss of the long chatty sit-down interview format, which had been replaced by quick clips; announcing that deep-dive interviews are returning weekly directly restores the exact format they valued. Confidence is slightly moderated because the announcement does not explicitly retire the short-form clips, so the show may still contain both formats rather than fully reversing the pivot.",
+          "keywordWouldCatch": false,
+          "latencyMs": 210288,
+          "capturedAt": "2026-08-22T09:36:12.980Z"
+        },
+        {
+          "departureId": "f5276430-52ec-4237-9106-a812bb818086",
+          "resolves": true,
+          "confidence": 0.65,
+          "rationale": "The member's complaint is about an unspecified format change making the content no longer what they signed up for; the announcement restoring deep-dive interviews weekly plausibly reverses that pivot, but the vagueness of the member's quote leaves meaningful uncertainty about whether this matches the exact format they originally wanted.",
+          "keywordWouldCatch": false,
+          "latencyMs": 39170,
+          "capturedAt": "2026-08-22T09:36:52.152Z"
+        },
+        {
+          "departureId": "7204a72f-160f-4472-9f0d-6507a1a69441",
+          "resolves": true,
+          "confidence": 0.9,
+          "rationale": "The member's stated reason was missing the old deep-dive format, and the announcement directly restores weekly deep-dive interviews, addressing the core content pivot complaint even though the member also requested no further contact.",
+          "keywordWouldCatch": false,
+          "latencyMs": 16087,
+          "capturedAt": "2026-08-22T09:37:08.240Z"
+        },
+        {
+          "departureId": "f15404ba-55df-4372-baec-13a09e7533c0",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because they cannot afford the $25/month price; the creator's announcement about restoring weekly deep-dive interviews adds content value but does nothing to address the affordability concern, which is a separate, non-substitutable reason for leaving.",
+          "keywordWouldCatch": false,
+          "latencyMs": 19948,
+          "capturedAt": "2026-08-22T09:37:49.235Z"
+        },
+        {
+          "departureId": "a0a57b26-a4b8-459f-b1ed-6aa7af56b86a",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the price was too high for them, and the creator's announcement only restores weekly deep-dive interviews, which adds content value but does nothing to address the affordability concern that caused them to cancel.",
+          "keywordWouldCatch": false,
+          "latencyMs": 18298,
+          "capturedAt": "2026-08-22T09:38:07.535Z"
+        },
+        {
+          "departureId": "0da06efb-f3a6-4cc1-af07-f1bb413a356f",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left for price/cost-cutting reasons, and the creator's announcement only restores weekly deep-dive interviews, which adds content value but does not address the affordability concern that caused the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 18796,
+          "capturedAt": "2026-08-22T09:38:26.332Z"
+        },
+        {
+          "departureId": "54381052-c03a-433e-8f34-3353a84b63e9",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the community became toxic and the moderators failed to address it, which is a social and moderation concern; the announcement restores weekly deep-dive interviews, which is purely a content-format change and does nothing to address the toxicity or mod behavior that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 23507,
+          "capturedAt": "2026-08-22T09:38:49.839Z"
+        },
+        {
+          "departureId": "a7676bd4-d3bb-44b8-921f-9887c9f8aa15",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because of community drama and toxicity, which is a social/moderation concern unrelated to the creator's announcement that weekly deep-dive interviews are returning, which is purely a content-format change.",
+          "keywordWouldCatch": false,
+          "latencyMs": 67264,
+          "capturedAt": "2026-08-22T09:39:57.103Z"
+        },
+        {
+          "departureId": "867f483e-e73b-4c90-93ac-b2672703163d",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because of constant arguments and interpersonal conflict, which is a community-culture concern; restoring weekly deep-dive interviews is purely a content-format change and does nothing to address the drama that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 32624,
+          "capturedAt": "2026-08-22T09:40:29.728Z"
+        },
+        {
+          "departureId": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+          "resolves": true,
+          "confidence": 0.9,
+          "rationale": "The member's stated reason was that posting had stopped with nothing new for weeks; the announcement that deep-dive interviews are returning on a weekly cadence directly restores a regular schedule of new content, which is precisely what the inactivity complaint was about. Confidence is slightly moderated only because the announcement commits specifically to weekly deep-dive interviews and does not explicitly confirm whether other types of posting activity are also being restored, but the cadence commitment is a substantive fix to the core inactivity issue that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 39097,
+          "capturedAt": "2026-08-22T09:41:08.826Z"
+        },
+        {
+          "departureId": "c2253c5e-6de5-4416-bc1f-bd6982b0b26c",
+          "resolves": true,
+          "confidence": 0.9,
+          "rationale": "The member's complaint was that the channel had gone quiet and felt dead, which is an inactivity concern; the announcement that deep-dive interviews are returning weekly directly restores a regular cadence of new content, addressing the core inactivity that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 48406,
+          "capturedAt": "2026-08-22T09:41:57.234Z"
+        },
+        {
+          "departureId": "51eb365b-fa75-4e99-9d33-177c4fe4149b",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because money is tight and they had to cut subscriptions, which is an affordability concern; the creator's announcement only restores weekly deep-dive interviews, a content-format change that does nothing to address the financial constraint that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 15316,
+          "capturedAt": "2026-08-22T09:42:12.553Z"
+        },
+        {
+          "departureId": "ec4ce0f0-4a2a-4fc0-9c50-8f4725386bd7",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because they lost their job and need to trim the budget, which is an affordability/life constraint; the creator's announcement only restores weekly deep-dive interviews, a content-format change that does nothing to address the financial pressure that caused the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 10620,
+          "capturedAt": "2026-08-22T09:42:23.174Z"
+        },
+        {
+          "departureId": "2b8368fd-b83a-4f13-9504-34a4be019b0e",
+          "resolves": true,
+          "confidence": 0.55,
+          "rationale": "Returning to weekly deep-dive interviews implies a shift toward more substantive, higher-effort content, which plausibly addresses the member's 'low-effort, quality declined' complaint; however, the announcement is about format and cadence rather than an explicit quality commitment, so the fit is moderate and the member's quality concern could stem from dimensions the announcement does not address.",
+          "keywordWouldCatch": false,
+          "latencyMs": 34679,
+          "capturedAt": "2026-08-22T09:42:57.854Z"
+        },
+        {
+          "departureId": "faba08eb-974b-4f6a-8644-4e7042698e95",
+          "resolves": true,
+          "confidence": 0.95,
+          "rationale": "The member's specific quoted reason was that the deep-dive interviews were everything to them and they were gone; the creator's announcement directly restores weekly deep-dive interviews, which is a near-exact semantic reversal of the format loss the member cited.",
+          "keywordWouldCatch": true,
+          "latencyMs": 34057,
+          "capturedAt": "2026-08-22T10:16:21.247Z"
+        },
+        {
+          "departureId": "600d66a8-2f4b-4a60-9767-970a204c9f8d",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the price was too high for what the membership offered, and the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing about the affordability concern that drove this member's cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 181576,
+          "capturedAt": "2026-08-22T10:19:22.826Z"
+        }
+      ],
+      "drafts": [
+        {
+          "departureId": "13820f87-f19d-4a7e-ad80-bb1b64253a59",
+          "memberId": "73ee63cd-d2fe-4d2a-847d-33329e5545b5",
+          "message": "Hey Arjun - quick note because I remembered why you left. You said the show had \"pivoted away from the deep-dive interviews and it's all shorts now,\" and I wanted you to know the deep dives are back, weekly. If that was the thing you were missing, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 10310,
+          "capturedAt": "2026-08-22T10:19:33.141Z"
+        },
+        {
+          "departureId": "d497945a-4ff3-4fc2-9e24-f3cd052ebacc",
+          "memberId": "ada80757-6ffb-4d2b-baee-36b5e07ccedb",
+          "message": "Hey Cai - I remembered why you left. You said \"the long chatty sit-downs with guests were the whole reason i was here, now it is quick clips,\" and I wanted to let you know the deep-dive interviews are back, weekly. If that was the thing you were missing, the door is open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 41079,
+          "capturedAt": "2026-08-22T10:20:14.221Z"
+        },
+        {
+          "departureId": "f5276430-52ec-4237-9106-a812bb818086",
+          "memberId": "acfa8f7d-70e5-4115-a886-69dd2d9f9a3a",
+          "message": "Hey Dre - I remembered why you left. You said the content was \"not what i signed up for since the format changed,\" and I wanted to let you know the deep-dive interviews are back, weekly. If that was the thing you were missing, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 16611,
+          "capturedAt": "2026-08-22T10:20:30.834Z"
+        },
+        {
+          "departureId": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+          "memberId": "a2f59299-7c16-4b49-98c7-aa5c4bdfe98d",
+          "message": "Hey Nio - I remembered why you left. You said \"you stopped posting, nothing new for weeks,\" and I wanted to let you know the deep-dive interviews are back, weekly. If that was the thing you were missing, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 36950,
+          "capturedAt": "2026-08-22T10:21:07.786Z"
+        },
+        {
+          "departureId": "c2253c5e-6de5-4416-bc1f-bd6982b0b26c",
+          "memberId": "1431ad88-c100-4abd-aed6-5d38c390e334",
+          "message": "Hey Ola - I remembered why you left. You said the channel had \"gone quiet, feels dead,\" and I wanted to let you know the deep-dive interviews are back, weekly. If that was the thing you were missing, the door is open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 12529,
+          "capturedAt": "2026-08-22T10:21:20.318Z"
+        },
+        {
+          "departureId": "faba08eb-974b-4f6a-8644-4e7042698e95",
+          "memberId": "c992f7db-64f1-4aef-b451-9273f7f9f39b",
+          "message": "Hey Fen - I remembered why you left. You said the deep-dive interviews were everything, and they are gone - and I wanted you to know they're back, weekly. If that was the thing you were missing, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 30827,
+          "capturedAt": "2026-08-22T10:21:51.147Z"
+        }
+      ]
+    },
+    "price": {
+      "text": "I've cut the membership to $3/mo — the old tier was too steep.",
+      "verdicts": [
+        {
+          "departureId": "13820f87-f19d-4a7e-ad80-bb1b64253a59",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's complaint was a content-format pivot away from deep-dive interviews toward shorts; the creator's announcement only cuts the membership price to $3/mo, which addresses affordability but does not restore the deep-dive format the member wanted back.",
+          "keywordWouldCatch": false,
+          "latencyMs": 29204,
+          "capturedAt": "2026-08-22T09:43:27.059Z"
+        },
+        {
+          "departureId": "6fd830e8-85c8-495a-8868-1f06d8879864",
+          "resolves": false,
+          "confidence": 0.97,
+          "rationale": "The member's reason was a content-format pivot away from the long-form lore videos they subscribed for; the creator's announcement is a price cut to $3/mo, which addresses affordability for other members but does nothing to restore the specific lore-video content the member cited as their reason for leaving.",
+          "keywordWouldCatch": false,
+          "latencyMs": 52414,
+          "capturedAt": "2026-08-22T09:44:19.475Z"
+        },
+        {
+          "departureId": "d497945a-4ff3-4fc2-9e24-f3cd052ebacc",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's reason was a content-format pivot away from the long chatty sit-down interviews with guests, replaced by quick clips; the creator's announcement is a price cut to $3/mo, which addresses affordability but does nothing to restore the long-form interview format the member valued as the whole reason they were there.",
+          "keywordWouldCatch": false,
+          "latencyMs": 42910,
+          "capturedAt": "2026-08-22T09:45:02.388Z"
+        },
+        {
+          "departureId": "f5276430-52ec-4237-9106-a812bb818086",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's complaint was that the format changed away from what they signed up for, which is a content-pivot concern; the creator's announcement only cuts the membership price to $3/mo, which addresses affordability for other members but does not restore the original format the member said they were missing.",
+          "keywordWouldCatch": false,
+          "latencyMs": 39871,
+          "capturedAt": "2026-08-22T09:45:42.261Z"
+        },
+        {
+          "departureId": "7204a72f-160f-4472-9f0d-6507a1a69441",
+          "resolves": false,
+          "confidence": 0.92,
+          "rationale": "The member's stated reason was missing the old deep dives - a content-pivot concern - and the announcement only cuts the membership to $3/mo, which addresses affordability but does not restore the deep-dive format the member said they were missing.",
+          "keywordWouldCatch": false,
+          "latencyMs": 21633,
+          "capturedAt": "2026-08-22T09:46:03.896Z"
+        },
+        {
+          "departureId": "faba08eb-974b-4f6a-8644-4e7042698e95",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's reason was missing the deep-dive interviews - a content-pivot concern - and the announcement only cuts the membership price to $3/mo, which addresses affordability but does not restore the deep-dive format the member said was everything to them.",
+          "keywordWouldCatch": false,
+          "latencyMs": 17385,
+          "capturedAt": "2026-08-22T09:46:21.282Z"
+        },
+        {
+          "departureId": "600d66a8-2f4b-4a60-9767-970a204c9f8d",
+          "resolves": true,
+          "confidence": 0.88,
+          "rationale": "The member's complaint was that the price was too high for what the membership offered, and the creator's announcement directly cuts the membership to $3/mo because the old tier was too steep, which substantively addresses the affordability concern that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 26642,
+          "capturedAt": "2026-08-22T09:46:47.925Z"
+        },
+        {
+          "departureId": "f15404ba-55df-4372-baec-13a09e7533c0",
+          "resolves": true,
+          "confidence": 0.93,
+          "rationale": "The member's stated reason was that they cannot afford the $25/month price, and the creator's announcement cuts the membership to $3/month because the old tier was too steep, which directly addresses the affordability concern that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 22146,
+          "capturedAt": "2026-08-22T09:47:10.072Z"
+        },
+        {
+          "departureId": "a0a57b26-a4b8-459f-b1ed-6aa7af56b86a",
+          "resolves": true,
+          "confidence": 0.93,
+          "rationale": "The member's stated reason was that the price was just too much money, and the creator's announcement directly cuts the membership to $3/mo because the old tier was too steep, which substantively addresses the affordability concern that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 23904,
+          "capturedAt": "2026-08-22T09:47:34.346Z"
+        },
+        {
+          "departureId": "0da06efb-f3a6-4cc1-af07-f1bb413a356f",
+          "resolves": true,
+          "confidence": 0.9,
+          "rationale": "The member left for cost-cutting reasons, and the creator's announcement cuts the membership to $3/mo because the old tier was too steep, which directly addresses the affordability concern that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 50269,
+          "capturedAt": "2026-08-22T09:48:24.618Z"
+        },
+        {
+          "departureId": "54381052-c03a-433e-8f34-3353a84b63e9",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the community became toxic and the moderators failed to address it, which is a social/moderation concern; the creator's announcement cuts the membership to $3/mo, which addresses affordability but does nothing to address the toxic community or the unresponsive mod behavior that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 11867,
+          "capturedAt": "2026-08-22T09:48:36.488Z"
+        },
+        {
+          "departureId": "a7676bd4-d3bb-44b8-921f-9887c9f8aa15",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because of community drama and toxicity in the Discord, which is a social/moderation concern; the creator's announcement dropping the price to $3/mo addresses affordability but does nothing to resolve the drama that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 44254,
+          "capturedAt": "2026-08-22T09:49:20.743Z"
+        },
+        {
+          "departureId": "867f483e-e73b-4c90-93ac-b2672703163d",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because of constant arguments and interpersonal conflict, which is a community-culture concern; the creator's announcement only cuts the membership price to $3/mo, which addresses affordability but does nothing to resolve the interpersonal drama that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 18916,
+          "capturedAt": "2026-08-22T09:49:39.662Z"
+        },
+        {
+          "departureId": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's reason was inactivity - they left because posting stopped and there was nothing new for weeks - and the creator's announcement only cuts the membership to $3/mo because the old tier was too steep, which addresses affordability for other members but does not restore the regular cadence of new content that drove this member's cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 28369,
+          "capturedAt": "2026-08-22T09:50:08.033Z"
+        },
+        {
+          "departureId": "c2253c5e-6de5-4416-bc1f-bd6982b0b26c",
+          "resolves": false,
+          "confidence": 0.9,
+          "rationale": "The member left because money is tight and they had to cut subscriptions, which is an affordability concern; the creator's announcement only cuts the membership price to $3/mo because the old tier was too steep, which addresses affordability for some members but does not restore the inactivity the member cited as their reason for leaving.",
+          "keywordWouldCatch": false,
+          "latencyMs": 21469,
+          "capturedAt": "2026-08-22T09:50:29.503Z"
+        },
+        {
+          "departureId": "51eb365b-fa75-4e99-9d33-177c4fe4149b",
+          "resolves": true,
+          "confidence": 0.92,
+          "rationale": "The member's stated reason was that money is tight and they had to cut subscriptions, which is an affordability concern; the creator's announcement cuts the membership to $3/mo because the old tier was too steep, which directly addresses the financial constraint that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 40369,
+          "capturedAt": "2026-08-22T09:51:09.874Z"
+        },
+        {
+          "departureId": "ec4ce0f0-4a2a-4fc0-9c50-8f4725386bd7",
+          "resolves": true,
+          "confidence": 0.93,
+          "rationale": "The member's stated reason was losing their job and needing to trim the budget, which is an affordability/life constraint; the creator's announcement cuts the membership to $3/mo because the old tier was too steep, which directly addresses the financial pressure that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 60521,
+          "capturedAt": "2026-08-22T09:52:10.397Z"
+        },
+        {
+          "departureId": "2b8368fd-b83a-4f13-9504-34a4be019b0e",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's complaint is that quality has really declined and the content feels low-effort, which is a content-quality concern about substance and effort; the creator's announcement only cuts the membership to $3/mo because the old tier was too steep, which addresses affordability for members who left for cost reasons but does nothing to improve the quality or effort level of the content itself, so the price cut does not resolve this member's stated reason for leaving.",
+          "keywordWouldCatch": false,
+          "latencyMs": 26131,
+          "capturedAt": "2026-08-22T09:52:36.530Z"
+        }
+      ],
+      "drafts": [
+        {
+          "departureId": "600d66a8-2f4b-4a60-9767-970a204c9f8d",
+          "memberId": "1ef63129-087f-4290-8516-172c226430b2",
+          "message": "Hey Gus - I remembered why you left. You said the membership was \"too expensive for what it is now,\" and I wanted to let you know it's been cut to $3/mo. If that was the thing holding you back, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 44163,
+          "capturedAt": "2026-08-22T10:22:35.311Z"
+        },
+        {
+          "departureId": "f15404ba-55df-4372-baec-13a09e7533c0",
+          "memberId": "c4d0a9d2-879c-496b-8402-efade25c3d53",
+          "message": "Hey Hana - I remembered why you left. You said you \"can't afford $25 a month anymore,\" and I wanted you to know the membership has been cut to $3/mo because the old tier was too steep. If that was the thing holding you back, the door is open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 38190,
+          "capturedAt": "2026-08-22T10:23:13.503Z"
+        },
+        {
+          "departureId": "a0a57b26-a4b8-459f-b1ed-6aa7af56b86a",
+          "memberId": "f80668c6-6e02-413f-a6de-756089457312",
+          "message": "Hey Ivo - I remembered why you left. You said \"the price is just too much money,\" and I wanted to let you know the membership has been cut to $3/mo. If that was the thing holding you back, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 22830,
+          "capturedAt": "2026-08-22T10:23:36.337Z"
+        },
+        {
+          "departureId": "0da06efb-f3a6-4cc1-af07-f1bb413a356f",
+          "memberId": "f9141ace-04cd-4cda-9581-6e258e35f2c8",
+          "message": "Hey Joy - I remembered why you left. You said \"cost cutting, sorry,\" and I wanted to let you know the membership has been cut to $3/mo since the old tier was too steep. If that was the thing holding you back, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 69910,
+          "capturedAt": "2026-08-22T10:24:46.252Z"
+        },
+        {
+          "departureId": "51eb365b-fa75-4e99-9d33-177c4fe4149b",
+          "memberId": "6ce0bcfd-2d22-423a-997f-e068b313384e",
+          "message": "Hey Pia - I remembered why you left. You said \"money is tight right now, had to cut subscriptions,\" and I wanted to let you know the membership has been cut to $3/mo because the old tier was too steep. If that was the thing holding you back, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 49845,
+          "capturedAt": "2026-08-22T10:25:36.099Z"
+        },
+        {
+          "departureId": "ec4ce0f0-4a2a-4fc0-9c50-8f4725386bd7",
+          "memberId": "9acbaf53-e022-43a1-a7fa-049922cd3376",
+          "message": "Hey Rex - I remembered why you left. You said you \"lost my job, need to trim the budget,\" and I wanted to let you know the membership has been cut to $3/mo since the old tier was too steep. If that was the thing holding you back, the door is open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 15616,
+          "capturedAt": "2026-08-22T10:25:51.718Z"
+        }
+      ]
+    },
+    "cadence": {
+      "text": "I'm posting weekly again after a long quiet stretch.",
+      "verdicts": [
+        {
+          "departureId": "13820f87-f19d-4a7e-ad80-bb1b64253a59",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's complaint was a content-format pivot away from deep-dive interviews toward shorts; the creator's announcement only cuts the membership price to $3/mo, which addresses affordability but does not restore the deep-dive format the member wanted back.",
+          "keywordWouldCatch": false,
+          "latencyMs": 181805,
+          "capturedAt": "2026-08-22T09:55:38.337Z"
+        },
+        {
+          "departureId": "6fd830e8-85c8-495a-8868-1f06d8879864",
+          "resolves": false,
+          "confidence": 0.78,
+          "rationale": "The member left specifically because long-form lore videos stopped, a content-format concern; the announcement restores weekly posting cadence but does not commit to bringing back the long-form lore format, so the member's stated reason remains unresolved.",
+          "keywordWouldCatch": false,
+          "latencyMs": 111850,
+          "capturedAt": "2026-08-22T09:57:30.189Z"
+        },
+        {
+          "departureId": "d497945a-4ff3-4fc2-9e24-f3cd052ebacc",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's reason was a content-format pivot away from the long chatty sit-down interviews with guests, replaced by quick clips; the creator's announcement is a price cut to $3/mo, which addresses affordability but does nothing to restore the long-form interview format the member valued as the whole reason they were there.",
+          "keywordWouldCatch": true,
+          "latencyMs": 182197,
+          "capturedAt": "2026-08-22T10:00:32.389Z"
+        },
+        {
+          "departureId": "f5276430-52ec-4237-9106-a812bb818086",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member's complaint was that the format changed away from what they signed up for, which is a content-pivot concern; the creator's announcement only cuts the membership price to $3/mo, which addresses affordability for other members but does not restore the original format the member said they were missing.",
+          "keywordWouldCatch": false,
+          "latencyMs": 182297,
+          "capturedAt": "2026-08-22T10:03:34.688Z"
+        },
+        {
+          "departureId": "7204a72f-160f-4472-9f0d-6507a1a69441",
+          "resolves": false,
+          "confidence": 0.85,
+          "rationale": "The member left because the deep-dive format was missing, a content-pivot concern; the announcement only restores a weekly posting cadence without committing to bringing back the deep-dive format specifically, so the format pivot that drove the cancellation remains unresolved.",
+          "keywordWouldCatch": true,
+          "latencyMs": 43129,
+          "capturedAt": "2026-08-22T10:04:17.820Z"
+        },
+        {
+          "departureId": "faba08eb-974b-4f6a-8644-4e7042698e95",
+          "resolves": false,
+          "confidence": 0.85,
+          "rationale": "The member left specifically because the deep-dive interviews were everything and they are gone - a content-format pivot concern - and the announcement only restores a weekly posting cadence after a quiet stretch without committing to bringing back the deep-dive format, so the specific format loss the member cited as their reason for leaving remains unresolved.",
+          "keywordWouldCatch": false,
+          "latencyMs": 25820,
+          "capturedAt": "2026-08-22T10:04:43.642Z"
+        },
+        {
+          "departureId": "600d66a8-2f4b-4a60-9767-970a204c9f8d",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the price was too high for what the membership offered, and the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing about the affordability concern that drove this member's cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 69874,
+          "capturedAt": "2026-08-22T10:05:53.516Z"
+        },
+        {
+          "departureId": "f15404ba-55df-4372-baec-13a09e7533c0",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because they cannot afford the $25/month price, which is a pure affordability concern; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing about the cost barrier that caused the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 21804,
+          "capturedAt": "2026-08-22T10:06:15.322Z"
+        },
+        {
+          "departureId": "a0a57b26-a4b8-459f-b1ed-6aa7af56b86a",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because the price was just too much money, which is an affordability concern; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing about the cost barrier that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 41909,
+          "capturedAt": "2026-08-22T10:06:57.233Z"
+        },
+        {
+          "departureId": "0da06efb-f3a6-4cc1-af07-f1bb413a356f",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left for cost-cutting reasons, an affordability concern, and the announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to address the financial constraint that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 22201,
+          "capturedAt": "2026-08-22T10:07:19.435Z"
+        },
+        {
+          "departureId": "54381052-c03a-433e-8f34-3353a84b63e9",
+          "resolves": false,
+          "confidence": 0.93,
+          "rationale": "The member left because the community became toxic and the mods did nothing, which is a social/moderation concern; the announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to address the toxicity or the unresponsive moderator behavior that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 15581,
+          "capturedAt": "2026-08-22T10:07:35.017Z"
+        },
+        {
+          "departureId": "a7676bd4-d3bb-44b8-921f-9887c9f8aa15",
+          "resolves": false,
+          "confidence": 0.93,
+          "rationale": "The member left because of community drama in the Discord, which is a social/moderation concern; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to address the community toxicity that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 20887,
+          "capturedAt": "2026-08-22T10:07:55.906Z"
+        },
+        {
+          "departureId": "867f483e-e73b-4c90-93ac-b2672703163d",
+          "resolves": false,
+          "confidence": 0.93,
+          "rationale": "The member left because of constant arguments and interpersonal conflict, which is a community-culture concern; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to resolve the interpersonal drama or constant arguments that drove the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 24289,
+          "capturedAt": "2026-08-22T10:08:20.197Z"
+        },
+        {
+          "departureId": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+          "resolves": true,
+          "confidence": 0.9,
+          "rationale": "The member's stated reason was that posting had stopped with nothing new for weeks; the announcement that the creator is posting weekly again after a long quiet stretch directly restores a regular cadence of new content, which is precisely the inactivity concern that drove the cancellation.",
+          "keywordWouldCatch": true,
+          "latencyMs": 12241,
+          "capturedAt": "2026-08-22T10:08:32.440Z"
+        },
+        {
+          "departureId": "c2253c5e-6de5-4416-bc1f-bd6982b0b26c",
+          "resolves": false,
+          "confidence": 0.92,
+          "rationale": "The member's stated reason was that the channel had gone quiet and felt dead, which is an inactivity complaint about posting cadence and freshness; the creator's announcement only cuts the membership price to $3/mo because the old tier was too steep, which addresses affordability for other members but does not restore activity or change the posting cadence that drove this member's cancellation.",
+          "keywordWouldCatch": true,
+          "latencyMs": 181989,
+          "capturedAt": "2026-08-22T10:11:34.431Z"
+        },
+        {
+          "departureId": "51eb365b-fa75-4e99-9d33-177c4fe4149b",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because money is tight and they had to cut subscriptions, which is an affordability/life constraint; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to address the financial pressure that caused the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 114694,
+          "capturedAt": "2026-08-22T10:13:29.128Z"
+        },
+        {
+          "departureId": "ec4ce0f0-4a2a-4fc0-9c50-8f4725386bd7",
+          "resolves": false,
+          "confidence": 0.95,
+          "rationale": "The member left because they lost their job and need to trim the budget, which is an affordability/life constraint; the creator's announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity but does nothing to address the financial pressure that caused the cancellation.",
+          "keywordWouldCatch": false,
+          "latencyMs": 20103,
+          "capturedAt": "2026-08-22T10:13:49.234Z"
+        },
+        {
+          "departureId": "2b8368fd-b83a-4f13-9504-34a4be019b0e",
+          "resolves": false,
+          "confidence": 0.9,
+          "rationale": "The member's complaint is about content quality being low-effort, while the announcement only restores a weekly posting cadence after a quiet stretch, which addresses inactivity and consistency but says nothing about raising the effort or quality of the content itself.",
+          "keywordWouldCatch": false,
+          "latencyMs": 16452,
+          "capturedAt": "2026-08-22T10:14:05.687Z"
+        }
+      ],
+      "drafts": [
+        {
+          "departureId": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+          "memberId": "a2f59299-7c16-4b49-98c7-aa5c4bdfe98d",
+          "message": "Hey Nio - I remembered why you left. You said \"you stopped posting, nothing new for weeks,\" and I wanted to let you know things are moving again - I'm posting weekly after a long quiet stretch. If that was the thing you were missing, the door's open whenever you want to step back in. No pitch, just wanted to flag it since it sounded like exactly what you'd been waiting for.",
+          "latencyMs": 25860,
+          "capturedAt": "2026-08-22T10:26:17.580Z"
+        }
+      ]
+    }
+  },
+  "latency": {
+    "samples": [
+      10310,
+      10620,
+      11867,
+      12241,
+      12529,
+      15316,
+      15581,
+      15616,
+      16087,
+      16452,
+      16611,
+      16703,
+      17385,
+      18298,
+      18796,
+      18916,
+      19948,
+      20103,
+      20887,
+      21469,
+      21633,
+      21804,
+      22146,
+      22201,
+      22830,
+      23507,
+      23904,
+      24289,
+      25820,
+      25860,
+      26131,
+      26642,
+      28369,
+      29204,
+      30827,
+      32624,
+      34057,
+      34679,
+      36950,
+      37037,
+      38190,
+      39097,
+      39170,
+      39871,
+      40369,
+      41079,
+      41909,
+      42910,
+      43129,
+      44163,
+      44254,
+      48406,
+      49845,
+      50269,
+      52414,
+      60521,
+      67264,
+      69874,
+      69910,
+      111850,
+      114694,
+      181576,
+      181805,
+      181989,
+      182197,
+      182297,
+      210288
+    ],
+    "p50": 29204,
+    "p95": 181989,
+    "max": 210288,
+    "capturedAt": "2026-08-22T10:26:17.580Z"
+  }
+}

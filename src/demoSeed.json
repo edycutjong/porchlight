@@ -1,0 +1,526 @@
+{
+  "members": [
+    {
+      "id": "a17ff8b3-5428-4342-aeb6-f658f38d3ccd",
+      "name": "Maya",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2025-06-28T02:18:23.796Z"
+    },
+    {
+      "id": "9be97cbb-ffb7-4911-bede-cfb606439bed",
+      "name": "Uma",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-07-03T02:18:23.796Z"
+    },
+    {
+      "id": "027da624-b83b-499e-9d83-3de55b247f0c",
+      "name": "Vik",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-06-28T02:18:23.796Z"
+    },
+    {
+      "id": "e5e33f2f-89a1-472d-9b47-d830edf6cd5f",
+      "name": "Wren",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-06-23T02:18:23.796Z"
+    },
+    {
+      "id": "b1259d8f-4976-4359-a37b-5501d8fe8d90",
+      "name": "Xan",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-06-18T02:18:23.796Z"
+    },
+    {
+      "id": "c372c62c-67e4-46d3-9ab6-4ba58401a768",
+      "name": "Yara",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-06-13T02:18:23.796Z"
+    },
+    {
+      "id": "286b0983-397e-4d10-8d07-f30adb907b93",
+      "name": "Zed",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-06-08T02:18:23.796Z"
+    },
+    {
+      "id": "8280073c-52e4-4756-9446-47d54e1363d7",
+      "name": "Ada",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-06-03T02:18:23.796Z"
+    },
+    {
+      "id": "6a90143c-006c-4f2e-8775-4a463c60aef7",
+      "name": "Ben",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-05-29T02:18:23.796Z"
+    },
+    {
+      "id": "9806abc2-938a-47fb-a7cb-57fd88689ad7",
+      "name": "Cleo",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-05-24T02:18:23.796Z"
+    },
+    {
+      "id": "7846c3ab-3456-4be4-96fe-71b04bbb9098",
+      "name": "Dax",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-05-19T02:18:23.796Z"
+    },
+    {
+      "id": "17ae32fa-a339-44b7-af9e-fca67e5692c9",
+      "name": "Esme",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-05-14T02:18:23.796Z"
+    },
+    {
+      "id": "5cf42c8d-5e91-4048-8ae5-90a24de270a4",
+      "name": "Finn",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-05-09T02:18:23.796Z"
+    },
+    {
+      "id": "c72be2b3-11ef-4acb-8f29-2c09b8d61e7d",
+      "name": "Gia",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-05-04T02:18:23.796Z"
+    },
+    {
+      "id": "bf8433c5-d492-4493-a95b-2a40687815e7",
+      "name": "Hugo",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-04-29T02:18:23.796Z"
+    },
+    {
+      "id": "a2c83468-f276-4833-a057-d0702e0f0a17",
+      "name": "Isla",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-04-24T02:18:23.796Z"
+    },
+    {
+      "id": "01a59598-7e72-4fb4-98a8-10d514f1672f",
+      "name": "Jax",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-04-19T02:18:23.796Z"
+    },
+    {
+      "id": "869d837d-1f45-46fc-b37e-d7b596b39321",
+      "name": "Kya",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-04-14T02:18:23.796Z"
+    },
+    {
+      "id": "67fc37bc-dabf-4588-95a6-dfe7101c9b97",
+      "name": "Leo",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-04-09T02:18:23.796Z"
+    },
+    {
+      "id": "1291f7eb-b16e-4151-96a4-3d8d300c0aa7",
+      "name": "Nova",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "active",
+      "joinedAt": "2026-04-04T02:18:23.796Z"
+    },
+    {
+      "id": "f320c005-7799-4a4a-88a3-69f90c0f1442",
+      "name": "Otis",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "active",
+      "joinedAt": "2026-03-30T02:18:23.796Z"
+    },
+    {
+      "id": "8015adbb-b8ac-4dfa-9748-00ab25ae5f60",
+      "name": "Remy",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "active",
+      "joinedAt": "2026-03-25T02:18:23.796Z"
+    },
+    {
+      "id": "73ee63cd-d2fe-4d2a-847d-33329e5545b5",
+      "name": "Arjun",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-06T02:18:23.796Z",
+      "cancelMessage": "the show pivoted away from the deep-dive interviews and it's all shorts now"
+    },
+    {
+      "id": "6422b9dc-317f-442f-8e2b-3920357a4eb9",
+      "name": "Bea",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-07T02:18:23.796Z",
+      "cancelMessage": "you stopped doing the long-form lore videos i subscribed for"
+    },
+    {
+      "id": "ada80757-6ffb-4d2b-baee-36b5e07ccedb",
+      "name": "Cai",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-08T02:18:23.796Z",
+      "cancelMessage": "the long chatty sit-downs with guests were the whole reason i was here, now it is quick clips"
+    },
+    {
+      "id": "acfa8f7d-70e5-4115-a886-69dd2d9f9a3a",
+      "name": "Dre",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-09T02:18:23.796Z",
+      "cancelMessage": "not what i signed up for since the format changed"
+    },
+    {
+      "id": "e606af45-5028-4761-80dd-f095824d4757",
+      "name": "Efi",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-10T02:18:23.796Z",
+      "cancelMessage": "miss the old deep dives — and please don't message me again"
+    },
+    {
+      "id": "c992f7db-64f1-4aef-b451-9273f7f9f39b",
+      "name": "Fen",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-11T02:18:23.796Z",
+      "cancelMessage": "the deep-dive interviews were everything, and they are gone"
+    },
+    {
+      "id": "1ef63129-087f-4290-8516-172c226430b2",
+      "name": "Gus",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-12T02:18:23.796Z",
+      "cancelMessage": "too expensive for what it is now"
+    },
+    {
+      "id": "c4d0a9d2-879c-496b-8402-efade25c3d53",
+      "name": "Hana",
+      "tier": "VIP",
+      "mrrCents": 2500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-13T02:18:23.796Z",
+      "cancelMessage": "can't afford $25 a month anymore"
+    },
+    {
+      "id": "f80668c6-6e02-413f-a6de-756089457312",
+      "name": "Ivo",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-14T02:18:23.796Z",
+      "cancelMessage": "the price is just too much money"
+    },
+    {
+      "id": "f9141ace-04cd-4cda-9581-6e258e35f2c8",
+      "name": "Joy",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-15T02:18:23.796Z",
+      "cancelMessage": "cost cutting, sorry"
+    },
+    {
+      "id": "681c75ed-a34f-4f38-b24b-22525e8953eb",
+      "name": "Kit",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-16T02:18:23.796Z",
+      "cancelMessage": "the community got toxic and the mods did nothing"
+    },
+    {
+      "id": "e3d12e5e-6cc3-4e12-8515-5fc8bc2c08ed",
+      "name": "Lux",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-17T02:18:23.796Z",
+      "cancelMessage": "too much drama in the discord"
+    },
+    {
+      "id": "850a83ce-850f-461f-86c4-d4bff2c03725",
+      "name": "Mira",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-18T02:18:23.796Z",
+      "cancelMessage": "constant arguments, i'm out"
+    },
+    {
+      "id": "a2f59299-7c16-4b49-98c7-aa5c4bdfe98d",
+      "name": "Nio",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-19T02:18:23.796Z",
+      "cancelMessage": "you stopped posting, nothing new for weeks"
+    },
+    {
+      "id": "1431ad88-c100-4abd-aed6-5d38c390e334",
+      "name": "Ola",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-20T02:18:23.796Z",
+      "cancelMessage": "channel's gone quiet, feels dead"
+    },
+    {
+      "id": "6ce0bcfd-2d22-423a-997f-e068b313384e",
+      "name": "Pia",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-21T02:18:23.796Z",
+      "cancelMessage": "money is tight right now, had to cut subscriptions"
+    },
+    {
+      "id": "9acbaf53-e022-43a1-a7fa-049922cd3376",
+      "name": "Rex",
+      "tier": "Supporter",
+      "mrrCents": 500,
+      "status": "cancelled",
+      "joinedAt": "2025-10-22T02:18:23.796Z",
+      "cancelMessage": "lost my job, need to trim the budget"
+    },
+    {
+      "id": "e080b611-f5d2-419b-9b91-3573bddcac8c",
+      "name": "Sol",
+      "tier": "Member",
+      "mrrCents": 1000,
+      "status": "cancelled",
+      "joinedAt": "2025-10-23T02:18:23.796Z",
+      "cancelMessage": "quality has really declined, feels low-effort"
+    }
+  ],
+  "departures": [
+    {
+      "id": "13820f87-f19d-4a7e-ad80-bb1b64253a59",
+      "memberId": "73ee63cd-d2fe-4d2a-847d-33329e5545b5",
+      "cancelledAt": "2026-06-21T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "the show pivoted away from the deep-dive interviews and it's all shorts now",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "6fd830e8-85c8-495a-8868-1f06d8879864",
+      "memberId": "6422b9dc-317f-442f-8e2b-3920357a4eb9",
+      "cancelledAt": "2026-06-22T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "you stopped doing the long-form lore videos i subscribed for",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "d497945a-4ff3-4fc2-9e24-f3cd052ebacc",
+      "memberId": "ada80757-6ffb-4d2b-baee-36b5e07ccedb",
+      "cancelledAt": "2026-06-23T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "the long chatty sit-downs with guests were the whole reason i was here, now it is quick clips",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "f5276430-52ec-4237-9106-a812bb818086",
+      "memberId": "acfa8f7d-70e5-4115-a886-69dd2d9f9a3a",
+      "cancelledAt": "2026-06-24T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "not what i signed up for since the format changed",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "7204a72f-160f-4472-9f0d-6507a1a69441",
+      "memberId": "e606af45-5028-4761-80dd-f095824d4757",
+      "cancelledAt": "2026-06-25T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "miss the old deep dives — and please don't message me again",
+      "doNotContact": true,
+      "status": "open"
+    },
+    {
+      "id": "faba08eb-974b-4f6a-8644-4e7042698e95",
+      "memberId": "c992f7db-64f1-4aef-b451-9273f7f9f39b",
+      "cancelledAt": "2026-06-26T02:18:23.796Z",
+      "reasonCategory": "content_pivot",
+      "detail": "Left over content pivot",
+      "verbatimQuote": "the deep-dive interviews were everything, and they are gone",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "600d66a8-2f4b-4a60-9767-970a204c9f8d",
+      "memberId": "1ef63129-087f-4290-8516-172c226430b2",
+      "cancelledAt": "2026-06-27T02:18:23.796Z",
+      "reasonCategory": "price",
+      "detail": "Left over price",
+      "verbatimQuote": "too expensive for what it is now",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "f15404ba-55df-4372-baec-13a09e7533c0",
+      "memberId": "c4d0a9d2-879c-496b-8402-efade25c3d53",
+      "cancelledAt": "2026-06-28T02:18:23.796Z",
+      "reasonCategory": "price",
+      "detail": "Left over price",
+      "verbatimQuote": "can't afford $25 a month anymore",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "a0a57b26-a4b8-459f-b1ed-6aa7af56b86a",
+      "memberId": "f80668c6-6e02-413f-a6de-756089457312",
+      "cancelledAt": "2026-06-29T02:18:23.796Z",
+      "reasonCategory": "price",
+      "detail": "Left over price",
+      "verbatimQuote": "the price is just too much money",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "0da06efb-f3a6-4cc1-af07-f1bb413a356f",
+      "memberId": "f9141ace-04cd-4cda-9581-6e258e35f2c8",
+      "cancelledAt": "2026-06-30T02:18:23.796Z",
+      "reasonCategory": "price",
+      "detail": "Left over price",
+      "verbatimQuote": "cost cutting, sorry",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "54381052-c03a-433e-8f34-3353a84b63e9",
+      "memberId": "681c75ed-a34f-4f38-b24b-22525e8953eb",
+      "cancelledAt": "2026-07-01T02:18:23.796Z",
+      "reasonCategory": "drama",
+      "detail": "Left over drama",
+      "verbatimQuote": "the community got toxic and the mods did nothing",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "a7676bd4-d3bb-44b8-921f-9887c9f8aa15",
+      "memberId": "e3d12e5e-6cc3-4e12-8515-5fc8bc2c08ed",
+      "cancelledAt": "2026-07-02T02:18:23.796Z",
+      "reasonCategory": "drama",
+      "detail": "Left over drama",
+      "verbatimQuote": "too much drama in the discord",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "867f483e-e73b-4c90-93ac-b2672703163d",
+      "memberId": "850a83ce-850f-461f-86c4-d4bff2c03725",
+      "cancelledAt": "2026-07-03T02:18:23.796Z",
+      "reasonCategory": "drama",
+      "detail": "Left over drama",
+      "verbatimQuote": "constant arguments, i'm out",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "3041d7c2-aafc-4715-9c8e-1bdb8928adad",
+      "memberId": "a2f59299-7c16-4b49-98c7-aa5c4bdfe98d",
+      "cancelledAt": "2026-07-04T02:18:23.796Z",
+      "reasonCategory": "inactivity",
+      "detail": "Left over inactivity",
+      "verbatimQuote": "you stopped posting, nothing new for weeks",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "c2253c5e-6de5-4416-bc1f-bd6982b0b26c",
+      "memberId": "1431ad88-c100-4abd-aed6-5d38c390e334",
+      "cancelledAt": "2026-07-05T02:18:23.796Z",
+      "reasonCategory": "inactivity",
+      "detail": "Left over inactivity",
+      "verbatimQuote": "channel's gone quiet, feels dead",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "51eb365b-fa75-4e99-9d33-177c4fe4149b",
+      "memberId": "6ce0bcfd-2d22-423a-997f-e068b313384e",
+      "cancelledAt": "2026-07-06T02:18:23.796Z",
+      "reasonCategory": "life",
+      "detail": "Left over life",
+      "verbatimQuote": "money is tight right now, had to cut subscriptions",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "ec4ce0f0-4a2a-4fc0-9c50-8f4725386bd7",
+      "memberId": "9acbaf53-e022-43a1-a7fa-049922cd3376",
+      "cancelledAt": "2026-07-07T02:18:23.796Z",
+      "reasonCategory": "life",
+      "detail": "Left over life",
+      "verbatimQuote": "lost my job, need to trim the budget",
+      "doNotContact": false,
+      "status": "open"
+    },
+    {
+      "id": "2b8368fd-b83a-4f13-9504-34a4be019b0e",
+      "memberId": "e080b611-f5d2-419b-9b91-3573bddcac8c",
+      "cancelledAt": "2026-07-08T02:18:23.796Z",
+      "reasonCategory": "quality",
+      "detail": "Left over quality",
+      "verbatimQuote": "quality has really declined, feels low-effort",
+      "doNotContact": false,
+      "status": "open"
+    }
+  ],
+  "changeEvents": [],
+  "winbacks": []
+}

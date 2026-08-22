@@ -74,7 +74,12 @@
   select:focus,input:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(255,207,107,.16); }
   input{ flex:1; min-width:200px; max-width:100%; }
   input::placeholder{ color:var(--whisper); }
-  button{ background:linear-gradient(180deg,var(--accent),var(--amber-deep)); color:var(--amber-ink); border:none; font-weight:700; cursor:pointer; letter-spacing:.01em; }
+  /* A <select> sizes itself to its widest <option>, and the departure options carry a
+     member's quote — without min-width:0 that intrinsic width blows past the viewport
+     on narrow screens no matter how the flex row wraps. Same for long button labels. */
+  select{ flex:1; min-width:0; max-width:100%; text-overflow:ellipsis; }
+  button{ background:linear-gradient(180deg,var(--accent),var(--amber-deep)); color:var(--amber-ink); border:none; font-weight:700; cursor:pointer; letter-spacing:.01em;
+    max-width:100%; white-space:normal; text-align:left; }
   button:hover{ transform:translateY(-1px); box-shadow:0 8px 22px rgba(255,207,107,.28); }
   button:active{ transform:translateY(0); }
   button.ghost{ background:var(--bg-inset); color:var(--ink); border:1px solid var(--line); font-weight:600; }
@@ -104,6 +109,7 @@
   <h1 class="brand"><span class="lantern">🏮</span> Porchlight</h1>
   <span class="badge" id="mode">…</span>
   <span class="tag">win members back when their reason is actually fixed</span>
+  <button class="ghost" onclick="resetDemo()" style="font-size:.8rem;padding:6px 12px">Reset my demo</button>
 </header>
 <main>
   <section class="card">
@@ -119,23 +125,45 @@
   </section>
 
   <section class="card full">
-    <h2>Simulate</h2>
-    <div class="row" style="margin-bottom:10px">
+    <h2>Announce a change → the Mind decides who that wins back</h2>
+    <p class="muted" id="curatedNote" style="margin:-4px 0 12px"></p>
+    <div id="curated" class="row" style="flex-wrap:wrap"></div>
+    <div id="skip"></div>
+  </section>
+
+  <section class="card full">
+    <h2>Or put the live Mind on the spot</h2>
+    <p class="muted" style="margin:-4px 0 12px">
+      Pick someone who left, describe a change in your own words, and a <b>real Mind call runs now</b>.
+      Try to fool it: describe a fix that should <em>not</em> win that person back, and it should say so.
+      One call takes <b id="expect">~30–60s</b>. Limited to 3 per 15 minutes.
+    </p>
+    <div class="row" style="margin-bottom:6px">
+      <select id="departure" onchange="showDepQuote()"></select>
+    </div>
+    <p class="muted" id="depQuote" style="margin:0 0 12px"></p>
+    <div class="row">
+      <input id="liveChange" placeholder="e.g. I've dropped the price to $3/mo" />
+      <button id="askBtn" onclick="askLive()">Ask the live Mind</button>
+    </div>
+    <div id="liveOut"></div>
+  </section>
+
+  <section class="card full">
+    <h2>Member cancels → the Mind interviews them (live)</h2>
+    <p class="muted" style="margin:-4px 0 12px">This files a structured return-condition in the member's own words. Real Mind call, same 3-per-15-min budget.</p>
+    <div class="row">
       <select id="member"></select>
       <input id="cancelMsg" placeholder="parting message (why they're leaving)…"
         value="the show pivoted away from the deep-dive interviews i loved — it is all short clips now" />
-      <button class="ghost" onclick="cancel()">Member cancels →</button>
+      <button class="ghost" id="cancelBtn" onclick="cancel()">Member cancels →</button>
     </div>
-    <div class="row">
-      <input id="change" placeholder="announce what changed…" value="Big news — the deep-dive interviews are back, weekly." />
-      <button onclick="announce()">Announce change → Mind wins back</button>
-    </div>
+    <div id="cancelOut"></div>
   </section>
 
   <section class="card full">
     <h2>Autonomous win-backs</h2>
     <div class="feed" id="feed"><p class="muted">No win-backs yet. Announce a change the Mind can match.</p></div>
-    <div id="skip"></div>
   </section>
 
   <section class="card full">
@@ -162,6 +190,30 @@ async function refresh() {
      <span class="n">${r.count}</span></div>`).join('')
   const active = s.roster.filter(m=>m.status==='active')
   $('member').innerHTML = active.map(m=>`<option value="${m.id}">${m.name} · ${m.tier} ($${(m.mrrCents/100)})</option>`).join('')
+
+  // departures the live matcher can be pointed at
+  // Options stay short on purpose: a <select> takes its min-content width from its widest
+  // option, which no amount of min-width:0 will shrink — a quote in here overflows mobile.
+  // The full quote is shown beneath instead, where it is more readable anyway.
+  DEPARTURES = s.openDepartures
+  $('departure').innerHTML = s.openDepartures.map(d =>
+    `<option value="${d.id}">${esc(d.memberName)} · ${d.reasonCategory.replace('_',' ')}</option>`).join('')
+  showDepQuote()
+
+  // curated changes: real Mind verdicts captured earlier, replayed instantly
+  if (s.curated.length) {
+    const when = new Date(s.curated[0].capturedAt).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})
+    $('curatedNote').innerHTML =
+      `Every verdict below is a <b>real Mind decision</b>, captured ${when} across all ${s.curated[0].verdicts} open departures ` +
+      `(judging one live takes ${s.latency ? (s.latency.p50/1000).toFixed(0)+'s' : 'about a minute'} per person, so they were run ahead of time). ` +
+      `Nothing here is simulated — this app has no keyword fallback.`
+    $('curated').innerHTML = s.curated.map(c =>
+      `<button class="ghost" onclick="announce('${c.key}')">“${esc(trim(c.text,58))}”</button>`).join('')
+  } else {
+    $('curatedNote').innerHTML = '<b>No captured verdicts on this deployment.</b> Use the live Mind below.'
+    $('curated').innerHTML = ''
+  }
+  if (s.latency) $('expect').textContent = `~${(s.latency.p50/1000).toFixed(0)}s typical, ${(s.latency.p95/1000).toFixed(0)}s at p95`
   const wb = s.board.winbacks
   $('feed').innerHTML = wb.length ? wb.map(w =>
     `<div class="wb"><div class="who">${w.memberName} <span class="muted">· ${w.reason.replace('_',' ')} · +$${(w.recoveredMrrCents/100).toFixed(2)}/mo</span>
@@ -175,17 +227,87 @@ async function refresh() {
      <span class="muted" style="font-size:12px">${new Date(a.at).toLocaleString()}</span></div>`).join('')
     : '<p class="muted">No changes announced yet.</p>'
 }
+let DEPARTURES = []
+function showDepQuote() {
+  const d = DEPARTURES.find((x) => x.id === $('departure').value)
+  $('depQuote').innerHTML = d
+    ? `They left saying: <em style="color:var(--ink)">“${esc(d.verbatimQuote)}”</em>${d.doNotContact ? ' 🔒 <b>asked not to be contacted</b> — Porchlight will never message them, however well a change matches.' : ''}`
+    : ''
+}
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))
+const trim = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s
+const post = async (url, body) => {
+  const r = await fetch(url, {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)})
+  return { ok: r.ok, data: await r.json() }
+}
+
+/** A real Mind call takes tens of seconds — show it working, not a frozen button. */
+function waiting(el, btn, label) {
+  btn.disabled = true
+  const started = Date.now()
+  el.innerHTML = `<div class="skip" id="tick">${label} <b>0s</b></div>`
+  const t = setInterval(() => {
+    const s = Math.round((Date.now() - started) / 1000)
+    const tick = document.getElementById('tick')
+    if (tick) tick.innerHTML = `${label} <b>${s}s</b>`
+  }, 1000)
+  return () => { clearInterval(t); btn.disabled = false }
+}
+
 async function cancel() {
   const memberId = $('member').value, message = $('cancelMsg').value
   if (!memberId) return
-  await fetch('/api/cancel', {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({memberId,message})})
+  const done = waiting($('cancelOut'), $('cancelBtn'), '🧠 the Mind is running the exit interview —')
+  try {
+    const { ok, data } = await post('/api/cancel', { memberId, message })
+    $('cancelOut').innerHTML = ok
+      ? `<div class="wb"><div class="who">Return-condition filed <span class="badge" style="border-color:var(--good);color:var(--good)">live Mind</span></div>
+         <div class="msg"><b>reason</b> ${esc(data.reasonCategory.replace('_',' '))}<br>
+         <b>their words</b> “${esc(data.verbatimQuote)}”<br>
+         <b>do-not-contact</b> ${data.doNotContact ? 'yes — will never be messaged' : 'no'}</div></div>`
+      : `<div class="skip">${esc(data.error)}</div>`
+  } finally { done() }
   refresh()
 }
-async function announce() {
-  const text = $('change').value
-  const r = await (await fetch('/api/change',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text})})).json()
-  $('skip').innerHTML = (r.skippedDoNotContact||[]).length
-    ? `<div class="skip">🔒 honored do-not-contact — skipped: ${r.skippedDoNotContact.map(s=>s.memberName).join(', ')}</div>` : ''
+
+async function announce(key) {
+  const { ok, data } = await post('/api/change', { key })
+  if (!ok) { $('skip').innerHTML = `<div class="skip">${esc(data.error)}</div>`; return }
+  const when = data.capturedAt ? new Date(data.capturedAt).toLocaleDateString() : ''
+  $('skip').innerHTML =
+    `<div class="skip">✅ ${data.winbacks.length} won back of ${data.consideredOpen} open — real Mind verdicts captured ${when}` +
+    ((data.skippedDoNotContact||[]).length
+      ? ` · 🔒 honored do-not-contact, skipped: ${esc(data.skippedDoNotContact.map(s=>s.memberName).join(', '))}` : '') +
+    `</div>`
+  refresh()
+}
+
+async function askLive() {
+  const departureId = $('departure').value, text = $('liveChange').value.trim()
+  if (!text) { $('liveOut').innerHTML = '<div class="skip">Describe a change first.</div>'; return }
+  const done = waiting($('liveOut'), $('askBtn'), '🧠 asking the live Mind —')
+  try {
+    const { ok, data } = await post('/api/change/live', { departureId, text })
+    if (!ok) { $('liveOut').innerHTML = `<div class="skip">${esc(data.error)}</div>`; return }
+    const verdictColor = data.resolved ? 'var(--good)' : 'var(--dim)'
+    // The headline: what the Mind concluded vs what a keyword rule would have done.
+    const kw = data.keywordWouldCatch
+      ? 'a keyword rule would also have caught this'
+      : '<b style="color:var(--accent)">a keyword rule scores this 0.00 and would never have contacted them</b>'
+    $('liveOut').innerHTML =
+      `<div class="wb"><div class="who">${esc(data.memberName)}
+         <span class="badge" style="border-color:${verdictColor};color:${verdictColor}">
+           ${data.resolved ? 'resolved — would be messaged' : 'not resolved — stays silent'}</span>
+         <span class="muted">· confidence ${data.verdict.confidence.toFixed(2)} (threshold ${data.threshold}) · ${(data.latencyMs/1000).toFixed(1)}s live</span></div>
+       <div class="msg"><b>they said</b> “${esc(data.verbatimQuote)}”<br>
+         <b>Mind's reasoning</b> ${esc(data.verdict.rationale)}<br>
+         <b>vs keywords</b> ${kw}</div></div>`
+  } finally { done() }
+}
+
+async function resetDemo() {
+  await post('/api/reset', {})
+  $('skip').innerHTML = ''; $('liveOut').innerHTML = ''; $('cancelOut').innerHTML = ''
   refresh()
 }
 refresh()

@@ -1,10 +1,10 @@
 import { defineConfig, devices } from '@playwright/test'
 
-// E2E runs against the real dashboard in MOCK mode — no API key required.
-// The web server seeds a fresh ledger, then serves the churn board on :5173.
+// E2E runs against the real dashboard. No API key required: the curated changes replay
+// verdicts the real Mind already produced, and each browser context gets its own session.
 export default defineConfig({
   testDir: './e2e',
-  fullyParallel: false, // the app has a single shared JSON store; keep specs serial
+  fullyParallel: false, // keep specs serial so the shared dev server stays predictable
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
@@ -19,7 +19,9 @@ export default defineConfig({
     { name: 'mobile-chrome', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: 'npm run start:demo',
+    // Plain `npm start`: the server serves the PINNED src/demoSeed.json, and re-seeding
+    // would rewrite .data/ with fresh UUIDs that no captured verdict is keyed to.
+    command: 'npm start',
     url: 'http://localhost:5173/api/state',
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,

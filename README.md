@@ -9,6 +9,7 @@
   <br/>
 
   [![Live site](https://img.shields.io/badge/Live_site-porchlight.edycu.dev-69D38A?style=for-the-badge&labelColor=0F1220&logo=github&logoColor=white)](https://porchlight.edycu.dev)
+  [![Try it live](https://img.shields.io/badge/Try_it_live-run_the_Mind_yourself-69D38A?style=for-the-badge&labelColor=0F1220&logo=flydotio&logoColor=white)](https://porchlight-demo.fly.dev)
   [![Demo video](https://img.shields.io/badge/▶_Demo-Watch_2_min-FF0000?style=for-the-badge&labelColor=0F1220&logo=youtube&logoColor=white)](https://youtu.be/1J-86tHxsYM)
   [![Pitch Deck](https://img.shields.io/badge/Pitch_Deck-View-ffcf6b?style=for-the-badge&labelColor=0F1220)](https://porchlight.edycu.dev/pitch-deck/)
   [![DoraHacks BUIDL](https://img.shields.io/badge/DoraHacks-BUIDL_%2347442-1E6FFF?style=for-the-badge&labelColor=0F1220)](https://dorahacks.io/buidl/47442)
@@ -16,6 +17,7 @@
   [![Creative Minds Jam](https://img.shields.io/badge/Creative_Minds_Jam-%231-6C5CE7?style=for-the-badge&labelColor=0F1220)](https://dorahacks.io/hackathon/creativeminds)
   [![Track](https://img.shields.io/badge/Track-Audience_Growth_%26_Community-ffcf6b?style=for-the-badge&labelColor=0F1220)](https://dorahacks.io/hackathon/creativeminds)
   [![Minds Builder Hub](https://img.shields.io/badge/Minds-Builder_Hub-69D38A?style=for-the-badge&labelColor=0F1220)](https://build.hellominds.ai)
+  [![SDK Feedback](https://img.shields.io/badge/SDK_Feedback-7_findings_%2B_latency_data-e89f45?style=for-the-badge&labelColor=0F1220)](FEEDBACK.md)
 
   <br/>
 
@@ -25,7 +27,7 @@
   ![Express](https://img.shields.io/badge/Express-server-000000?style=flat&logo=express&logoColor=white)
   ![zod](https://img.shields.io/badge/zod-schemas-3E67B1?style=flat&logo=zod&logoColor=white)
   ![Playwright](https://img.shields.io/badge/Playwright-e2e-2EAD33?style=flat&logo=playwright&logoColor=white)
-  ![Tests](https://img.shields.io/badge/tests-51_passing-69D38A?style=flat)
+  ![Tests](https://img.shields.io/badge/tests-57_passing-69D38A?style=flat)
   ![Coverage](https://img.shields.io/badge/coverage-100%25-2ea44f?style=flat)
   ![License](https://img.shields.io/badge/license-MIT-2ea44f?style=flat)
   [![CI/CD Pipeline](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml)
@@ -78,13 +80,40 @@ For any membership creator, **churn is the direct revenue wound.** When a member
 
 Uses `@animocabrands/minds-client-lib` across 7 methods: `listMinds`, `getMind`, `ensureConversation`, `sendMessage`, `waitForReply`, `getHistory`, `getLatestHistoryFingerprint`.
 
+## 🕹️ Try it without installing anything
+
+**[porchlight-demo.fly.dev](https://porchlight-demo.fly.dev)** — no signup, loads with data.
+
+- **Announce a curated change** → instant. Those verdicts are **real Mind output**, captured ahead of
+  time (`npm run precompute`) because judging one change against all 18 departures takes minutes of
+  live Mind time. Each is stamped with when it was captured.
+- **Put the live Mind on the spot** → pick someone who left, describe a change in your own words,
+  and a real call runs there and then, with its reasoning, confidence, and what a keyword rule would
+  have scored. Rate-limited to 3 per 15 minutes.
+- **The interesting test is trying to fool it.** Describe a fix that *should not* win someone back.
+  It is supposed to stay quiet.
+
+> There is **no keyword fallback in the deployed app**. Without credentials it returns `503` and says
+> so, rather than quietly answering with the very mechanism this project exists to beat.
+
+### 📊 About the numbers you'll see
+
+Recovered-MRR figures are **per run, not constants**. Mind verdicts are non-deterministic — the same
+departure judged against the same change can resolve on one run and not the next, and we have the
+traces both ways ([FEEDBACK.md §7](FEEDBACK.md)). The demo video shows a 19-departure arc that
+recovered **$105/mo vs $35/mo for the keyword baseline**; the deployed app starts from the
+18-departure seed and shows whatever its own dated capture produced. Both are real; neither is a
+fixed marketing number. The **shape** is the claim: a large slice of recovered revenue that keyword
+matching provably cannot reach.
+
 ## ⚡ Run it
 
 ```bash
 npm install
 npm run demo  # the full arc, headless (works offline in MOCK mode)
-npm start     # dashboard at http://localhost:5173  (npm run seed first for data)
-npm test      # 51 tests (interview parse, win-back, semantic edge, do-not-contact, live SDK, edges)
+npm start     # dashboard at http://localhost:5173 (serves the pinned src/demoSeed.json)
+npm run precompute  # capture REAL Mind verdicts + latency into src/liveCache.json (needs a key)
+npm test      # 57 tests (interview parse, win-back, semantic edge, do-not-contact, live SDK, sessions, edges)
 ```
 
 ### Offline by default, real Mind when you want it

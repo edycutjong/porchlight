@@ -1,6 +1,6 @@
 import { load, save, member, openDepartures, id, type ChangeEvent, type Winback, type Member, type Departure } from '../db.js'
 import { draftWinback } from '../minds.js'
-import { matchAll } from './conditionMatcher.js'
+import { matchAll, type Match } from './conditionMatcher.js'
 import { keywordResolves } from '../keywordBaseline.js'
 
 export interface ChangeResult {
@@ -16,19 +16,34 @@ export interface ChangeResult {
  * members whose reason is now resolved — quoting their own words. Do-not-contact
  * is always honored.
  */
+/**
+ * Where the semantic judgement and the win-back wording come from. Defaults to live
+ * Mind calls. The deployed demo swaps in verdicts the real Mind produced earlier
+ * (see verdictCache.ts) so a visitor is not made to wait minutes — same code path,
+ * same data shape, and never a mock.
+ */
+export interface ChangeDeps {
+  match?: (text: string, open: Departure[]) => Promise<Match[]>
+  draft?: (text: string, departure: Departure, member: Member) => Promise<string>
+}
+
 export async function applyChange(
   text: string,
   // Whether a messaged member actually re-subscribed. Defaults to the demo model where
   // a reason-resolved win-back converts; production passes a predicate backed by a real
   // re-subscribe webhook so recovered MRR only flips on a confirmed rejoin.
   confirmRejoin: (member: Member, departure: Departure) => boolean = () => true,
+  deps: ChangeDeps = {},
 ): Promise<ChangeResult> {
+  const match = deps.match ?? matchAll
+  const draft = deps.draft ?? draftWinback
+
   const db = load()
   const changeEvent: ChangeEvent = { id: id(), createdAt: new Date().toISOString(), text }
   db.changeEvents.push(changeEvent)
 
   const open = openDepartures(db)
-  const matches = await matchAll(text, open)
+  const matches = await match(text, open)
 
   const winbacks: Winback[] = []
   const skipped: { memberName: string; reason: string }[] = []
@@ -43,7 +58,7 @@ export async function applyChange(
       continue
     }
 
-    const message = await draftWinback(text, departure, m)
+    const message = await draft(text, departure, m)
     const rejoined = confirmRejoin(m, departure)
     const wb: Winback = {
       id: id(),
