@@ -61,9 +61,15 @@
     background:radial-gradient(120% 100% at 50% 38%, transparent 55%, rgba(5,6,14,.55)); }
   header, main{ position:relative; z-index:1; }
 
-  header{ display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-    padding:20px clamp(20px,4vw,44px); border-bottom:1px solid var(--line-soft);
+  /* header/footer are full-bleed so their border and background span the viewport,
+     while an inner .wrap holds the same max-width and gutters as main — this is how
+     site/index.html does it, and it is what keeps the brand aligned with the cards
+     instead of hugging the window edge on wide screens. */
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,4vw,44px); }
+  header{ border-bottom:1px solid var(--line-soft);
     background:linear-gradient(180deg, rgba(15,18,32,.72), transparent); backdrop-filter:blur(8px); }
+  header .wrap{ display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding-top:20px; padding-bottom:20px; }
   .brand{ display:flex; align-items:center; gap:9px; margin:0; font-family:var(--serif); font-size:1.3rem; font-weight:600; letter-spacing:.01em; color:var(--ink); }
   .brand .lantern{ width:30px; height:30px; display:block; flex:none;
     filter:drop-shadow(0 0 10px rgba(255,207,107,.55)); }
@@ -73,8 +79,7 @@
 
   /* Matches the landing page's .wrap so the two surfaces line up:
      --maxw:1120px and padding:0 clamp(20px,4vw,44px) in site/index.html. */
-  main{ max-width:1120px; margin:0 auto; padding:clamp(20px,3vw,30px) clamp(20px,4vw,44px) 0;
-    display:grid; gap:18px; grid-template-columns:1fr 1fr; }
+  main.wrap{ padding-top:clamp(20px,3vw,30px); display:grid; gap:18px; grid-template-columns:1fr 1fr; }
   .card{ position:relative; background:linear-gradient(180deg, var(--card), var(--bg-raise));
     border:1px solid var(--line-soft); border-radius:16px; padding:20px 22px;
     box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 12px 34px rgba(0,0,0,.30);
@@ -124,11 +129,10 @@
   .muted{ color:var(--dim); font-size:.85rem; }
   #edge b, #counts{ font-variant-numeric:tabular-nums; }
 
-  footer{ position:relative; z-index:1; max-width:1120px; margin:0 auto;
-    padding:26px clamp(20px,4vw,44px) 34px; margin-top:26px;
-    border-top:1px solid var(--line-soft);
-    display:flex; align-items:center; gap:14px 20px; flex-wrap:wrap;
+  footer{ position:relative; z-index:1; margin-top:26px; border-top:1px solid var(--line-soft);
     color:var(--whisper); font-size:.82rem; font-family:var(--mono); }
+  footer .wrap{ display:flex; align-items:center; gap:14px 20px; flex-wrap:wrap;
+    padding-top:26px; padding-bottom:34px; }
   footer nav{ margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
   footer a{ color:var(--dim); text-decoration:none; border-bottom:1px solid transparent;
     transition:color .2s var(--ease), border-color .2s var(--ease); }
@@ -136,7 +140,7 @@
   #ver{ font-variant-numeric:tabular-nums; }
 
   @media (max-width:640px){
-    main{ grid-template-columns:1fr; }
+    main.wrap{ grid-template-columns:1fr; }
     .full{ grid-column:auto; }
     .tag{ margin-left:0; flex-basis:100%; }
     footer nav{ margin-left:0; flex-basis:100%; }
@@ -147,12 +151,14 @@
 </head>
 <body>
 <header>
+  <div class="wrap">
   <h1 class="brand"><img class="lantern" src="icon.svg" alt="" width="30" height="30" /> Porchlight</h1>
   <span class="badge" id="mode">…</span>
   <span class="tag">win members back when their reason is actually fixed</span>
   <button class="ghost" onclick="resetDemo()" style="font-size:.8rem;padding:6px 12px">Reset my demo</button>
+  </div>
 </header>
-<main>
+<main class="wrap">
   <section class="card">
     <h2>Recovered MRR</h2>
     <div class="mrr"><span id="mrr">$0.00</span> <small>/mo · <span id="rejoined">0</span> rejoined</small></div>
@@ -213,6 +219,7 @@
   </section>
 </main>
 <footer>
+  <div class="wrap">
   <span>the porch light stays on ·
     <a href="https://github.com/edycutjong/porchlight/releases" target="_blank" rel="noopener" id="ver">v–</a>
   </span>
@@ -224,6 +231,7 @@
     <a href="https://dorahacks.io/buidl/47442" target="_blank" rel="noopener">BUIDL</a>
     <a href="https://hellominds.ai" target="_blank" rel="noopener">Powered by Minds</a>
   </nav>
+  </div>
 </footer>
 <script>
 const $ = (id) => document.getElementById(id)
