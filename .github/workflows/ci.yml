@@ -140,6 +140,70 @@ jobs:
           echo "  ✅ Stage 4 — E2E (Playwright)"
           echo "  ✅ Stage 5 — Performance (Lighthouse CI, advisory)"
           echo "  ✅ Stage 6 — Deploy Gate"
+          echo "  ➡️  Stage 7 — Fly.io deploy (only when src/, public/, Dockerfile or fly.toml changed)"
 
   # Releases are handled by the dedicated semantic-release workflow (release.yml),
   # which owns SemVer, CHANGELOG, tags, and GitHub Releases on push to main.
+
+  # ── STAGE 7: Deploy the app to Fly.io (main only, after every gate) ───────
+  # pages.yml publishes site/ to porchlight.edycu.dev on its own. This job is what
+  # keeps try.porchlight.edycu.dev from silently drifting behind the repo: without
+  # it, a push touching src/ or public/ goes green, updates the landing page, and
+  # leaves the running app on old code with nothing to warn you.
+  deploy-fly:
+    name: "Stage 7 · Deploy app to Fly.io"
+    needs: [deploy-gate]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    concurrency:
+      group: fly-deploy-porchlight
+      cancel-in-progress: false # never abort a half-finished machine rollout
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2 # need the parent commit to diff against
+
+      - name: Does this push actually touch the app?
+        id: changed
+        run: |
+          if git diff --name-only HEAD^ HEAD \
+            | grep -qE '^(src/|public/|Dockerfile|fly\.toml|package\.json|package-lock\.json)'; then
+            echo "app=true" >> "$GITHUB_OUTPUT"
+            echo "App files changed — deploying."
+          else
+            echo "app=false" >> "$GITHUB_OUTPUT"
+            echo "Docs/site only — skipping the Fly deploy."
+          fi
+
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+        if: steps.changed.outputs.app == 'true'
+
+      - name: Deploy
+        if: steps.changed.outputs.app == 'true'
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: flyctl deploy --remote-only --app porchlight-demo
+
+      - name: Verify the deployed app is actually serving
+        if: steps.changed.outputs.app == 'true'
+        run: |
+          for i in $(seq 1 10); do
+            body=$(curl -fsS --max-time 20 https://try.porchlight.edycu.dev/healthz) && break
+            echo "attempt $i: not ready yet"; sleep 10
+          done
+          if [ -z "${body:-}" ]; then
+            echo "::error::Deploy finished but /healthz never responded."
+            exit 1
+          fi
+          echo "$body"
+          # LIVE proves the Mind credentials reached the machine. MOCK would mean the app
+          # is up but running the keyword stand-in — worse than being down, because the
+          # public demo would silently stop being real.
+          echo "$body" | grep -q '"mode":"LIVE"' || {
+            echo "::error::App is serving in MOCK mode — the Fly secrets are missing."
+            exit 1
+          }
+          echo "$body" | grep -q '"ok":true' || exit 1
+          # Informational only: semantic-release bumps package.json in a [skip ci] commit
+          # AFTER this job, so the served version legitimately trails by one release.
+          echo "repo package.json version: $(node -p "require('./package.json').version")"
