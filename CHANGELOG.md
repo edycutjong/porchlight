@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/edycutjong/porchlight/compare/v1.11.0...v1.12.0) (2026-08-22)
+
+
+### Features
+
+* **demo:** match the app to the landing page's identity and gutters ([b5ec7ee](https://github.com/edycutjong/porchlight/commit/b5ec7ee88192f4f049de6930c4211ba9388a2dcd))
+
 # [1.11.0](https://github.com/edycutjong/porchlight/compare/v1.10.1...v1.11.0) (2026-08-22)
 
 
