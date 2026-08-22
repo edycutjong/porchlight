@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/edycutjong/porchlight/compare/v1.12.1...v1.13.0) (2026-08-22)
+
+
+### Features
+
+* **site:** make 'Try it live' the nav CTA, demote GitHub to a plain link ([c3a3151](https://github.com/edycutjong/porchlight/commit/c3a31510ed4039dd4759ec336571eabfd6fb9f21))
+
 ## [1.12.1](https://github.com/edycutjong/porchlight/compare/v1.12.0...v1.12.1) (2026-08-22)
 
 
