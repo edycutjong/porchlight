@@ -33,6 +33,10 @@ const SID_COOKIE = 'porchlight_sid'
 const DEMO_SEED: DB = JSON.parse(readFileSync(new URL('./demoSeed.json', import.meta.url), 'utf8'))
 const seedDb = (): DB => DEMO_SEED
 
+/** Served to the UI so the footer shows the exact build, not a best-effort API lookup. */
+const VERSION: string =
+  JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version ?? '0.0.0'
+
 function sidOf(req: express.Request, res: express.Response): string {
   const raw = req.headers.cookie ?? ''
   const found = raw.split(';').map((c) => c.trim().split('=')).find(([k]) => k === SID_COOKIE)?.[1]
@@ -81,6 +85,7 @@ app.get('/api/state', (req, res) => {
   const db = load()
   res.json({
     mode: MODE,
+    version: VERSION,
     mindId: CONFIG.mindId || null,
     board: board(),
     roster: db.members,
@@ -209,10 +214,10 @@ app.post('/api/cancel', async (req, res) => {
   }
 })
 
-app.get('/healthz', (_req, res) => res.json({ ok: true, mode: MODE }))
+app.get('/healthz', (_req, res) => res.json({ ok: true, mode: MODE, version: VERSION }))
 
 app.listen(CONFIG.port, () => {
-  console.log(`Porchlight [${MODE}] — http://localhost:${CONFIG.port}`)
+  console.log(`Porchlight v${VERSION} [${MODE}] — http://localhost:${CONFIG.port}`)
   console.log(`  curated changes: ${curatedChanges().length} (captured real Mind verdicts)`)
   if (CONFIG.mock) console.log('  (MOCK mode — set MINDS_BUILDER_API_KEY to drive a real Mind)')
 })

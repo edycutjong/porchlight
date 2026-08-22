@@ -3,7 +3,32 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Porchlight</title>
+<title>Try Porchlight — run the win-back Mind yourself</title>
+<meta name="description" content="Announce a change and watch a real Minds agent decide which past members that wins back — quoting their own words. Or put it on the spot with your own wording. No signup, no keyword fallback." />
+<link rel="canonical" href="https://try.porchlight.edycu.dev/" />
+<meta name="theme-color" content="#0f1220" />
+
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Porchlight" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://try.porchlight.edycu.dev/" />
+<meta property="og:title" content="Try Porchlight — run the win-back Mind yourself" />
+<meta property="og:description" content="A member left over 'short clips replaced the long sit-down conversations.' The creator posts 'the deep-dive interviews are back.' Zero shared words — a keyword rule scores 0.00. Watch the Mind score it 0.93." />
+<meta property="og:image" content="https://try.porchlight.edycu.dev/og-image.png" />
+<meta property="og:image:secure_url" content="https://try.porchlight.edycu.dev/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Porchlight — the win-back Mind. Recovered MRR beside a live churn dashboard, showing the revenue that keyword matching misses." />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Try Porchlight — run the win-back Mind yourself" />
+<meta name="twitter:description" content="Describe a change in your own words and a real Minds agent decides who it wins back. Try to fool it — it's supposed to stay quiet." />
+<meta name="twitter:image" content="https://try.porchlight.edycu.dev/og-image.png" />
+<meta name="twitter:image:alt" content="Porchlight — the win-back Mind, powered by Minds by Animoca Brands, beside a live churn dashboard." />
 <style>
   /* Design language mirrors the landing page (site/index.html): warm serif
      headings, mono amber kickers, glassy cards on deep navy, --ease motion.
@@ -37,15 +62,19 @@
   header, main{ position:relative; z-index:1; }
 
   header{ display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-    padding:20px clamp(18px,4vw,32px); border-bottom:1px solid var(--line-soft);
+    padding:20px clamp(20px,4vw,44px); border-bottom:1px solid var(--line-soft);
     background:linear-gradient(180deg, rgba(15,18,32,.72), transparent); backdrop-filter:blur(8px); }
   .brand{ display:flex; align-items:center; gap:9px; margin:0; font-family:var(--serif); font-size:1.3rem; font-weight:600; letter-spacing:.01em; color:var(--ink); }
-  .brand .lantern{ filter:drop-shadow(0 0 10px rgba(255,207,107,.55)); }
+  .brand .lantern{ width:30px; height:30px; display:block; flex:none;
+    filter:drop-shadow(0 0 10px rgba(255,207,107,.55)); }
   .tag{ margin-left:auto; color:var(--dim); font-size:.9rem; }
   .badge{ font-family:var(--mono); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase;
     padding:4px 10px; border:1px solid var(--line); border-radius:99px; color:var(--dim); background:rgba(255,255,255,.02); }
 
-  main{ max-width:1040px; margin:0 auto; padding:clamp(20px,3vw,30px); display:grid; gap:18px; grid-template-columns:1fr 1fr; }
+  /* Matches the landing page's .wrap so the two surfaces line up:
+     --maxw:1120px and padding:0 clamp(20px,4vw,44px) in site/index.html. */
+  main{ max-width:1120px; margin:0 auto; padding:clamp(20px,3vw,30px) clamp(20px,4vw,44px) 0;
+    display:grid; gap:18px; grid-template-columns:1fr 1fr; }
   .card{ position:relative; background:linear-gradient(180deg, var(--card), var(--bg-raise));
     border:1px solid var(--line-soft); border-radius:16px; padding:20px 22px;
     box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 12px 34px rgba(0,0,0,.30);
@@ -95,10 +124,22 @@
   .muted{ color:var(--dim); font-size:.85rem; }
   #edge b, #counts{ font-variant-numeric:tabular-nums; }
 
+  footer{ position:relative; z-index:1; max-width:1120px; margin:0 auto;
+    padding:26px clamp(20px,4vw,44px) 34px; margin-top:26px;
+    border-top:1px solid var(--line-soft);
+    display:flex; align-items:center; gap:14px 20px; flex-wrap:wrap;
+    color:var(--whisper); font-size:.82rem; font-family:var(--mono); }
+  footer nav{ margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; }
+  footer a{ color:var(--dim); text-decoration:none; border-bottom:1px solid transparent;
+    transition:color .2s var(--ease), border-color .2s var(--ease); }
+  footer a:hover{ color:var(--accent); border-bottom-color:rgba(255,207,107,.5); }
+  #ver{ font-variant-numeric:tabular-nums; }
+
   @media (max-width:640px){
     main{ grid-template-columns:1fr; }
     .full{ grid-column:auto; }
     .tag{ margin-left:0; flex-basis:100%; }
+    footer nav{ margin-left:0; flex-basis:100%; }
     input{ min-width:0; }
     select{ max-width:100%; }
   }
@@ -106,7 +147,7 @@
 </head>
 <body>
 <header>
-  <h1 class="brand"><span class="lantern">🏮</span> Porchlight</h1>
+  <h1 class="brand"><img class="lantern" src="icon.svg" alt="" width="30" height="30" /> Porchlight</h1>
   <span class="badge" id="mode">…</span>
   <span class="tag">win members back when their reason is actually fixed</span>
   <button class="ghost" onclick="resetDemo()" style="font-size:.8rem;padding:6px 12px">Reset my demo</button>
@@ -171,11 +212,25 @@
     <div id="audit"><p class="muted">No changes announced yet.</p></div>
   </section>
 </main>
+<footer>
+  <span>the porch light stays on ·
+    <a href="https://github.com/edycutjong/porchlight/releases" target="_blank" rel="noopener" id="ver">v–</a>
+  </span>
+  <nav>
+    <a href="https://porchlight.edycu.dev" target="_blank" rel="noopener">Overview</a>
+    <a href="https://porchlight.edycu.dev/pitch-deck/" target="_blank" rel="noopener">Pitch deck</a>
+    <a href="https://youtu.be/1J-86tHxsYM" target="_blank" rel="noopener">Demo video</a>
+    <a href="https://github.com/edycutjong/porchlight" target="_blank" rel="noopener">Code</a>
+    <a href="https://dorahacks.io/buidl/47442" target="_blank" rel="noopener">BUIDL</a>
+    <a href="https://hellominds.ai" target="_blank" rel="noopener">Powered by Minds</a>
+  </nav>
+</footer>
 <script>
 const $ = (id) => document.getElementById(id)
 async function refresh() {
   const s = await (await fetch('/api/state')).json()
   $('mode').textContent = s.mode
+  if (s.version) $('ver').textContent = 'v' + s.version
   $('mrr').textContent = '$' + (s.board.recoveredMrrCents/100).toFixed(2)
   $('rejoined').textContent = s.board.members.rejoined
   const edge = s.board.recoveredMrrCents - s.board.keywordRecoveredMrrCents

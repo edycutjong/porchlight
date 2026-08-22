@@ -2,6 +2,7 @@ import './testenv-server-mock.js'
 import './server.js' // starts app.listen(0) at import; helper captured the Server
 import { test, before, after } from 'node:test'
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import type { AddressInfo } from 'node:net'
 import type { Server } from 'node:http'
 
@@ -110,8 +111,17 @@ test('POST /api/reset clears this visitor and answers ok', async () => {
   assert.deepEqual(await r.json(), { ok: true })
 })
 
-test('GET /healthz reports the mode', async () => {
+test('GET /healthz reports the mode and the exact running version', async () => {
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string }
   const r = await fetch(`${base()}/healthz`)
   assert.equal(r.status, 200)
-  assert.deepEqual(await r.json(), { ok: true, mode: 'MOCK' })
+  // The footer shows this, so it has to be the build that is actually running —
+  // not a best-effort lookup against the GitHub releases API.
+  assert.deepEqual(await r.json(), { ok: true, mode: 'MOCK', version: pkg.version })
+})
+
+test('GET /api/state carries the same version the footer renders', async () => {
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string }
+  const j = (await (await fetch(`${base()}/api/state`)).json()) as { version: string }
+  assert.equal(j.version, pkg.version)
 })
