@@ -128,44 +128,72 @@ With no API key, Porchlight runs in **MOCK mode** so the whole flow is demoable 
 ## 🏗️ Architecture
 ```mermaid
 flowchart TD
-    subgraph client["🖥️ Browser — our own UI"]
-        SF["Mock membership storefront<br/>(cancel / rejoin)"]
-        DASH["Dashboard<br/>churn board · recovered-MRR · audit trail"]
+    subgraph client["🖥️ Browser"]
+        direction LR
+        SF["Membership storefront<br/>cancel / rejoin"]
+        DASH["Dashboard<br/>churn board · recovered MRR · audit"]
     end
 
-    subgraph backend["⚙️ Porchlight backend — Node/TS · Express"]
-        SRV["server.ts<br/>REST API · serves /public"]
-        subgraph engine["engine/"]
-            EI["exitInterview.ts<br/>drives Mind chat, parses condition"]
-            CM["conditionMatcher.ts<br/>semantic: does change resolve reason?"]
-            TE["triggerEngine.ts<br/>match open conditions → win back resolved"]
+    subgraph backend["⚙️ Porchlight — Node/TS · Express"]
+        SRV["server.ts<br/>REST API · per-visitor sessions"]
+        subgraph logic["engine/ — the three behaviours that need a Mind"]
+            direction LR
+            EI["exitInterview.ts<br/>runs the interview,<br/>files the condition"]
+            CM["conditionMatcher.ts<br/>does this change<br/>resolve that reason?"]
+            TE["triggerEngine.ts<br/>wins back only<br/>the resolved"]
         end
-        MW["minds.ts<br/>client-lib wrapper (+ MOCK mode)"]
-        DB[("db.ts — SQLite<br/>members · departures{condition, quote, do_not_contact}<br/>events · winbacks")]
+        MW["minds.ts · client-lib wrapper"]
+        KB["keywordBaseline.ts<br/>the control we measure against"]
+        DB[("db.ts — JSON store<br/>reason · verbatim quote · do-not-contact")]
     end
 
-    subgraph minds["🧠 Minds platform · @animocabrands/minds-client-lib"]
-        MIND["Pre-configured Mind<br/>long-term memory · semantic reasoning · Skill"]
-        CH["Native channel<br/>Telegram / email"]
+    subgraph minds["🧠 Minds · @animocabrands/minds-client-lib"]
+        direction LR
+        MIND["The Mind<br/>long-term memory · semantic reasoning · Skill"]
+        CH["Native channel<br/>email"]
     end
 
-    SF -- "cancel event" --> SRV
+    SF -- "cancel" --> SRV
     SRV --> EI
-    EI -- "ensureConversation · sendMessage · waitForReply" --> MW
-    MW <--> MIND
-    MIND <--> CH
-    EI -- "structured return-condition + verbatim quote" --> DB
-
-    SRV -- "creator posts 'what changed'" --> TE
+    SRV -- "creator posts what changed" --> TE
     TE --> CM
-    CM -- "semantic judgment" --> MW
-    TE -- "resolved & not do-not-contact" --> MW
-    MW -- "win-back quoting member's own words" --> MIND
-    TE -- "recovered MRR" --> DB
+    TE -- "same change, keyword rule" --> KB
 
+    EI -- "interview" --> MW
+    CM -- "semantic judgement" --> MW
+    TE -- "resolved · not do-not-contact" --> MW
+    MW <--> MIND
+    MIND --> CH
+
+    EI -- "condition + quote" --> DB
+    TE -- "recovered MRR" --> DB
+    KB -- "what keywords would have caught" --> DB
     DB --> SRV
-    MW -- "getHistory audit · getLatestHistoryFingerprint" --> SRV
+    MW -- "getHistory → audit" --> SRV
     SRV --> DASH
+
+    %% Amber = the Mind, and the code that cannot work without it.
+    %% Every amber edge is a real round-trip to the agent.
+    classDef agent fill:#ffcf6b,stroke:#b8761a,stroke-width:2px,color:#20160a
+    classDef brainwork fill:#fff1cc,stroke:#e89f45,stroke-width:1.5px,color:#20160a
+    classDef plumbing fill:#e7ebf8,stroke:#6b76a3,stroke-width:1.5px,color:#171b2e
+    classDef store fill:#2a3050,stroke:#575f8a,stroke-width:1.5px,color:#e9ecff
+    classDef ui fill:#dcf3e5,stroke:#3fa96a,stroke-width:1.5px,color:#0b1a10
+    classDef control fill:#f2e3e3,stroke:#a87878,stroke-width:1.5px,color:#3a2020
+
+    class MIND,CH agent
+    class EI,CM,TE brainwork
+    class SRV,MW plumbing
+    class DB store
+    class SF,DASH ui
+    class KB control
+
+    style client fill:#f4fbf7,stroke:#bfe3cd,color:#0b1a10
+    style backend fill:#f7f8fd,stroke:#ccd3ea,color:#171b2e
+    style logic fill:#fffaf0,stroke:#edc98a,color:#20160a
+    style minds fill:#fff8e8,stroke:#e2b666,color:#20160a
+
+    linkStyle 5,6,7,8,9 stroke:#e89f45,stroke-width:2.5px
 ```
 - `src/minds.ts` — the Minds integration (LIVE client-lib + MOCK brain).
 - `src/engine/` — exit interview, condition matcher, trigger engine.
