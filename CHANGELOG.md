@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/edycutjong/porchlight/compare/v1.12.0...v1.12.1) (2026-08-22)
+
+
+### Bug Fixes
+
+* **demo:** align header nav and footer with the content gutters ([0a64841](https://github.com/edycutjong/porchlight/commit/0a6484103f9c3f2aaf82f1ca7927dac5529f4437))
+
 # [1.12.0](https://github.com/edycutjong/porchlight/compare/v1.11.0...v1.12.0) (2026-08-22)
 
 
