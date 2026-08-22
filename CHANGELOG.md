@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/edycutjong/porchlight/compare/v1.10.1...v1.11.0) (2026-08-22)
+
+
+### Features
+
+* **demo:** ship a genuinely live, playable demo with real captured Mind verdicts ([4e54869](https://github.com/edycutjong/porchlight/commit/4e548697933728addeebcf08e73dc32d4560b67d))
+
 ## [1.10.1](https://github.com/edycutjong/porchlight/compare/v1.10.0...v1.10.1) (2026-08-13)
 
 
