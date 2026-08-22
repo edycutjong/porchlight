@@ -9,7 +9,7 @@
   <br/>
 
   [![Live site](https://img.shields.io/badge/Live_site-porchlight.edycu.dev-69D38A?style=for-the-badge&labelColor=0F1220&logo=github&logoColor=white)](https://porchlight.edycu.dev)
-  [![Try it live](https://img.shields.io/badge/Try_it_live-run_the_Mind_yourself-69D38A?style=for-the-badge&labelColor=0F1220&logo=flydotio&logoColor=white)](https://porchlight-demo.fly.dev)
+  [![Try it live](https://img.shields.io/badge/Try_it_live-run_the_Mind_yourself-69D38A?style=for-the-badge&labelColor=0F1220&logo=rocket&logoColor=white)](https://try.porchlight.edycu.dev)
   [![Demo video](https://img.shields.io/badge/▶_Demo-Watch_2_min-FF0000?style=for-the-badge&labelColor=0F1220&logo=youtube&logoColor=white)](https://youtu.be/1J-86tHxsYM)
   [![Pitch Deck](https://img.shields.io/badge/Pitch_Deck-View-ffcf6b?style=for-the-badge&labelColor=0F1220)](https://porchlight.edycu.dev/pitch-deck/)
   [![DoraHacks BUIDL](https://img.shields.io/badge/DoraHacks-BUIDL_%2347442-1E6FFF?style=for-the-badge&labelColor=0F1220)](https://dorahacks.io/buidl/47442)
@@ -82,7 +82,7 @@ Uses `@animocabrands/minds-client-lib` across 7 methods: `listMinds`, `getMind`,
 
 ## 🕹️ Try it without installing anything
 
-**[porchlight-demo.fly.dev](https://porchlight-demo.fly.dev)** — no signup, loads with data.
+**[try.porchlight.edycu.dev](https://try.porchlight.edycu.dev)** — no signup, loads with data.
 
 - **Announce a curated change** → instant. Those verdicts are **real Mind output**, captured ahead of
   time (`npm run precompute`) because judging one change against all 18 departures takes minutes of
