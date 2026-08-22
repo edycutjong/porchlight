@@ -27,7 +27,7 @@
   ![Express](https://img.shields.io/badge/Express-server-000000?style=flat&logo=express&logoColor=white)
   ![zod](https://img.shields.io/badge/zod-schemas-3E67B1?style=flat&logo=zod&logoColor=white)
   ![Playwright](https://img.shields.io/badge/Playwright-e2e-2EAD33?style=flat&logo=playwright&logoColor=white)
-  ![Tests](https://img.shields.io/badge/tests-57_passing-69D38A?style=flat)
+  ![Tests](https://img.shields.io/badge/tests-58_passing-69D38A?style=flat)
   ![Coverage](https://img.shields.io/badge/coverage-100%25-2ea44f?style=flat)
   ![License](https://img.shields.io/badge/license-MIT-2ea44f?style=flat)
   [![CI/CD Pipeline](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/porchlight/actions/workflows/ci.yml)
@@ -113,7 +113,7 @@ npm install
 npm run demo  # the full arc, headless (works offline in MOCK mode)
 npm start     # dashboard at http://localhost:5173 (serves the pinned src/demoSeed.json)
 npm run precompute  # capture REAL Mind verdicts + latency into src/liveCache.json (needs a key)
-npm test      # 57 tests (interview parse, win-back, semantic edge, do-not-contact, live SDK, sessions, edges)
+npm test      # 58 tests (interview parse, win-back, semantic edge, do-not-contact, live SDK, sessions, edges)
 ```
 
 ### Offline by default, real Mind when you want it
@@ -203,11 +203,11 @@ Node 22+ · TypeScript · Express · zod. A JSON store mirrors the Mind's memory
 
 ## 🧪 Testing & CI
 
-A production-grade harness runs on every push and PR — a **6-stage GitHub Actions pipeline** (`ci.yml`): Quality → Security → Build & Smoke → E2E → Performance → Deploy Gate. Releases run in a dedicated `release.yml` workflow (see below).
+A production-grade harness runs on every push and PR — a **7-stage GitHub Actions pipeline** (`ci.yml`): Quality → Security → Build & Smoke → E2E → Performance → Deploy Gate → Fly.io deploy (main only, app files only, and it fails the build if the deployed app comes up in MOCK mode). Releases run in a dedicated `release.yml` workflow (see below).
 
 ```bash
 npm run ci          # audit + strict typecheck + unit tests
-npm test            # 51 unit tests (node:test)
+npm test            # 58 unit tests (node:test)
 npm run test:coverage  # 100% lines / branches / functions on every source file
 npm run e2e         # Playwright E2E against the live dashboard (demo mode, no key)
 npm run lighthouse  # Lighthouse CI (performance / a11y / SEO)
